@@ -1,3 +1,4 @@
+
 name: Claude
 
 # Trigger when you mention @claude in an issue or a comment.
@@ -14,6 +15,7 @@ permissions:
   contents: write
   issues: write
   pull-requests: write
+id-token: write
 
 jobs:
   claude:
