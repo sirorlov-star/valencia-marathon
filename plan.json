@@ -1,17 +1,17 @@
 {
-  "version": "2.0",
+  "version": "3.0",
   "meta": {
     "id": "valencia-marathon-2026",
     "athlete": "First-Time Marathoner",
     "event": "Valencia Marathon 2026",
     "eventDate": "2026-12-06",
-    "planStartDate": "2026-06-22",
+    "planStartDate": "2026-08-17",
     "planEndDate": "2026-12-06",
-    "createdAt": "2026-06-23T00:00:00Z",
-    "updatedAt": "2026-06-23T00:00:00Z",
-    "totalWeeks": 24,
+    "createdAt": "2026-08-16T00:00:00Z",
+    "updatedAt": "2026-08-16T00:00:00Z",
+    "totalWeeks": 16,
     "generatedBy": "Claude Coach",
-    "revisionNote": "Revision 2 (June 23). Athlete ahead of plan after 3 strong weeks — skipped re-base, running 4x/week, HR down ~20bpm at same pace. Paces recalibrated faster; long-run ramp accelerated; now 24 weeks from current week."
+    "revisionNote": "Revision 3 (Aug 16). 15 km at 6:28/km over ~378 m climbing, HR 146, +3bpm drift over 96 min. EF +14% since June, cadence 143->165. Goal pace revised 6:55 -> 6:20/km. Peak long run raised to 32 km. Hill repeats retained (dune terrain)."
   },
   "preferences": {
     "swim": "meters",
@@ -24,75 +24,79 @@
       "raceHistory": [
         "No prior races — first marathon"
       ],
-      "peakTrainingLoad": "Now running 4x/week, 15–20 km/week",
-      "foundationLevel": "beginner→novice",
+      "peakTrainingLoad": "36 km/week, longest run 15 km",
+      "foundationLevel": "novice",
       "yearsInSport": 10,
-      "notes": "3 weeks of consistent training logged. Adapted faster than expected — graduated out of re-base."
+      "notes": "8 weeks of consistent training with zero missed weeks. Handling 4 runs/week comfortably."
     },
     "currentForm": {
       "weeklyVolume": {
-        "total": 18,
-        "run": 18
+        "total": 36,
+        "run": 36
       },
       "longestSessions": {
-        "run": 6
+        "run": 15
       },
-      "consistency": "Strong — 11 runs in 3 weeks, no gaps",
-      "notes": "Easy pace ~6:30/km at HR 140. Same pace as May baseline but 20 bpm lower HR — clear aerobic gains. Knee symptom-free. Added cycling + walks as cross-training."
+      "consistency": "Excellent — no gaps since June 1",
+      "notes": "15 km at 6:28/km over ~378 m of climbing, mean HR 146, peak 157, only +3 bpm drift over 96 min. Even 5 km splits (6:24/6:35/6:24). Efficiency factor up 14% since June."
     },
     "strengths": [
       {
         "sport": "run",
-        "evidence": "HR dropped from 159→139 at same 6:30/km pace over 3 weeks"
+        "evidence": "Only +3 bpm cardiac drift over 96 min on hilly terrain — exceptional aerobic control"
       },
       {
         "sport": "run",
-        "evidence": "Consistent 4x/week, tolerating continuous running well"
+        "evidence": "Cadence improved 143 -> 165 spm, reducing impact load per step"
+      },
+      {
+        "sport": "run",
+        "evidence": "Efficiency factor +14% in 8 weeks (same HR, 1:10/km faster)"
       },
       {
         "sport": "general",
-        "evidence": "Good long-run pacing instinct (ran 6km at 7:41/km, kept HR 141)"
+        "evidence": "Zero missed training weeks; knee has stayed symptom-free"
       }
     ],
     "limiters": [
       {
-        "sport": "run",
-        "evidence": "Longest run still only 6 km — endurance is the gap to close"
-      },
-      {
         "sport": "strength",
-        "evidence": "Strength work only done occasionally — knee insurance is under-used"
+        "evidence": "Only 2 strength sessions logged since June — the main injury risk as volume climbs"
       },
       {
-        "sport": "general",
-        "evidence": "Recovery constrained by 1yo + work; 4 runs/week leaves little margin"
+        "sport": "run",
+        "evidence": "Untested beyond 15 km; the 25–42 km range is entirely unknown territory"
+      },
+      {
+        "sport": "run",
+        "evidence": "Long runs carry ~25 m/km of climbing — great training, but means flat-ground race pace is still unmeasured"
       }
     ],
     "constraints": [
-      "3–4 training days/week",
+      "3–4 running days/week",
       "9-to-5 work + two children (1 yo & 11 yo)",
       "Bodyweight strength only (home)",
-      "Knee currently symptom-free — keep it that way"
+      "Rolling dune terrain near the coast — hillier than the flat Valencia course"
     ]
   },
   "zones": {
     "run": {
       "hr": {
-        "lthr": 168,
+        "lthr": 170,
         "maxEstimated": 188,
-        "notes": "Refined from 11 logged runs. Max HR 180 seen at hard effort; true max ~185–190. Validate Z4/Z5 with a 5K time trial around week 6.",
+        "notes": "Observed max 183 in hard sessions. Zones validated against 8 weeks of data — easy runs sit correctly at 142–147.",
         "zones": [
           {
             "zone": 1,
             "name": "Recovery",
             "hrLow": 0,
-            "hrHigh": 130,
+            "hrHigh": 132,
             "feels": "Very easy — chatty"
           },
           {
             "zone": 2,
             "name": "Easy/Aerobic",
-            "hrLow": 130,
+            "hrLow": 132,
             "hrHigh": 150,
             "feels": "Conversational — where most runs live"
           },
@@ -120,73 +124,58 @@
         ]
       },
       "pace": {
-        "marathonGoalPace": "6:55/km",
-        "marathonGoalRange": "6:45–7:05/km (4:45–4:59 finish)",
+        "marathonGoalPace": "6:20/km",
+        "marathonGoalRange": "6:10–6:35/km (4:20–4:38 finish)",
         "easy": "6:30–7:00/km",
-        "longRun": "7:00–7:30/km (deliberately slower)",
-        "tempo": "5:55–6:10/km",
+        "longRun": "6:40–7:05/km",
+        "tempo": "5:50–6:05/km",
         "threshold": "5:30–5:45/km",
-        "notes": "Recalibrated UP from your logged data. Long runs slower than easy runs on purpose. Goal pace held conservative until your 18–22km runs prove what you can sustain — likely revisit down then."
+        "notes": "Revised UP from 6:55/km after the 15 km at 6:28 with negligible drift. Final goal confirmed after the 26–28 km runs in October."
       }
     }
   },
   "phases": [
     {
-      "name": "Base",
+      "name": "Build",
       "startWeek": 1,
       "endWeek": 8,
-      "focus": "Aerobic base + long run to 13 km",
+      "focus": "Tempo + MP work, long run to 26 km",
       "weeklyHoursRange": {
-        "low": 4,
-        "high": 6.5
+        "low": 5.5,
+        "high": 9.5
       },
       "keyWorkouts": [
         "Long run",
-        "Hill repeats",
-        "Strides",
-        "Tempo intro"
-      ]
-    },
-    {
-      "name": "Build",
-      "startWeek": 9,
-      "endWeek": 16,
-      "focus": "Tempo + MP work, long run to 22 km",
-      "weeklyHoursRange": {
-        "low": 5.5,
-        "high": 9
-      },
-      "keyWorkouts": [
-        "Tempo runs",
-        "MP intervals",
+        "Tempo",
         "MP blocks",
-        "Long runs"
+        "Hill repeats"
       ]
     },
     {
       "name": "Peak",
-      "startWeek": 17,
-      "endWeek": 21,
-      "focus": "Marathon-specific, long run 30 km",
+      "startWeek": 9,
+      "endWeek": 13,
+      "focus": "Marathon-specific, long run to 32 km",
       "weeklyHoursRange": {
         "low": 6.5,
-        "high": 10.5
+        "high": 11
       },
       "keyWorkouts": [
-        "Long run with MP",
+        "Long run with MP finish",
         "MP blocks"
       ]
     },
     {
       "name": "Taper",
-      "startWeek": 22,
-      "endWeek": 24,
-      "focus": "Cut volume, stay sharp, race",
+      "startWeek": 14,
+      "endWeek": 16,
+      "focus": "Cut volume, hold sharpness, race",
       "weeklyHoursRange": {
         "low": 4,
-        "high": 7.5
+        "high": 8
       },
       "keyWorkouts": [
+        "MP intervals",
         "Easy + strides",
         "Race day"
       ]
@@ -195,1133 +184,10 @@
   "weeks": [
     {
       "weekNumber": 1,
-      "startDate": "2026-06-22",
-      "endDate": "2026-06-28",
-      "phase": "Base",
-      "focus": "Settle into recalibrated easy pace",
-      "targetHours": 4.5,
-      "isRecoveryWeek": false,
-      "days": [
-        {
-          "date": "2026-06-22",
-          "dayOfWeek": "Monday",
-          "workouts": [
-            {
-              "name": "Strength B — Core & Stability",
-              "description": "Core + single-leg balance for running economy and knee tracking.",
-              "humanReadable": "Warm-up (5 min): cat-cow, bird-dog 2x8\nMain (3 rounds, 45s rest):\n  • Plank — 30–45s\n  • Side plank — 20–30s each side\n  • Dead bug — 8 reps each side\n  • Single-leg deadlift (no weight) — 8 reps each leg\n  • Step-ups onto chair — 10 each leg\nCool-down (5 min): pigeon stretch, child's pose",
-              "durationMinutes": 25,
-              "id": "w1-mon-str",
-              "sport": "strength",
-              "type": "strength",
-              "primaryZone": "Z2",
-              "completed": false
-            }
-          ]
-        },
-        {
-          "date": "2026-06-23",
-          "dayOfWeek": "Tuesday",
-          "workouts": [
-            {
-              "id": "w1-tue-run",
-              "sport": "run",
-              "type": "run",
-              "completed": false,
-              "name": "Easy + 4 Strides — 35 min",
-              "description": "Easy aerobic with short pickups to keep leg speed sharp.",
-              "durationMinutes": 35,
-              "primaryZone": "Z2 + Strides",
-              "humanReadable": "Warm-up: 5 min walk + 10 min easy\nMain: 10 min easy (6:30–7:00/km)\nStrides: 4 x 20s acceleration to ~5K pace on flat, 60s walk between\nCool-down: 5 min walk"
-            }
-          ]
-        },
-        {
-          "date": "2026-06-24",
-          "dayOfWeek": "Wednesday",
-          "workouts": [
-            {
-              "id": "w1-wed-run",
-              "sport": "run",
-              "type": "run",
-              "completed": false,
-              "name": "Easy Run — 30 min (optional 4th run)",
-              "description": "Optional. Run it if recovery is good — skip without guilt if tired or short on sleep.",
-              "durationMinutes": 30,
-              "distanceKm": 4.3,
-              "primaryZone": "Z2 Easy",
-              "humanReadable": "OPTIONAL 4th run — only if you feel fresh.\nWarm-up: 5 min walk\nMain: 20 min very easy (HR <145, pace 6:45–7:15/km)\nCool-down: 5 min walk\n\nIf knee feels anything, or sleep was bad, do mobility instead."
-            }
-          ]
-        },
-        {
-          "date": "2026-06-25",
-          "dayOfWeek": "Thursday",
-          "workouts": [
-            {
-              "id": "w1-thu-run",
-              "sport": "run",
-              "type": "run",
-              "completed": false,
-              "name": "Easy Run — 35 min",
-              "description": "Easy/conversational. Keep HR under 150. This pace should feel comfortable.",
-              "durationMinutes": 35,
-              "distanceKm": 5,
-              "primaryZone": "Z2 Easy",
-              "humanReadable": "Warm-up: 5 min walk + light jog\nMain: 25 min easy (HR 135–150, pace 6:30–7:00/km)\nCool-down: 5 min walk + stretch"
-            }
-          ]
-        },
-        {
-          "date": "2026-06-26",
-          "dayOfWeek": "Friday",
-          "workouts": [
-            {
-              "name": "Strength A — Lower Body Foundation",
-              "description": "Knee insurance. Single-leg & glute work. Non-negotiable now that long runs are growing.",
-              "humanReadable": "Warm-up (5 min): leg swings, hip circles, glute bridges 2x10\nMain (3 rounds, 60s rest):\n  • Bodyweight squats — 12 reps (slow & controlled)\n  • Reverse lunges — 8 reps each leg\n  • Single-leg glute bridges — 10 reps each leg\n  • Calf raises — 15 reps\n  • Side-lying clamshells — 12 reps each side\nCool-down (5 min): hip flexor & quad stretches",
-              "durationMinutes": 30,
-              "id": "w1-fri-str",
-              "sport": "strength",
-              "type": "strength",
-              "primaryZone": "Z2",
-              "completed": false
-            }
-          ]
-        },
-        {
-          "date": "2026-06-27",
-          "dayOfWeek": "Saturday",
-          "workouts": [
-            {
-              "id": "w1-sat-run",
-              "sport": "run",
-              "type": "run",
-              "completed": false,
-              "name": "Long Run — 7 km",
-              "description": "The engine of your marathon. Keep it SLOW — slower than your easy runs. Time on feet matters more than pace.",
-              "distanceKm": 7,
-              "durationMinutes": 51,
-              "primaryZone": "Z2 Easy",
-              "humanReadable": "Warm-up: 5 min walk\nMain: 7 km easy (7:00–7:30/km, HR 135–150). Deliberately slow.\nCool-down: 5 min walk + stretches\nFuel: After 75 min, 30g carbs (gel/banana). Water every 15 min."
-            }
-          ]
-        },
-        {
-          "date": "2026-06-28",
-          "dayOfWeek": "Sunday",
-          "workouts": [
-            {
-              "id": "w1-sun-rest",
-              "sport": "rest",
-              "type": "rest",
-              "name": "Rest Day",
-              "description": "Full recovery — fitness is built during rest.",
-              "humanReadable": "Sleep, hydrate, eat well. Light walking is fine.",
-              "completed": false
-            }
-          ]
-        }
-      ],
-      "summary": {
-        "totalHours": 2.5,
-        "bySport": {
-          "run": {
-            "sessions": 4,
-            "hours": 2.5,
-            "km": 16.3
-          }
-        }
-      }
-    },
-    {
-      "weekNumber": 2,
-      "startDate": "2026-06-29",
-      "endDate": "2026-07-05",
-      "phase": "Base",
-      "focus": "Introduce hill strength",
-      "targetHours": 5.0,
-      "isRecoveryWeek": false,
-      "days": [
-        {
-          "date": "2026-06-29",
-          "dayOfWeek": "Monday",
-          "workouts": [
-            {
-              "name": "Strength B — Core & Stability",
-              "description": "Core + single-leg balance for running economy and knee tracking.",
-              "humanReadable": "Warm-up (5 min): cat-cow, bird-dog 2x8\nMain (3 rounds, 45s rest):\n  • Plank — 30–45s\n  • Side plank — 20–30s each side\n  • Dead bug — 8 reps each side\n  • Single-leg deadlift (no weight) — 8 reps each leg\n  • Step-ups onto chair — 10 each leg\nCool-down (5 min): pigeon stretch, child's pose",
-              "durationMinutes": 25,
-              "id": "w2-mon-str",
-              "sport": "strength",
-              "type": "strength",
-              "primaryZone": "Z2",
-              "completed": false
-            }
-          ]
-        },
-        {
-          "date": "2026-06-30",
-          "dayOfWeek": "Tuesday",
-          "workouts": [
-            {
-              "id": "w2-tue-run",
-              "sport": "run",
-              "type": "run",
-              "completed": false,
-              "name": "Easy Run — 40 min",
-              "description": "Easy/conversational. Keep HR under 150. This pace should feel comfortable.",
-              "durationMinutes": 40,
-              "distanceKm": 6,
-              "primaryZone": "Z2 Easy",
-              "humanReadable": "Warm-up: 5 min walk + light jog\nMain: 30 min easy (HR 135–150, pace 6:30–7:00/km)\nCool-down: 5 min walk + stretch"
-            }
-          ]
-        },
-        {
-          "date": "2026-07-01",
-          "dayOfWeek": "Wednesday",
-          "workouts": [
-            {
-              "id": "w2-wed-run",
-              "sport": "run",
-              "type": "run",
-              "completed": false,
-              "name": "Easy Run — 30 min (optional 4th run)",
-              "description": "Optional. Run it if recovery is good — skip without guilt if tired or short on sleep.",
-              "durationMinutes": 30,
-              "distanceKm": 4.3,
-              "primaryZone": "Z2 Easy",
-              "humanReadable": "OPTIONAL 4th run — only if you feel fresh.\nWarm-up: 5 min walk\nMain: 20 min very easy (HR <145, pace 6:45–7:15/km)\nCool-down: 5 min walk\n\nIf knee feels anything, or sleep was bad, do mobility instead."
-            }
-          ]
-        },
-        {
-          "date": "2026-07-02",
-          "dayOfWeek": "Thursday",
-          "workouts": [
-            {
-              "id": "w2-thu-run",
-              "sport": "run",
-              "type": "run",
-              "completed": false,
-              "name": "Hill Repeats — 40 min",
-              "description": "Strength without speed-work impact. Great for the knee.",
-              "durationMinutes": 40,
-              "primaryZone": "Z4 (uphill)",
-              "humanReadable": "Warm-up: 15 min easy to a 4–6% hill\nMain: 5 x 30s uphill strong (~5K effort), walk/jog down (90s)\nCool-down: 10 min easy"
-            }
-          ]
-        },
-        {
-          "date": "2026-07-03",
-          "dayOfWeek": "Friday",
-          "workouts": [
-            {
-              "name": "Strength A — Lower Body Foundation",
-              "description": "Knee insurance. Single-leg & glute work. Non-negotiable now that long runs are growing.",
-              "humanReadable": "Warm-up (5 min): leg swings, hip circles, glute bridges 2x10\nMain (3 rounds, 60s rest):\n  • Bodyweight squats — 12 reps (slow & controlled)\n  • Reverse lunges — 8 reps each leg\n  • Single-leg glute bridges — 10 reps each leg\n  • Calf raises — 15 reps\n  • Side-lying clamshells — 12 reps each side\nCool-down (5 min): hip flexor & quad stretches",
-              "durationMinutes": 30,
-              "id": "w2-fri-str",
-              "sport": "strength",
-              "type": "strength",
-              "primaryZone": "Z2",
-              "completed": false
-            }
-          ]
-        },
-        {
-          "date": "2026-07-04",
-          "dayOfWeek": "Saturday",
-          "workouts": [
-            {
-              "id": "w2-sat-run",
-              "sport": "run",
-              "type": "run",
-              "completed": false,
-              "name": "Long Run — 8 km",
-              "description": "The engine of your marathon. Keep it SLOW — slower than your easy runs. Time on feet matters more than pace.",
-              "distanceKm": 8,
-              "durationMinutes": 58,
-              "primaryZone": "Z2 Easy",
-              "humanReadable": "Warm-up: 5 min walk\nMain: 8 km easy (7:00–7:30/km, HR 135–150). Deliberately slow.\nCool-down: 5 min walk + stretches\nFuel: After 75 min, 30g carbs (gel/banana). Water every 15 min."
-            }
-          ]
-        },
-        {
-          "date": "2026-07-05",
-          "dayOfWeek": "Sunday",
-          "workouts": [
-            {
-              "id": "w2-sun-rest",
-              "sport": "rest",
-              "type": "rest",
-              "name": "Rest Day",
-              "description": "Full recovery — fitness is built during rest.",
-              "humanReadable": "Sleep, hydrate, eat well. Light walking is fine.",
-              "completed": false
-            }
-          ]
-        }
-      ],
-      "summary": {
-        "totalHours": 2.8,
-        "bySport": {
-          "run": {
-            "sessions": 4,
-            "hours": 2.8,
-            "km": 18.3
-          }
-        }
-      }
-    },
-    {
-      "weekNumber": 3,
-      "startDate": "2026-07-06",
-      "endDate": "2026-07-12",
-      "phase": "Base",
-      "focus": "Long run to 9 km",
-      "targetHours": 5.5,
-      "isRecoveryWeek": false,
-      "days": [
-        {
-          "date": "2026-07-06",
-          "dayOfWeek": "Monday",
-          "workouts": [
-            {
-              "name": "Strength B — Core & Stability",
-              "description": "Core + single-leg balance for running economy and knee tracking.",
-              "humanReadable": "Warm-up (5 min): cat-cow, bird-dog 2x8\nMain (3 rounds, 45s rest):\n  • Plank — 30–45s\n  • Side plank — 20–30s each side\n  • Dead bug — 8 reps each side\n  • Single-leg deadlift (no weight) — 8 reps each leg\n  • Step-ups onto chair — 10 each leg\nCool-down (5 min): pigeon stretch, child's pose",
-              "durationMinutes": 25,
-              "id": "w3-mon-str",
-              "sport": "strength",
-              "type": "strength",
-              "primaryZone": "Z2",
-              "completed": false
-            }
-          ]
-        },
-        {
-          "date": "2026-07-07",
-          "dayOfWeek": "Tuesday",
-          "workouts": [
-            {
-              "id": "w3-tue-run",
-              "sport": "run",
-              "type": "run",
-              "completed": false,
-              "name": "Easy + 5 Strides — 40 min",
-              "description": "Easy aerobic with short pickups to keep leg speed sharp.",
-              "durationMinutes": 40,
-              "primaryZone": "Z2 + Strides",
-              "humanReadable": "Warm-up: 5 min walk + 10 min easy\nMain: 15 min easy (6:30–7:00/km)\nStrides: 5 x 20s acceleration to ~5K pace on flat, 60s walk between\nCool-down: 5 min walk"
-            }
-          ]
-        },
-        {
-          "date": "2026-07-08",
-          "dayOfWeek": "Wednesday",
-          "workouts": [
-            {
-              "id": "w3-wed-run",
-              "sport": "run",
-              "type": "run",
-              "completed": false,
-              "name": "Easy Run — 35 min (optional 4th run)",
-              "description": "Optional. Run it if recovery is good — skip without guilt if tired or short on sleep.",
-              "durationMinutes": 35,
-              "distanceKm": 5,
-              "primaryZone": "Z2 Easy",
-              "humanReadable": "OPTIONAL 4th run — only if you feel fresh.\nWarm-up: 5 min walk\nMain: 25 min very easy (HR <145, pace 6:45–7:15/km)\nCool-down: 5 min walk\n\nIf knee feels anything, or sleep was bad, do mobility instead."
-            }
-          ]
-        },
-        {
-          "date": "2026-07-09",
-          "dayOfWeek": "Thursday",
-          "workouts": [
-            {
-              "id": "w3-thu-run",
-              "sport": "run",
-              "type": "run",
-              "completed": false,
-              "name": "Easy Run — 40 min",
-              "description": "Easy/conversational. Keep HR under 150. This pace should feel comfortable.",
-              "durationMinutes": 40,
-              "distanceKm": 6,
-              "primaryZone": "Z2 Easy",
-              "humanReadable": "Warm-up: 5 min walk + light jog\nMain: 30 min easy (HR 135–150, pace 6:30–7:00/km)\nCool-down: 5 min walk + stretch"
-            }
-          ]
-        },
-        {
-          "date": "2026-07-10",
-          "dayOfWeek": "Friday",
-          "workouts": [
-            {
-              "name": "Strength A — Lower Body Foundation",
-              "description": "Knee insurance. Single-leg & glute work. Non-negotiable now that long runs are growing.",
-              "humanReadable": "Warm-up (5 min): leg swings, hip circles, glute bridges 2x10\nMain (3 rounds, 60s rest):\n  • Bodyweight squats — 12 reps (slow & controlled)\n  • Reverse lunges — 8 reps each leg\n  • Single-leg glute bridges — 10 reps each leg\n  • Calf raises — 15 reps\n  • Side-lying clamshells — 12 reps each side\nCool-down (5 min): hip flexor & quad stretches",
-              "durationMinutes": 30,
-              "id": "w3-fri-str",
-              "sport": "strength",
-              "type": "strength",
-              "primaryZone": "Z2",
-              "completed": false
-            }
-          ]
-        },
-        {
-          "date": "2026-07-11",
-          "dayOfWeek": "Saturday",
-          "workouts": [
-            {
-              "id": "w3-sat-run",
-              "sport": "run",
-              "type": "run",
-              "completed": false,
-              "name": "Long Run — 9 km",
-              "description": "The engine of your marathon. Keep it SLOW — slower than your easy runs. Time on feet matters more than pace.",
-              "distanceKm": 9,
-              "durationMinutes": 65,
-              "primaryZone": "Z2 Easy",
-              "humanReadable": "Warm-up: 5 min walk\nMain: 9 km easy (7:00–7:30/km, HR 135–150). Deliberately slow.\nCool-down: 5 min walk + stretches\nFuel: After 75 min, 30g carbs (gel/banana). Water every 15 min."
-            }
-          ]
-        },
-        {
-          "date": "2026-07-12",
-          "dayOfWeek": "Sunday",
-          "workouts": [
-            {
-              "id": "w3-sun-rest",
-              "sport": "rest",
-              "type": "rest",
-              "name": "Rest Day",
-              "description": "Full recovery — fitness is built during rest.",
-              "humanReadable": "Sleep, hydrate, eat well. Light walking is fine.",
-              "completed": false
-            }
-          ]
-        }
-      ],
-      "summary": {
-        "totalHours": 3.0,
-        "bySport": {
-          "run": {
-            "sessions": 4,
-            "hours": 3.0,
-            "km": 20
-          }
-        }
-      }
-    },
-    {
-      "weekNumber": 4,
-      "startDate": "2026-07-13",
-      "endDate": "2026-07-19",
-      "phase": "Base",
-      "focus": "Recovery week — absorb",
-      "targetHours": 4.0,
-      "isRecoveryWeek": true,
-      "days": [
-        {
-          "date": "2026-07-13",
-          "dayOfWeek": "Monday",
-          "workouts": [
-            {
-              "id": "w4-mon-rest",
-              "sport": "rest",
-              "type": "rest",
-              "name": "Rest Day",
-              "description": "Full recovery — fitness is built during rest.",
-              "humanReadable": "Sleep, hydrate, eat well. Light walking is fine.",
-              "completed": false
-            }
-          ]
-        },
-        {
-          "date": "2026-07-14",
-          "dayOfWeek": "Tuesday",
-          "workouts": [
-            {
-              "id": "w4-tue-run",
-              "sport": "run",
-              "type": "run",
-              "completed": false,
-              "name": "Easy Run — 35 min",
-              "description": "Easy/conversational. Keep HR under 150. This pace should feel comfortable.",
-              "durationMinutes": 35,
-              "distanceKm": 5,
-              "primaryZone": "Z2 Easy",
-              "humanReadable": "Warm-up: 5 min walk + light jog\nMain: 25 min easy (HR 135–150, pace 6:30–7:00/km)\nCool-down: 5 min walk + stretch"
-            }
-          ]
-        },
-        {
-          "date": "2026-07-15",
-          "dayOfWeek": "Wednesday",
-          "workouts": [
-            {
-              "name": "Mobility & Recovery",
-              "description": "Light movement — supports recovery.",
-              "humanReadable": "10–15 min total:\n  • Foam roll quads, calves, glutes (5 min)\n  • Hip flexor stretch — 60s each side\n  • Hamstring stretch — 60s each side\n  • Ankle circles & calf stretch — 30s each",
-              "durationMinutes": 15,
-              "id": "w4-wed-mob",
-              "sport": "mobility",
-              "type": "recovery",
-              "primaryZone": "Recovery",
-              "completed": false
-            }
-          ]
-        },
-        {
-          "date": "2026-07-16",
-          "dayOfWeek": "Thursday",
-          "workouts": [
-            {
-              "id": "w4-thu-run",
-              "sport": "run",
-              "type": "run",
-              "completed": false,
-              "name": "Easy Run — 35 min",
-              "description": "Easy/conversational. Keep HR under 150. This pace should feel comfortable.",
-              "durationMinutes": 35,
-              "distanceKm": 5,
-              "primaryZone": "Z2 Easy",
-              "humanReadable": "Warm-up: 5 min walk + light jog\nMain: 25 min easy (HR 135–150, pace 6:30–7:00/km)\nCool-down: 5 min walk + stretch"
-            }
-          ]
-        },
-        {
-          "date": "2026-07-17",
-          "dayOfWeek": "Friday",
-          "workouts": [
-            {
-              "name": "Strength A — Lower Body Foundation",
-              "description": "Knee insurance. Single-leg & glute work. Non-negotiable now that long runs are growing.",
-              "humanReadable": "Warm-up (5 min): leg swings, hip circles, glute bridges 2x10\nMain (3 rounds, 60s rest):\n  • Bodyweight squats — 12 reps (slow & controlled)\n  • Reverse lunges — 8 reps each leg\n  • Single-leg glute bridges — 10 reps each leg\n  • Calf raises — 15 reps\n  • Side-lying clamshells — 12 reps each side\nCool-down (5 min): hip flexor & quad stretches",
-              "durationMinutes": 30,
-              "id": "w4-fri-str",
-              "sport": "strength",
-              "type": "strength",
-              "primaryZone": "Z2",
-              "completed": false
-            }
-          ]
-        },
-        {
-          "date": "2026-07-18",
-          "dayOfWeek": "Saturday",
-          "workouts": [
-            {
-              "id": "w4-sat-run",
-              "sport": "run",
-              "type": "run",
-              "completed": false,
-              "name": "Long Run — 7 km",
-              "description": "The engine of your marathon. Keep it SLOW — slower than your easy runs. Time on feet matters more than pace.",
-              "distanceKm": 7,
-              "durationMinutes": 51,
-              "primaryZone": "Z2 Easy",
-              "humanReadable": "Warm-up: 5 min walk\nMain: 7 km easy (7:00–7:30/km, HR 135–150). Deliberately slow.\nCool-down: 5 min walk + stretches\nFuel: After 75 min, 30g carbs (gel/banana). Water every 15 min."
-            }
-          ]
-        },
-        {
-          "date": "2026-07-19",
-          "dayOfWeek": "Sunday",
-          "workouts": [
-            {
-              "id": "w4-sun-rest",
-              "sport": "rest",
-              "type": "rest",
-              "name": "Rest Day",
-              "description": "Full recovery — fitness is built during rest.",
-              "humanReadable": "Sleep, hydrate, eat well. Light walking is fine.",
-              "completed": false
-            }
-          ]
-        }
-      ],
-      "summary": {
-        "totalHours": 2.0,
-        "bySport": {
-          "run": {
-            "sessions": 3,
-            "hours": 2.0,
-            "km": 17
-          }
-        }
-      }
-    },
-    {
-      "weekNumber": 5,
-      "startDate": "2026-07-20",
-      "endDate": "2026-07-26",
-      "phase": "Base",
-      "focus": "Build to 10 km",
-      "targetHours": 5.5,
-      "isRecoveryWeek": false,
-      "days": [
-        {
-          "date": "2026-07-20",
-          "dayOfWeek": "Monday",
-          "workouts": [
-            {
-              "name": "Strength B — Core & Stability",
-              "description": "Core + single-leg balance for running economy and knee tracking.",
-              "humanReadable": "Warm-up (5 min): cat-cow, bird-dog 2x8\nMain (3 rounds, 45s rest):\n  • Plank — 30–45s\n  • Side plank — 20–30s each side\n  • Dead bug — 8 reps each side\n  • Single-leg deadlift (no weight) — 8 reps each leg\n  • Step-ups onto chair — 10 each leg\nCool-down (5 min): pigeon stretch, child's pose",
-              "durationMinutes": 25,
-              "id": "w5-mon-str",
-              "sport": "strength",
-              "type": "strength",
-              "primaryZone": "Z2",
-              "completed": false
-            }
-          ]
-        },
-        {
-          "date": "2026-07-21",
-          "dayOfWeek": "Tuesday",
-          "workouts": [
-            {
-              "id": "w5-tue-run",
-              "sport": "run",
-              "type": "run",
-              "completed": false,
-              "name": "Easy + 5 Strides — 40 min",
-              "description": "Easy aerobic with short pickups to keep leg speed sharp.",
-              "durationMinutes": 40,
-              "primaryZone": "Z2 + Strides",
-              "humanReadable": "Warm-up: 5 min walk + 10 min easy\nMain: 15 min easy (6:30–7:00/km)\nStrides: 5 x 20s acceleration to ~5K pace on flat, 60s walk between\nCool-down: 5 min walk"
-            }
-          ]
-        },
-        {
-          "date": "2026-07-22",
-          "dayOfWeek": "Wednesday",
-          "workouts": [
-            {
-              "id": "w5-wed-run",
-              "sport": "run",
-              "type": "run",
-              "completed": false,
-              "name": "Easy Run — 35 min (optional 4th run)",
-              "description": "Optional. Run it if recovery is good — skip without guilt if tired or short on sleep.",
-              "durationMinutes": 35,
-              "distanceKm": 5,
-              "primaryZone": "Z2 Easy",
-              "humanReadable": "OPTIONAL 4th run — only if you feel fresh.\nWarm-up: 5 min walk\nMain: 25 min very easy (HR <145, pace 6:45–7:15/km)\nCool-down: 5 min walk\n\nIf knee feels anything, or sleep was bad, do mobility instead."
-            }
-          ]
-        },
-        {
-          "date": "2026-07-23",
-          "dayOfWeek": "Thursday",
-          "workouts": [
-            {
-              "id": "w5-thu-run",
-              "sport": "run",
-              "type": "run",
-              "completed": false,
-              "name": "Hill Repeats — 45 min",
-              "description": "Strength without speed-work impact. Great for the knee.",
-              "durationMinutes": 45,
-              "primaryZone": "Z4 (uphill)",
-              "humanReadable": "Warm-up: 15 min easy to a 4–6% hill\nMain: 6 x 30s uphill strong (~5K effort), walk/jog down (90s)\nCool-down: 10 min easy"
-            }
-          ]
-        },
-        {
-          "date": "2026-07-24",
-          "dayOfWeek": "Friday",
-          "workouts": [
-            {
-              "name": "Strength A — Lower Body Foundation",
-              "description": "Knee insurance. Single-leg & glute work. Non-negotiable now that long runs are growing.",
-              "humanReadable": "Warm-up (5 min): leg swings, hip circles, glute bridges 2x10\nMain (3 rounds, 60s rest):\n  • Bodyweight squats — 12 reps (slow & controlled)\n  • Reverse lunges — 8 reps each leg\n  • Single-leg glute bridges — 10 reps each leg\n  • Calf raises — 15 reps\n  • Side-lying clamshells — 12 reps each side\nCool-down (5 min): hip flexor & quad stretches",
-              "durationMinutes": 30,
-              "id": "w5-fri-str",
-              "sport": "strength",
-              "type": "strength",
-              "primaryZone": "Z2",
-              "completed": false
-            }
-          ]
-        },
-        {
-          "date": "2026-07-25",
-          "dayOfWeek": "Saturday",
-          "workouts": [
-            {
-              "id": "w5-sat-run",
-              "sport": "run",
-              "type": "run",
-              "completed": false,
-              "name": "Long Run — 10 km",
-              "description": "The engine of your marathon. Keep it SLOW — slower than your easy runs. Time on feet matters more than pace.",
-              "distanceKm": 10,
-              "durationMinutes": 73,
-              "primaryZone": "Z2 Easy",
-              "humanReadable": "Warm-up: 5 min walk\nMain: 10 km easy (7:00–7:30/km, HR 135–150). Deliberately slow.\nCool-down: 5 min walk + stretches\nFuel: After 75 min, 30g carbs (gel/banana). Water every 15 min."
-            }
-          ]
-        },
-        {
-          "date": "2026-07-26",
-          "dayOfWeek": "Sunday",
-          "workouts": [
-            {
-              "id": "w5-sun-rest",
-              "sport": "rest",
-              "type": "rest",
-              "name": "Rest Day",
-              "description": "Full recovery — fitness is built during rest.",
-              "humanReadable": "Sleep, hydrate, eat well. Light walking is fine.",
-              "completed": false
-            }
-          ]
-        }
-      ],
-      "summary": {
-        "totalHours": 3.2,
-        "bySport": {
-          "run": {
-            "sessions": 4,
-            "hours": 3.2,
-            "km": 15
-          }
-        }
-      }
-    },
-    {
-      "weekNumber": 6,
-      "startDate": "2026-07-27",
-      "endDate": "2026-08-02",
-      "phase": "Base",
-      "focus": "First 12 km long run",
-      "targetHours": 6.0,
-      "isRecoveryWeek": false,
-      "days": [
-        {
-          "date": "2026-07-27",
-          "dayOfWeek": "Monday",
-          "workouts": [
-            {
-              "name": "Strength B — Core & Stability",
-              "description": "Core + single-leg balance for running economy and knee tracking.",
-              "humanReadable": "Warm-up (5 min): cat-cow, bird-dog 2x8\nMain (3 rounds, 45s rest):\n  • Plank — 30–45s\n  • Side plank — 20–30s each side\n  • Dead bug — 8 reps each side\n  • Single-leg deadlift (no weight) — 8 reps each leg\n  • Step-ups onto chair — 10 each leg\nCool-down (5 min): pigeon stretch, child's pose",
-              "durationMinutes": 25,
-              "id": "w6-mon-str",
-              "sport": "strength",
-              "type": "strength",
-              "primaryZone": "Z2",
-              "completed": false
-            }
-          ]
-        },
-        {
-          "date": "2026-07-28",
-          "dayOfWeek": "Tuesday",
-          "workouts": [
-            {
-              "id": "w6-tue-run",
-              "sport": "run",
-              "type": "run",
-              "completed": false,
-              "name": "Easy Run — 45 min",
-              "description": "Easy/conversational. Keep HR under 150. This pace should feel comfortable.",
-              "durationMinutes": 45,
-              "distanceKm": 6.5,
-              "primaryZone": "Z2 Easy",
-              "humanReadable": "Warm-up: 5 min walk + light jog\nMain: 35 min easy (HR 135–150, pace 6:30–7:00/km)\nCool-down: 5 min walk + stretch"
-            }
-          ]
-        },
-        {
-          "date": "2026-07-29",
-          "dayOfWeek": "Wednesday",
-          "workouts": [
-            {
-              "id": "w6-wed-run",
-              "sport": "run",
-              "type": "run",
-              "completed": false,
-              "name": "Easy Run — 35 min (optional 4th run)",
-              "description": "Optional. Run it if recovery is good — skip without guilt if tired or short on sleep.",
-              "durationMinutes": 35,
-              "distanceKm": 5,
-              "primaryZone": "Z2 Easy",
-              "humanReadable": "OPTIONAL 4th run — only if you feel fresh.\nWarm-up: 5 min walk\nMain: 25 min very easy (HR <145, pace 6:45–7:15/km)\nCool-down: 5 min walk\n\nIf knee feels anything, or sleep was bad, do mobility instead."
-            }
-          ]
-        },
-        {
-          "date": "2026-07-30",
-          "dayOfWeek": "Thursday",
-          "workouts": [
-            {
-              "id": "w6-thu-run",
-              "sport": "run",
-              "type": "run",
-              "completed": false,
-              "name": "Easy + 6 Strides — 45 min",
-              "description": "Easy aerobic with short pickups to keep leg speed sharp.",
-              "durationMinutes": 45,
-              "primaryZone": "Z2 + Strides",
-              "humanReadable": "Warm-up: 5 min walk + 10 min easy\nMain: 20 min easy (6:30–7:00/km)\nStrides: 6 x 20s acceleration to ~5K pace on flat, 60s walk between\nCool-down: 5 min walk"
-            }
-          ]
-        },
-        {
-          "date": "2026-07-31",
-          "dayOfWeek": "Friday",
-          "workouts": [
-            {
-              "name": "Strength A — Lower Body Foundation",
-              "description": "Knee insurance. Single-leg & glute work. Non-negotiable now that long runs are growing.",
-              "humanReadable": "Warm-up (5 min): leg swings, hip circles, glute bridges 2x10\nMain (3 rounds, 60s rest):\n  • Bodyweight squats — 12 reps (slow & controlled)\n  • Reverse lunges — 8 reps each leg\n  • Single-leg glute bridges — 10 reps each leg\n  • Calf raises — 15 reps\n  • Side-lying clamshells — 12 reps each side\nCool-down (5 min): hip flexor & quad stretches",
-              "durationMinutes": 30,
-              "id": "w6-fri-str",
-              "sport": "strength",
-              "type": "strength",
-              "primaryZone": "Z2",
-              "completed": false
-            }
-          ]
-        },
-        {
-          "date": "2026-08-01",
-          "dayOfWeek": "Saturday",
-          "workouts": [
-            {
-              "id": "w6-sat-run",
-              "sport": "run",
-              "type": "run",
-              "completed": false,
-              "name": "Long Run — 12 km",
-              "description": "🎉 Past your old 12K limit — new territory!",
-              "distanceKm": 12,
-              "durationMinutes": 87,
-              "primaryZone": "Z2 Easy",
-              "humanReadable": "Warm-up: 5 min walk\nMain: 12 km easy (7:00–7:30/km, HR 135–150). Deliberately slow.\nCool-down: 5 min walk + stretches\nFuel: After 75 min, 30g carbs (gel/banana). Water every 15 min."
-            }
-          ]
-        },
-        {
-          "date": "2026-08-02",
-          "dayOfWeek": "Sunday",
-          "workouts": [
-            {
-              "id": "w6-sun-rest",
-              "sport": "rest",
-              "type": "rest",
-              "name": "Rest Day",
-              "description": "Full recovery — fitness is built during rest.",
-              "humanReadable": "Sleep, hydrate, eat well. Light walking is fine.",
-              "completed": false
-            }
-          ]
-        }
-      ],
-      "summary": {
-        "totalHours": 3.5,
-        "bySport": {
-          "run": {
-            "sessions": 4,
-            "hours": 3.5,
-            "km": 23.5
-          }
-        }
-      }
-    },
-    {
-      "weekNumber": 7,
-      "startDate": "2026-08-03",
-      "endDate": "2026-08-09",
-      "phase": "Base",
-      "focus": "Recovery week",
-      "targetHours": 4.5,
-      "isRecoveryWeek": true,
-      "days": [
-        {
-          "date": "2026-08-03",
-          "dayOfWeek": "Monday",
-          "workouts": [
-            {
-              "id": "w7-mon-rest",
-              "sport": "rest",
-              "type": "rest",
-              "name": "Rest Day",
-              "description": "Full recovery — fitness is built during rest.",
-              "humanReadable": "Sleep, hydrate, eat well. Light walking is fine.",
-              "completed": false
-            }
-          ]
-        },
-        {
-          "date": "2026-08-04",
-          "dayOfWeek": "Tuesday",
-          "workouts": [
-            {
-              "id": "w7-tue-run",
-              "sport": "run",
-              "type": "run",
-              "completed": false,
-              "name": "Easy Run — 35 min",
-              "description": "Easy/conversational. Keep HR under 150. This pace should feel comfortable.",
-              "durationMinutes": 35,
-              "distanceKm": 5,
-              "primaryZone": "Z2 Easy",
-              "humanReadable": "Warm-up: 5 min walk + light jog\nMain: 25 min easy (HR 135–150, pace 6:30–7:00/km)\nCool-down: 5 min walk + stretch"
-            }
-          ]
-        },
-        {
-          "date": "2026-08-05",
-          "dayOfWeek": "Wednesday",
-          "workouts": [
-            {
-              "name": "Mobility & Recovery",
-              "description": "Light movement — supports recovery.",
-              "humanReadable": "10–15 min total:\n  • Foam roll quads, calves, glutes (5 min)\n  • Hip flexor stretch — 60s each side\n  • Hamstring stretch — 60s each side\n  • Ankle circles & calf stretch — 30s each",
-              "durationMinutes": 15,
-              "id": "w7-wed-mob",
-              "sport": "mobility",
-              "type": "recovery",
-              "primaryZone": "Recovery",
-              "completed": false
-            }
-          ]
-        },
-        {
-          "date": "2026-08-06",
-          "dayOfWeek": "Thursday",
-          "workouts": [
-            {
-              "id": "w7-thu-run",
-              "sport": "run",
-              "type": "run",
-              "completed": false,
-              "name": "Easy Run — 40 min",
-              "description": "Easy/conversational. Keep HR under 150. This pace should feel comfortable.",
-              "durationMinutes": 40,
-              "distanceKm": 5.5,
-              "primaryZone": "Z2 Easy",
-              "humanReadable": "Warm-up: 5 min walk + light jog\nMain: 30 min easy (HR 135–150, pace 6:30–7:00/km)\nCool-down: 5 min walk + stretch"
-            }
-          ]
-        },
-        {
-          "date": "2026-08-07",
-          "dayOfWeek": "Friday",
-          "workouts": [
-            {
-              "name": "Strength A — Lower Body Foundation",
-              "description": "Knee insurance. Single-leg & glute work. Non-negotiable now that long runs are growing.",
-              "humanReadable": "Warm-up (5 min): leg swings, hip circles, glute bridges 2x10\nMain (3 rounds, 60s rest):\n  • Bodyweight squats — 12 reps (slow & controlled)\n  • Reverse lunges — 8 reps each leg\n  • Single-leg glute bridges — 10 reps each leg\n  • Calf raises — 15 reps\n  • Side-lying clamshells — 12 reps each side\nCool-down (5 min): hip flexor & quad stretches",
-              "durationMinutes": 30,
-              "id": "w7-fri-str",
-              "sport": "strength",
-              "type": "strength",
-              "primaryZone": "Z2",
-              "completed": false
-            }
-          ]
-        },
-        {
-          "date": "2026-08-08",
-          "dayOfWeek": "Saturday",
-          "workouts": [
-            {
-              "id": "w7-sat-run",
-              "sport": "run",
-              "type": "run",
-              "completed": false,
-              "name": "Long Run — 9 km",
-              "description": "The engine of your marathon. Keep it SLOW — slower than your easy runs. Time on feet matters more than pace.",
-              "distanceKm": 9,
-              "durationMinutes": 65,
-              "primaryZone": "Z2 Easy",
-              "humanReadable": "Warm-up: 5 min walk\nMain: 9 km easy (7:00–7:30/km, HR 135–150). Deliberately slow.\nCool-down: 5 min walk + stretches\nFuel: After 75 min, 30g carbs (gel/banana). Water every 15 min."
-            }
-          ]
-        },
-        {
-          "date": "2026-08-09",
-          "dayOfWeek": "Sunday",
-          "workouts": [
-            {
-              "id": "w7-sun-rest",
-              "sport": "rest",
-              "type": "rest",
-              "name": "Rest Day",
-              "description": "Full recovery — fitness is built during rest.",
-              "humanReadable": "Sleep, hydrate, eat well. Light walking is fine.",
-              "completed": false
-            }
-          ]
-        }
-      ],
-      "summary": {
-        "totalHours": 2.3,
-        "bySport": {
-          "run": {
-            "sessions": 3,
-            "hours": 2.3,
-            "km": 19.5
-          }
-        }
-      }
-    },
-    {
-      "weekNumber": 8,
-      "startDate": "2026-08-10",
-      "endDate": "2026-08-16",
-      "phase": "Base",
-      "focus": "Tempo intro + 13 km",
-      "targetHours": 6.5,
-      "isRecoveryWeek": false,
-      "days": [
-        {
-          "date": "2026-08-10",
-          "dayOfWeek": "Monday",
-          "workouts": [
-            {
-              "name": "Strength B — Core & Stability",
-              "description": "Core + single-leg balance for running economy and knee tracking.",
-              "humanReadable": "Warm-up (5 min): cat-cow, bird-dog 2x8\nMain (3 rounds, 45s rest):\n  • Plank — 30–45s\n  • Side plank — 20–30s each side\n  • Dead bug — 8 reps each side\n  • Single-leg deadlift (no weight) — 8 reps each leg\n  • Step-ups onto chair — 10 each leg\nCool-down (5 min): pigeon stretch, child's pose",
-              "durationMinutes": 25,
-              "id": "w8-mon-str",
-              "sport": "strength",
-              "type": "strength",
-              "primaryZone": "Z2",
-              "completed": false
-            }
-          ]
-        },
-        {
-          "date": "2026-08-11",
-          "dayOfWeek": "Tuesday",
-          "workouts": [
-            {
-              "id": "w8-tue-run",
-              "sport": "run",
-              "type": "run",
-              "completed": false,
-              "name": "Easy Run — 45 min",
-              "description": "Easy/conversational. Keep HR under 150. This pace should feel comfortable.",
-              "durationMinutes": 45,
-              "distanceKm": 6.5,
-              "primaryZone": "Z2 Easy",
-              "humanReadable": "Warm-up: 5 min walk + light jog\nMain: 35 min easy (HR 135–150, pace 6:30–7:00/km)\nCool-down: 5 min walk + stretch"
-            }
-          ]
-        },
-        {
-          "date": "2026-08-12",
-          "dayOfWeek": "Wednesday",
-          "workouts": [
-            {
-              "id": "w8-wed-run",
-              "sport": "run",
-              "type": "run",
-              "completed": false,
-              "name": "Easy Run — 35 min (optional 4th run)",
-              "description": "Optional. Run it if recovery is good — skip without guilt if tired or short on sleep.",
-              "durationMinutes": 35,
-              "distanceKm": 5,
-              "primaryZone": "Z2 Easy",
-              "humanReadable": "OPTIONAL 4th run — only if you feel fresh.\nWarm-up: 5 min walk\nMain: 25 min very easy (HR <145, pace 6:45–7:15/km)\nCool-down: 5 min walk\n\nIf knee feels anything, or sleep was bad, do mobility instead."
-            }
-          ]
-        },
-        {
-          "date": "2026-08-13",
-          "dayOfWeek": "Thursday",
-          "workouts": [
-            {
-              "id": "w8-thu-run",
-              "sport": "run",
-              "type": "run",
-              "completed": false,
-              "name": "Tempo Intro — 2x8 min",
-              "description": "Threshold work — builds the engine to hold marathon pace.",
-              "durationMinutes": 50,
-              "primaryZone": "Z4 Tempo",
-              "humanReadable": "Warm-up: 15 min easy\nMain: 2 x 8 min @ tempo (6:00/km, HR 162–170), 3 min jog recovery\nCool-down: 10 min easy"
-            }
-          ]
-        },
-        {
-          "date": "2026-08-14",
-          "dayOfWeek": "Friday",
-          "workouts": [
-            {
-              "name": "Strength A — Lower Body Foundation",
-              "description": "Knee insurance. Single-leg & glute work. Non-negotiable now that long runs are growing.",
-              "humanReadable": "Warm-up (5 min): leg swings, hip circles, glute bridges 2x10\nMain (3 rounds, 60s rest):\n  • Bodyweight squats — 12 reps (slow & controlled)\n  • Reverse lunges — 8 reps each leg\n  • Single-leg glute bridges — 10 reps each leg\n  • Calf raises — 15 reps\n  • Side-lying clamshells — 12 reps each side\nCool-down (5 min): hip flexor & quad stretches",
-              "durationMinutes": 30,
-              "id": "w8-fri-str",
-              "sport": "strength",
-              "type": "strength",
-              "primaryZone": "Z2",
-              "completed": false
-            }
-          ]
-        },
-        {
-          "date": "2026-08-15",
-          "dayOfWeek": "Saturday",
-          "workouts": [
-            {
-              "id": "w8-sat-run",
-              "sport": "run",
-              "type": "run",
-              "completed": false,
-              "name": "Long Run — 13 km",
-              "description": "The engine of your marathon. Keep it SLOW — slower than your easy runs. Time on feet matters more than pace.",
-              "distanceKm": 13,
-              "durationMinutes": 94,
-              "primaryZone": "Z2 Easy",
-              "humanReadable": "Warm-up: 5 min walk\nMain: 13 km easy (7:00–7:30/km, HR 135–150). Deliberately slow.\nCool-down: 5 min walk + stretches\nFuel: After 75 min, 30g carbs (gel/banana). Water every 15 min."
-            }
-          ]
-        },
-        {
-          "date": "2026-08-16",
-          "dayOfWeek": "Sunday",
-          "workouts": [
-            {
-              "id": "w8-sun-rest",
-              "sport": "rest",
-              "type": "rest",
-              "name": "Rest Day",
-              "description": "Full recovery — fitness is built during rest.",
-              "humanReadable": "Sleep, hydrate, eat well. Light walking is fine.",
-              "completed": false
-            }
-          ]
-        }
-      ],
-      "summary": {
-        "totalHours": 3.7,
-        "bySport": {
-          "run": {
-            "sessions": 4,
-            "hours": 3.7,
-            "km": 24.5
-          }
-        }
-      }
-    },
-    {
-      "weekNumber": 9,
       "startDate": "2026-08-17",
       "endDate": "2026-08-23",
       "phase": "Build",
-      "focus": "Extend tempo work",
+      "focus": "Consolidate the 15 km jump",
       "targetHours": 6.5,
       "isRecoveryWeek": false,
       "days": [
@@ -1331,10 +197,10 @@
           "workouts": [
             {
               "name": "Strength B — Core & Stability",
-              "description": "Core + single-leg balance for running economy and knee tracking.",
-              "humanReadable": "Warm-up (5 min): cat-cow, bird-dog 2x8\nMain (3 rounds, 45s rest):\n  • Plank — 30–45s\n  • Side plank — 20–30s each side\n  • Dead bug — 8 reps each side\n  • Single-leg deadlift (no weight) — 8 reps each leg\n  • Step-ups onto chair — 10 each leg\nCool-down (5 min): pigeon stretch, child's pose",
+              "description": "Core + single-leg balance. Protects form when you fatigue late in long runs.",
               "durationMinutes": 25,
-              "id": "w9-mon-str",
+              "humanReadable": "Warm-up (5 min): cat-cow, bird-dog 2x8\nMain (3 rounds, 45s rest):\n  • Plank — 30–45s\n  • Side plank — 20–30s each side\n  • Dead bug — 8 each side\n  • Single-leg deadlift — 8 each leg\n  • Step-ups onto chair — 10 each leg\nCool-down (5 min): pigeon stretch, child's pose",
+              "id": "w1-mon-str",
               "sport": "strength",
               "type": "strength",
               "primaryZone": "Z2",
@@ -1347,16 +213,15 @@
           "dayOfWeek": "Tuesday",
           "workouts": [
             {
-              "id": "w9-tue-run",
+              "id": "w1-tue-run",
               "sport": "run",
               "type": "run",
               "completed": false,
-              "name": "Easy Run — 45 min",
-              "description": "Easy/conversational. Keep HR under 150. This pace should feel comfortable.",
+              "name": "Easy + 5 Strides — 45 min",
+              "description": "Easy aerobic plus short pickups to hold leg speed and high cadence.",
               "durationMinutes": 45,
-              "distanceKm": 6.5,
-              "primaryZone": "Z2 Easy",
-              "humanReadable": "Warm-up: 5 min walk + light jog\nMain: 35 min easy (HR 135–150, pace 6:30–7:00/km)\nCool-down: 5 min walk + stretch"
+              "primaryZone": "Z2 + Strides",
+              "humanReadable": "Warm-up: 15 min easy\nMain: 20 min easy\nStrides: 5 x 20s acceleration to ~5K effort, 60s walk between\nCool-down: 5 min easy"
             }
           ]
         },
@@ -1365,16 +230,16 @@
           "dayOfWeek": "Wednesday",
           "workouts": [
             {
-              "id": "w9-wed-run",
+              "id": "w1-wed-run",
               "sport": "run",
               "type": "run",
               "completed": false,
-              "name": "Easy Run — 40 min (optional 4th run)",
-              "description": "Optional. Run it if recovery is good — skip without guilt if tired or short on sleep.",
-              "durationMinutes": 40,
-              "distanceKm": 5.5,
+              "name": "Easy Run — 35 min (optional 4th run)",
+              "description": "Optional. Run only if recovery is good — skip freely on bad-sleep weeks.",
+              "durationMinutes": 35,
+              "distanceKm": 5,
               "primaryZone": "Z2 Easy",
-              "humanReadable": "OPTIONAL 4th run — only if you feel fresh.\nWarm-up: 5 min walk\nMain: 30 min very easy (HR <145, pace 6:45–7:15/km)\nCool-down: 5 min walk\n\nIf knee feels anything, or sleep was bad, do mobility instead."
+              "humanReadable": "OPTIONAL — only if you feel fresh.\nWarm-up: 5 min\nMain: 25 min very easy (HR <145)\nCool-down: 5 min\n\nTired, poor sleep, or any knee signal? Do mobility instead."
             }
           ]
         },
@@ -1383,15 +248,16 @@
           "dayOfWeek": "Thursday",
           "workouts": [
             {
-              "id": "w9-thu-run",
+              "id": "w1-thu-run",
               "sport": "run",
               "type": "run",
               "completed": false,
-              "name": "Tempo — 2x10 min",
-              "description": "Threshold work — builds the engine to hold marathon pace.",
-              "durationMinutes": 55,
-              "primaryZone": "Z4 Tempo",
-              "humanReadable": "Warm-up: 15 min easy\nMain: 2 x 10 min @ tempo (6:00/km, HR 162–170), 3 min recovery\nCool-down: 10 min easy"
+              "name": "Easy Run — 45 min",
+              "description": "Easy/conversational. HR 135–148. Let pace be whatever that allows.",
+              "durationMinutes": 45,
+              "distanceKm": 7,
+              "primaryZone": "Z2 Easy",
+              "humanReadable": "Warm-up: 5 min very easy\nMain: 35 min easy (HR 135–148, ~6:30–7:00/km)\nCool-down: 5 min easy + stretch"
             }
           ]
         },
@@ -1401,10 +267,10 @@
           "workouts": [
             {
               "name": "Strength A — Lower Body Foundation",
-              "description": "Knee insurance. Single-leg & glute work. Non-negotiable now that long runs are growing.",
-              "humanReadable": "Warm-up (5 min): leg swings, hip circles, glute bridges 2x10\nMain (3 rounds, 60s rest):\n  • Bodyweight squats — 12 reps (slow & controlled)\n  • Reverse lunges — 8 reps each leg\n  • Single-leg glute bridges — 10 reps each leg\n  • Calf raises — 15 reps\n  • Side-lying clamshells — 12 reps each side\nCool-down (5 min): hip flexor & quad stretches",
+              "description": "Knee insurance. Single-leg & glute work. Critical now that long runs pass 20 km.",
               "durationMinutes": 30,
-              "id": "w9-fri-str",
+              "humanReadable": "Warm-up (5 min): leg swings, hip circles, glute bridges 2x10\nMain (3 rounds, 60s rest):\n  • Bodyweight squats — 12 reps\n  • Reverse lunges — 8 each leg\n  • Single-leg glute bridges — 10 each leg\n  • Calf raises — 15 reps\n  • Side-lying clamshells — 12 each side\nCool-down (5 min): hip flexor & quad stretches",
+              "id": "w1-fri-str",
               "sport": "strength",
               "type": "strength",
               "primaryZone": "Z2",
@@ -1417,16 +283,16 @@
           "dayOfWeek": "Saturday",
           "workouts": [
             {
-              "id": "w9-sat-run",
+              "id": "w1-sat-run",
               "sport": "run",
               "type": "run",
               "completed": false,
-              "name": "Long Run — 15 km",
-              "description": "The engine of your marathon. Keep it SLOW — slower than your easy runs. Time on feet matters more than pace.",
-              "distanceKm": 15,
-              "durationMinutes": 109,
+              "name": "Long Run — 16 km",
+              "description": "The engine of your marathon. Keep it genuinely easy — time on feet beats pace.",
+              "distanceKm": 16,
+              "durationMinutes": 108,
               "primaryZone": "Z2 Easy",
-              "humanReadable": "Warm-up: 5 min walk\nMain: 15 km easy (7:00–7:30/km, HR 135–150). Deliberately slow.\nCool-down: 5 min walk + stretches\nFuel: After 75 min, 30g carbs (gel/banana). Water every 15 min."
+              "humanReadable": "Warm-up: 1 km very easy\nMain: 15 km easy (HR 138–150, ~6:40–7:05/km)\nCool-down: 5 min walk + stretches\nFuel: after 75 min take 30g carbs. Water every 15 min."
             }
           ]
         },
@@ -1435,11 +301,11 @@
           "dayOfWeek": "Sunday",
           "workouts": [
             {
-              "id": "w9-sun-rest",
+              "id": "w1-sun-rest",
               "sport": "rest",
               "type": "rest",
               "name": "Rest Day",
-              "description": "Full recovery — fitness is built during rest.",
+              "description": "Full recovery — adaptation happens now.",
               "humanReadable": "Sleep, hydrate, eat well. Light walking is fine.",
               "completed": false
             }
@@ -1447,22 +313,22 @@
         }
       ],
       "summary": {
-        "totalHours": 4.1,
+        "totalHours": 3.9,
         "bySport": {
           "run": {
             "sessions": 4,
-            "hours": 4.1,
-            "km": 27.0
+            "hours": 3.9,
+            "km": 28
           }
         }
       }
     },
     {
-      "weekNumber": 10,
+      "weekNumber": 2,
       "startDate": "2026-08-24",
       "endDate": "2026-08-30",
       "phase": "Build",
-      "focus": "Tempo + 16 km",
+      "focus": "Tempo returns + 18 km",
       "targetHours": 7.5,
       "isRecoveryWeek": false,
       "days": [
@@ -1472,10 +338,10 @@
           "workouts": [
             {
               "name": "Strength B — Core & Stability",
-              "description": "Core + single-leg balance for running economy and knee tracking.",
-              "humanReadable": "Warm-up (5 min): cat-cow, bird-dog 2x8\nMain (3 rounds, 45s rest):\n  • Plank — 30–45s\n  • Side plank — 20–30s each side\n  • Dead bug — 8 reps each side\n  • Single-leg deadlift (no weight) — 8 reps each leg\n  • Step-ups onto chair — 10 each leg\nCool-down (5 min): pigeon stretch, child's pose",
+              "description": "Core + single-leg balance. Protects form when you fatigue late in long runs.",
               "durationMinutes": 25,
-              "id": "w10-mon-str",
+              "humanReadable": "Warm-up (5 min): cat-cow, bird-dog 2x8\nMain (3 rounds, 45s rest):\n  • Plank — 30–45s\n  • Side plank — 20–30s each side\n  • Dead bug — 8 each side\n  • Single-leg deadlift — 8 each leg\n  • Step-ups onto chair — 10 each leg\nCool-down (5 min): pigeon stretch, child's pose",
+              "id": "w2-mon-str",
               "sport": "strength",
               "type": "strength",
               "primaryZone": "Z2",
@@ -1488,16 +354,16 @@
           "dayOfWeek": "Tuesday",
           "workouts": [
             {
-              "id": "w10-tue-run",
+              "id": "w2-tue-run",
               "sport": "run",
               "type": "run",
               "completed": false,
               "name": "Easy Run — 50 min",
-              "description": "Easy/conversational. Keep HR under 150. This pace should feel comfortable.",
+              "description": "Easy/conversational. HR 135–148. Let pace be whatever that allows.",
               "durationMinutes": 50,
-              "distanceKm": 7,
+              "distanceKm": 7.5,
               "primaryZone": "Z2 Easy",
-              "humanReadable": "Warm-up: 5 min walk + light jog\nMain: 40 min easy (HR 135–150, pace 6:30–7:00/km)\nCool-down: 5 min walk + stretch"
+              "humanReadable": "Warm-up: 5 min very easy\nMain: 40 min easy (HR 135–148, ~6:30–7:00/km)\nCool-down: 5 min easy + stretch"
             }
           ]
         },
@@ -1506,16 +372,16 @@
           "dayOfWeek": "Wednesday",
           "workouts": [
             {
-              "id": "w10-wed-run",
+              "id": "w2-wed-run",
               "sport": "run",
               "type": "run",
               "completed": false,
               "name": "Easy Run — 40 min (optional 4th run)",
-              "description": "Optional. Run it if recovery is good — skip without guilt if tired or short on sleep.",
+              "description": "Optional. Run only if recovery is good — skip freely on bad-sleep weeks.",
               "durationMinutes": 40,
-              "distanceKm": 5.5,
+              "distanceKm": 6,
               "primaryZone": "Z2 Easy",
-              "humanReadable": "OPTIONAL 4th run — only if you feel fresh.\nWarm-up: 5 min walk\nMain: 30 min very easy (HR <145, pace 6:45–7:15/km)\nCool-down: 5 min walk\n\nIf knee feels anything, or sleep was bad, do mobility instead."
+              "humanReadable": "OPTIONAL — only if you feel fresh.\nWarm-up: 5 min\nMain: 30 min very easy (HR <145)\nCool-down: 5 min\n\nTired, poor sleep, or any knee signal? Do mobility instead."
             }
           ]
         },
@@ -1524,15 +390,15 @@
           "dayOfWeek": "Thursday",
           "workouts": [
             {
-              "id": "w10-thu-run",
+              "id": "w2-thu-run",
               "sport": "run",
               "type": "run",
               "completed": false,
               "name": "Tempo — 3x10 min",
-              "description": "Threshold work — builds the engine to hold marathon pace.",
+              "description": "Threshold work. Raises the ceiling your marathon pace sits under.",
               "durationMinutes": 60,
               "primaryZone": "Z4 Tempo",
-              "humanReadable": "Warm-up: 15 min easy\nMain: 3 x 10 min @ tempo (6:00/km, HR 162–170), 3 min recovery\nCool-down: 10 min easy"
+              "humanReadable": "Warm-up: 15 min easy\nMain: 3 x 10 min @ tempo (5:50–6:05/km, HR 162–172), 3 min jog recovery\nCool-down: 10 min easy"
             }
           ]
         },
@@ -1542,10 +408,10 @@
           "workouts": [
             {
               "name": "Strength A — Lower Body Foundation",
-              "description": "Knee insurance. Single-leg & glute work. Non-negotiable now that long runs are growing.",
-              "humanReadable": "Warm-up (5 min): leg swings, hip circles, glute bridges 2x10\nMain (3 rounds, 60s rest):\n  • Bodyweight squats — 12 reps (slow & controlled)\n  • Reverse lunges — 8 reps each leg\n  • Single-leg glute bridges — 10 reps each leg\n  • Calf raises — 15 reps\n  • Side-lying clamshells — 12 reps each side\nCool-down (5 min): hip flexor & quad stretches",
+              "description": "Knee insurance. Single-leg & glute work. Critical now that long runs pass 20 km.",
               "durationMinutes": 30,
-              "id": "w10-fri-str",
+              "humanReadable": "Warm-up (5 min): leg swings, hip circles, glute bridges 2x10\nMain (3 rounds, 60s rest):\n  • Bodyweight squats — 12 reps\n  • Reverse lunges — 8 each leg\n  • Single-leg glute bridges — 10 each leg\n  • Calf raises — 15 reps\n  • Side-lying clamshells — 12 each side\nCool-down (5 min): hip flexor & quad stretches",
+              "id": "w2-fri-str",
               "sport": "strength",
               "type": "strength",
               "primaryZone": "Z2",
@@ -1558,16 +424,16 @@
           "dayOfWeek": "Saturday",
           "workouts": [
             {
-              "id": "w10-sat-run",
+              "id": "w2-sat-run",
               "sport": "run",
               "type": "run",
               "completed": false,
-              "name": "Long Run — 16 km",
-              "description": "The engine of your marathon. Keep it SLOW — slower than your easy runs. Time on feet matters more than pace.",
-              "distanceKm": 16,
-              "durationMinutes": 116,
+              "name": "Long Run — 18 km",
+              "description": "The engine of your marathon. Keep it genuinely easy — time on feet beats pace.",
+              "distanceKm": 18,
+              "durationMinutes": 122,
               "primaryZone": "Z2 Easy",
-              "humanReadable": "Warm-up: 5 min walk\nMain: 16 km easy (7:00–7:30/km, HR 135–150). Deliberately slow.\nCool-down: 5 min walk + stretches\nFuel: After 75 min, 30g carbs (gel/banana). Water every 15 min."
+              "humanReadable": "Warm-up: 1 km very easy\nMain: 17 km easy (HR 138–150, ~6:40–7:05/km)\nCool-down: 5 min walk + stretches\nFuel: after 75 min take 30g carbs. Water every 15 min."
             }
           ]
         },
@@ -1576,291 +442,11 @@
           "dayOfWeek": "Sunday",
           "workouts": [
             {
-              "id": "w10-sun-rest",
+              "id": "w2-sun-rest",
               "sport": "rest",
               "type": "rest",
               "name": "Rest Day",
-              "description": "Full recovery — fitness is built during rest.",
-              "humanReadable": "Sleep, hydrate, eat well. Light walking is fine.",
-              "completed": false
-            }
-          ]
-        }
-      ],
-      "summary": {
-        "totalHours": 4.4,
-        "bySport": {
-          "run": {
-            "sessions": 4,
-            "hours": 4.4,
-            "km": 28.5
-          }
-        }
-      }
-    },
-    {
-      "weekNumber": 11,
-      "startDate": "2026-08-31",
-      "endDate": "2026-09-06",
-      "phase": "Build",
-      "focus": "Recovery week",
-      "targetHours": 5.5,
-      "isRecoveryWeek": true,
-      "days": [
-        {
-          "date": "2026-08-31",
-          "dayOfWeek": "Monday",
-          "workouts": [
-            {
-              "id": "w11-mon-rest",
-              "sport": "rest",
-              "type": "rest",
-              "name": "Rest Day",
-              "description": "Full recovery — fitness is built during rest.",
-              "humanReadable": "Sleep, hydrate, eat well. Light walking is fine.",
-              "completed": false
-            }
-          ]
-        },
-        {
-          "date": "2026-09-01",
-          "dayOfWeek": "Tuesday",
-          "workouts": [
-            {
-              "id": "w11-tue-run",
-              "sport": "run",
-              "type": "run",
-              "completed": false,
-              "name": "Easy Run — 40 min",
-              "description": "Easy/conversational. Keep HR under 150. This pace should feel comfortable.",
-              "durationMinutes": 40,
-              "distanceKm": 5.5,
-              "primaryZone": "Z2 Easy",
-              "humanReadable": "Warm-up: 5 min walk + light jog\nMain: 30 min easy (HR 135–150, pace 6:30–7:00/km)\nCool-down: 5 min walk + stretch"
-            }
-          ]
-        },
-        {
-          "date": "2026-09-02",
-          "dayOfWeek": "Wednesday",
-          "workouts": [
-            {
-              "name": "Mobility & Recovery",
-              "description": "Light movement — supports recovery.",
-              "humanReadable": "10–15 min total:\n  • Foam roll quads, calves, glutes (5 min)\n  • Hip flexor stretch — 60s each side\n  • Hamstring stretch — 60s each side\n  • Ankle circles & calf stretch — 30s each",
-              "durationMinutes": 15,
-              "id": "w11-wed-mob",
-              "sport": "mobility",
-              "type": "recovery",
-              "primaryZone": "Recovery",
-              "completed": false
-            }
-          ]
-        },
-        {
-          "date": "2026-09-03",
-          "dayOfWeek": "Thursday",
-          "workouts": [
-            {
-              "id": "w11-thu-run",
-              "sport": "run",
-              "type": "run",
-              "completed": false,
-              "name": "Easy Run — 45 min",
-              "description": "Easy/conversational. Keep HR under 150. This pace should feel comfortable.",
-              "durationMinutes": 45,
-              "distanceKm": 6,
-              "primaryZone": "Z2 Easy",
-              "humanReadable": "Warm-up: 5 min walk + light jog\nMain: 35 min easy (HR 135–150, pace 6:30–7:00/km)\nCool-down: 5 min walk + stretch"
-            }
-          ]
-        },
-        {
-          "date": "2026-09-04",
-          "dayOfWeek": "Friday",
-          "workouts": [
-            {
-              "name": "Strength A — Lower Body Foundation",
-              "description": "Knee insurance. Single-leg & glute work. Non-negotiable now that long runs are growing.",
-              "humanReadable": "Warm-up (5 min): leg swings, hip circles, glute bridges 2x10\nMain (3 rounds, 60s rest):\n  • Bodyweight squats — 12 reps (slow & controlled)\n  • Reverse lunges — 8 reps each leg\n  • Single-leg glute bridges — 10 reps each leg\n  • Calf raises — 15 reps\n  • Side-lying clamshells — 12 reps each side\nCool-down (5 min): hip flexor & quad stretches",
-              "durationMinutes": 30,
-              "id": "w11-fri-str",
-              "sport": "strength",
-              "type": "strength",
-              "primaryZone": "Z2",
-              "completed": false
-            }
-          ]
-        },
-        {
-          "date": "2026-09-05",
-          "dayOfWeek": "Saturday",
-          "workouts": [
-            {
-              "id": "w11-sat-run",
-              "sport": "run",
-              "type": "run",
-              "completed": false,
-              "name": "Long Run — 12 km",
-              "description": "The engine of your marathon. Keep it SLOW — slower than your easy runs. Time on feet matters more than pace.",
-              "distanceKm": 12,
-              "durationMinutes": 87,
-              "primaryZone": "Z2 Easy",
-              "humanReadable": "Warm-up: 5 min walk\nMain: 12 km easy (7:00–7:30/km, HR 135–150). Deliberately slow.\nCool-down: 5 min walk + stretches\nFuel: After 75 min, 30g carbs (gel/banana). Water every 15 min."
-            }
-          ]
-        },
-        {
-          "date": "2026-09-06",
-          "dayOfWeek": "Sunday",
-          "workouts": [
-            {
-              "id": "w11-sun-rest",
-              "sport": "rest",
-              "type": "rest",
-              "name": "Rest Day",
-              "description": "Full recovery — fitness is built during rest.",
-              "humanReadable": "Sleep, hydrate, eat well. Light walking is fine.",
-              "completed": false
-            }
-          ]
-        }
-      ],
-      "summary": {
-        "totalHours": 2.9,
-        "bySport": {
-          "run": {
-            "sessions": 3,
-            "hours": 2.9,
-            "km": 23.5
-          }
-        }
-      }
-    },
-    {
-      "weekNumber": 12,
-      "startDate": "2026-09-07",
-      "endDate": "2026-09-13",
-      "phase": "Build",
-      "focus": "Marathon-pace intro",
-      "targetHours": 7.5,
-      "isRecoveryWeek": false,
-      "days": [
-        {
-          "date": "2026-09-07",
-          "dayOfWeek": "Monday",
-          "workouts": [
-            {
-              "name": "Strength B — Core & Stability",
-              "description": "Core + single-leg balance for running economy and knee tracking.",
-              "humanReadable": "Warm-up (5 min): cat-cow, bird-dog 2x8\nMain (3 rounds, 45s rest):\n  • Plank — 30–45s\n  • Side plank — 20–30s each side\n  • Dead bug — 8 reps each side\n  • Single-leg deadlift (no weight) — 8 reps each leg\n  • Step-ups onto chair — 10 each leg\nCool-down (5 min): pigeon stretch, child's pose",
-              "durationMinutes": 25,
-              "id": "w12-mon-str",
-              "sport": "strength",
-              "type": "strength",
-              "primaryZone": "Z2",
-              "completed": false
-            }
-          ]
-        },
-        {
-          "date": "2026-09-08",
-          "dayOfWeek": "Tuesday",
-          "workouts": [
-            {
-              "id": "w12-tue-run",
-              "sport": "run",
-              "type": "run",
-              "completed": false,
-              "name": "Easy Run — 50 min",
-              "description": "Easy/conversational. Keep HR under 150. This pace should feel comfortable.",
-              "durationMinutes": 50,
-              "distanceKm": 7,
-              "primaryZone": "Z2 Easy",
-              "humanReadable": "Warm-up: 5 min walk + light jog\nMain: 40 min easy (HR 135–150, pace 6:30–7:00/km)\nCool-down: 5 min walk + stretch"
-            }
-          ]
-        },
-        {
-          "date": "2026-09-09",
-          "dayOfWeek": "Wednesday",
-          "workouts": [
-            {
-              "id": "w12-wed-run",
-              "sport": "run",
-              "type": "run",
-              "completed": false,
-              "name": "Easy Run — 40 min (optional 4th run)",
-              "description": "Optional. Run it if recovery is good — skip without guilt if tired or short on sleep.",
-              "durationMinutes": 40,
-              "distanceKm": 5.5,
-              "primaryZone": "Z2 Easy",
-              "humanReadable": "OPTIONAL 4th run — only if you feel fresh.\nWarm-up: 5 min walk\nMain: 30 min very easy (HR <145, pace 6:45–7:15/km)\nCool-down: 5 min walk\n\nIf knee feels anything, or sleep was bad, do mobility instead."
-            }
-          ]
-        },
-        {
-          "date": "2026-09-10",
-          "dayOfWeek": "Thursday",
-          "workouts": [
-            {
-              "id": "w12-thu-run",
-              "sport": "run",
-              "type": "run",
-              "completed": false,
-              "name": "MP Intervals — 4 x 1 km",
-              "description": "Lock in goal marathon pace and rhythm.",
-              "durationMinutes": 55,
-              "primaryZone": "Z3 Marathon Pace",
-              "humanReadable": "Warm-up: 15 min easy\nMain: 4 x 1 km @ marathon pace (6:55/km, HR 155–165), 2 min jog recovery\nCool-down: 10 min easy"
-            }
-          ]
-        },
-        {
-          "date": "2026-09-11",
-          "dayOfWeek": "Friday",
-          "workouts": [
-            {
-              "name": "Strength A — Lower Body Foundation",
-              "description": "Knee insurance. Single-leg & glute work. Non-negotiable now that long runs are growing.",
-              "humanReadable": "Warm-up (5 min): leg swings, hip circles, glute bridges 2x10\nMain (3 rounds, 60s rest):\n  • Bodyweight squats — 12 reps (slow & controlled)\n  • Reverse lunges — 8 reps each leg\n  • Single-leg glute bridges — 10 reps each leg\n  • Calf raises — 15 reps\n  • Side-lying clamshells — 12 reps each side\nCool-down (5 min): hip flexor & quad stretches",
-              "durationMinutes": 30,
-              "id": "w12-fri-str",
-              "sport": "strength",
-              "type": "strength",
-              "primaryZone": "Z2",
-              "completed": false
-            }
-          ]
-        },
-        {
-          "date": "2026-09-12",
-          "dayOfWeek": "Saturday",
-          "workouts": [
-            {
-              "id": "w12-sat-run",
-              "sport": "run",
-              "type": "run",
-              "completed": false,
-              "name": "Long Run — 17 km",
-              "description": "The engine of your marathon. Keep it SLOW — slower than your easy runs. Time on feet matters more than pace.",
-              "distanceKm": 17,
-              "durationMinutes": 124,
-              "primaryZone": "Z2 Easy",
-              "humanReadable": "Warm-up: 5 min walk\nMain: 17 km easy (7:00–7:30/km, HR 135–150). Deliberately slow.\nCool-down: 5 min walk + stretches\nFuel: After 75 min, 30g carbs (gel/banana). Water every 15 min."
-            }
-          ]
-        },
-        {
-          "date": "2026-09-13",
-          "dayOfWeek": "Sunday",
-          "workouts": [
-            {
-              "id": "w12-sun-rest",
-              "sport": "rest",
-              "type": "rest",
-              "name": "Rest Day",
-              "description": "Full recovery — fitness is built during rest.",
+              "description": "Full recovery — adaptation happens now.",
               "humanReadable": "Sleep, hydrate, eat well. Light walking is fine.",
               "completed": false
             }
@@ -1873,100 +459,98 @@
           "run": {
             "sessions": 4,
             "hours": 4.5,
-            "km": 29.5
+            "km": 31.5
           }
         }
       }
     },
     {
-      "weekNumber": 13,
-      "startDate": "2026-09-14",
-      "endDate": "2026-09-20",
+      "weekNumber": 3,
+      "startDate": "2026-08-31",
+      "endDate": "2026-09-06",
       "phase": "Build",
-      "focus": "MP intervals + 18 km",
-      "targetHours": 8.0,
-      "isRecoveryWeek": false,
+      "focus": "Recovery week — absorb",
+      "targetHours": 5.5,
+      "isRecoveryWeek": true,
       "days": [
         {
-          "date": "2026-09-14",
+          "date": "2026-08-31",
           "dayOfWeek": "Monday",
           "workouts": [
             {
-              "name": "Strength B — Core & Stability",
-              "description": "Core + single-leg balance for running economy and knee tracking.",
-              "humanReadable": "Warm-up (5 min): cat-cow, bird-dog 2x8\nMain (3 rounds, 45s rest):\n  • Plank — 30–45s\n  • Side plank — 20–30s each side\n  • Dead bug — 8 reps each side\n  • Single-leg deadlift (no weight) — 8 reps each leg\n  • Step-ups onto chair — 10 each leg\nCool-down (5 min): pigeon stretch, child's pose",
-              "durationMinutes": 25,
-              "id": "w13-mon-str",
-              "sport": "strength",
-              "type": "strength",
-              "primaryZone": "Z2",
+              "id": "w3-mon-rest",
+              "sport": "rest",
+              "type": "rest",
+              "name": "Rest Day",
+              "description": "Full recovery — adaptation happens now.",
+              "humanReadable": "Sleep, hydrate, eat well. Light walking is fine.",
               "completed": false
             }
           ]
         },
         {
-          "date": "2026-09-15",
+          "date": "2026-09-01",
           "dayOfWeek": "Tuesday",
           "workouts": [
             {
-              "id": "w13-tue-run",
+              "id": "w3-tue-run",
               "sport": "run",
               "type": "run",
               "completed": false,
-              "name": "Easy Run — 50 min",
-              "description": "Easy/conversational. Keep HR under 150. This pace should feel comfortable.",
-              "durationMinutes": 50,
-              "distanceKm": 7,
+              "name": "Easy Run — 40 min",
+              "description": "Easy/conversational. HR 135–148. Let pace be whatever that allows.",
+              "durationMinutes": 40,
+              "distanceKm": 6,
               "primaryZone": "Z2 Easy",
-              "humanReadable": "Warm-up: 5 min walk + light jog\nMain: 40 min easy (HR 135–150, pace 6:30–7:00/km)\nCool-down: 5 min walk + stretch"
+              "humanReadable": "Warm-up: 5 min very easy\nMain: 30 min easy (HR 135–148, ~6:30–7:00/km)\nCool-down: 5 min easy + stretch"
             }
           ]
         },
         {
-          "date": "2026-09-16",
+          "date": "2026-09-02",
           "dayOfWeek": "Wednesday",
           "workouts": [
             {
-              "id": "w13-wed-run",
-              "sport": "run",
-              "type": "run",
-              "completed": false,
-              "name": "Easy Run — 40 min (optional 4th run)",
-              "description": "Optional. Run it if recovery is good — skip without guilt if tired or short on sleep.",
-              "durationMinutes": 40,
-              "distanceKm": 5.5,
-              "primaryZone": "Z2 Easy",
-              "humanReadable": "OPTIONAL 4th run — only if you feel fresh.\nWarm-up: 5 min walk\nMain: 30 min very easy (HR <145, pace 6:45–7:15/km)\nCool-down: 5 min walk\n\nIf knee feels anything, or sleep was bad, do mobility instead."
+              "name": "Mobility & Recovery",
+              "description": "Light movement — supports recovery.",
+              "durationMinutes": 15,
+              "humanReadable": "10–15 min:\n  • Foam roll quads, calves, glutes (5 min)\n  • Hip flexor stretch 60s each\n  • Hamstring stretch 60s each\n  • Ankle circles & calf stretch",
+              "id": "w3-wed-mob",
+              "sport": "mobility",
+              "type": "recovery",
+              "primaryZone": "Recovery",
+              "completed": false
             }
           ]
         },
         {
-          "date": "2026-09-17",
+          "date": "2026-09-03",
           "dayOfWeek": "Thursday",
           "workouts": [
             {
-              "id": "w13-thu-run",
+              "id": "w3-thu-run",
               "sport": "run",
               "type": "run",
               "completed": false,
-              "name": "MP Intervals — 5 x 1 km",
-              "description": "Lock in goal marathon pace and rhythm.",
-              "durationMinutes": 60,
-              "primaryZone": "Z3 Marathon Pace",
-              "humanReadable": "Warm-up: 15 min easy\nMain: 5 x 1 km @ marathon pace (6:55/km, HR 155–165), 2 min jog recovery\nCool-down: 10 min easy"
+              "name": "Easy Run — 45 min",
+              "description": "Easy/conversational. HR 135–148. Let pace be whatever that allows.",
+              "durationMinutes": 45,
+              "distanceKm": 7,
+              "primaryZone": "Z2 Easy",
+              "humanReadable": "Warm-up: 5 min very easy\nMain: 35 min easy (HR 135–148, ~6:30–7:00/km)\nCool-down: 5 min easy + stretch"
             }
           ]
         },
         {
-          "date": "2026-09-18",
+          "date": "2026-09-04",
           "dayOfWeek": "Friday",
           "workouts": [
             {
               "name": "Strength A — Lower Body Foundation",
-              "description": "Knee insurance. Single-leg & glute work. Non-negotiable now that long runs are growing.",
-              "humanReadable": "Warm-up (5 min): leg swings, hip circles, glute bridges 2x10\nMain (3 rounds, 60s rest):\n  • Bodyweight squats — 12 reps (slow & controlled)\n  • Reverse lunges — 8 reps each leg\n  • Single-leg glute bridges — 10 reps each leg\n  • Calf raises — 15 reps\n  • Side-lying clamshells — 12 reps each side\nCool-down (5 min): hip flexor & quad stretches",
+              "description": "Knee insurance. Single-leg & glute work. Critical now that long runs pass 20 km.",
               "durationMinutes": 30,
-              "id": "w13-fri-str",
+              "humanReadable": "Warm-up (5 min): leg swings, hip circles, glute bridges 2x10\nMain (3 rounds, 60s rest):\n  • Bodyweight squats — 12 reps\n  • Reverse lunges — 8 each leg\n  • Single-leg glute bridges — 10 each leg\n  • Calf raises — 15 reps\n  • Side-lying clamshells — 12 each side\nCool-down (5 min): hip flexor & quad stretches",
+              "id": "w3-fri-str",
               "sport": "strength",
               "type": "strength",
               "primaryZone": "Z2",
@@ -1975,33 +559,174 @@
           ]
         },
         {
-          "date": "2026-09-19",
+          "date": "2026-09-05",
           "dayOfWeek": "Saturday",
           "workouts": [
             {
-              "id": "w13-sat-run",
+              "id": "w3-sat-run",
               "sport": "run",
               "type": "run",
               "completed": false,
-              "name": "Long Run — 18 km",
-              "description": "The engine of your marathon. Keep it SLOW — slower than your easy runs. Time on feet matters more than pace.",
-              "distanceKm": 18,
-              "durationMinutes": 131,
+              "name": "Long Run — 13 km",
+              "description": "The engine of your marathon. Keep it genuinely easy — time on feet beats pace.",
+              "distanceKm": 13,
+              "durationMinutes": 88,
               "primaryZone": "Z2 Easy",
-              "humanReadable": "Warm-up: 5 min walk\nMain: 18 km easy (7:00–7:30/km, HR 135–150). Deliberately slow.\nCool-down: 5 min walk + stretches\nFuel: After 75 min, 30g carbs (gel/banana). Water every 15 min."
+              "humanReadable": "Warm-up: 1 km very easy\nMain: 12 km easy (HR 138–150, ~6:40–7:05/km)\nCool-down: 5 min walk + stretches\nFuel: after 75 min take 30g carbs. Water every 15 min."
             }
           ]
         },
         {
-          "date": "2026-09-20",
+          "date": "2026-09-06",
           "dayOfWeek": "Sunday",
           "workouts": [
             {
-              "id": "w13-sun-rest",
+              "id": "w3-sun-rest",
               "sport": "rest",
               "type": "rest",
               "name": "Rest Day",
-              "description": "Full recovery — fitness is built during rest.",
+              "description": "Full recovery — adaptation happens now.",
+              "humanReadable": "Sleep, hydrate, eat well. Light walking is fine.",
+              "completed": false
+            }
+          ]
+        }
+      ],
+      "summary": {
+        "totalHours": 2.9,
+        "bySport": {
+          "run": {
+            "sessions": 3,
+            "hours": 2.9,
+            "km": 26
+          }
+        }
+      }
+    },
+    {
+      "weekNumber": 4,
+      "startDate": "2026-09-07",
+      "endDate": "2026-09-13",
+      "phase": "Build",
+      "focus": "Marathon pace introduced",
+      "targetHours": 8.0,
+      "isRecoveryWeek": false,
+      "days": [
+        {
+          "date": "2026-09-07",
+          "dayOfWeek": "Monday",
+          "workouts": [
+            {
+              "name": "Strength B — Core & Stability",
+              "description": "Core + single-leg balance. Protects form when you fatigue late in long runs.",
+              "durationMinutes": 25,
+              "humanReadable": "Warm-up (5 min): cat-cow, bird-dog 2x8\nMain (3 rounds, 45s rest):\n  • Plank — 30–45s\n  • Side plank — 20–30s each side\n  • Dead bug — 8 each side\n  • Single-leg deadlift — 8 each leg\n  • Step-ups onto chair — 10 each leg\nCool-down (5 min): pigeon stretch, child's pose",
+              "id": "w4-mon-str",
+              "sport": "strength",
+              "type": "strength",
+              "primaryZone": "Z2",
+              "completed": false
+            }
+          ]
+        },
+        {
+          "date": "2026-09-08",
+          "dayOfWeek": "Tuesday",
+          "workouts": [
+            {
+              "id": "w4-tue-run",
+              "sport": "run",
+              "type": "run",
+              "completed": false,
+              "name": "Easy Run — 50 min",
+              "description": "Easy/conversational. HR 135–148. Let pace be whatever that allows.",
+              "durationMinutes": 50,
+              "distanceKm": 7.5,
+              "primaryZone": "Z2 Easy",
+              "humanReadable": "Warm-up: 5 min very easy\nMain: 40 min easy (HR 135–148, ~6:30–7:00/km)\nCool-down: 5 min easy + stretch"
+            }
+          ]
+        },
+        {
+          "date": "2026-09-09",
+          "dayOfWeek": "Wednesday",
+          "workouts": [
+            {
+              "id": "w4-wed-run",
+              "sport": "run",
+              "type": "run",
+              "completed": false,
+              "name": "Easy Run — 40 min (optional 4th run)",
+              "description": "Optional. Run only if recovery is good — skip freely on bad-sleep weeks.",
+              "durationMinutes": 40,
+              "distanceKm": 6,
+              "primaryZone": "Z2 Easy",
+              "humanReadable": "OPTIONAL — only if you feel fresh.\nWarm-up: 5 min\nMain: 30 min very easy (HR <145)\nCool-down: 5 min\n\nTired, poor sleep, or any knee signal? Do mobility instead."
+            }
+          ]
+        },
+        {
+          "date": "2026-09-10",
+          "dayOfWeek": "Thursday",
+          "workouts": [
+            {
+              "id": "w4-thu-run",
+              "sport": "run",
+              "type": "run",
+              "completed": false,
+              "name": "MP Intervals — 4 x 1.5 km",
+              "description": "Lock in goal marathon pace and rhythm.",
+              "durationMinutes": 55,
+              "primaryZone": "Z3 Marathon Pace",
+              "humanReadable": "Warm-up: 15 min easy\nMain: 4 x 1.5 km @ marathon pace (6:20/km, HR 152–162), 2 min jog recovery\nCool-down: 10 min easy"
+            }
+          ]
+        },
+        {
+          "date": "2026-09-11",
+          "dayOfWeek": "Friday",
+          "workouts": [
+            {
+              "name": "Strength A — Lower Body Foundation",
+              "description": "Knee insurance. Single-leg & glute work. Critical now that long runs pass 20 km.",
+              "durationMinutes": 30,
+              "humanReadable": "Warm-up (5 min): leg swings, hip circles, glute bridges 2x10\nMain (3 rounds, 60s rest):\n  • Bodyweight squats — 12 reps\n  • Reverse lunges — 8 each leg\n  • Single-leg glute bridges — 10 each leg\n  • Calf raises — 15 reps\n  • Side-lying clamshells — 12 each side\nCool-down (5 min): hip flexor & quad stretches",
+              "id": "w4-fri-str",
+              "sport": "strength",
+              "type": "strength",
+              "primaryZone": "Z2",
+              "completed": false
+            }
+          ]
+        },
+        {
+          "date": "2026-09-12",
+          "dayOfWeek": "Saturday",
+          "workouts": [
+            {
+              "id": "w4-sat-run",
+              "sport": "run",
+              "type": "run",
+              "completed": false,
+              "name": "Long Run — 20 km",
+              "description": "The engine of your marathon. Keep it genuinely easy — time on feet beats pace.",
+              "distanceKm": 20,
+              "durationMinutes": 136,
+              "primaryZone": "Z2 Easy",
+              "humanReadable": "Warm-up: 1 km very easy\nMain: 19 km easy (HR 138–150, ~6:40–7:05/km)\nCool-down: 5 min walk + stretches\nFuel: after 75 min take 30g carbs. Water every 15 min."
+            }
+          ]
+        },
+        {
+          "date": "2026-09-13",
+          "dayOfWeek": "Sunday",
+          "workouts": [
+            {
+              "id": "w4-sun-rest",
+              "sport": "rest",
+              "type": "rest",
+              "name": "Rest Day",
+              "description": "Full recovery — adaptation happens now.",
               "humanReadable": "Sleep, hydrate, eat well. Light walking is fine.",
               "completed": false
             }
@@ -2014,13 +739,154 @@
           "run": {
             "sessions": 4,
             "hours": 4.7,
-            "km": 30.5
+            "km": 33.5
           }
         }
       }
     },
     {
-      "weekNumber": 14,
+      "weekNumber": 5,
+      "startDate": "2026-09-14",
+      "endDate": "2026-09-20",
+      "phase": "Build",
+      "focus": "First 22 km",
+      "targetHours": 8.5,
+      "isRecoveryWeek": false,
+      "days": [
+        {
+          "date": "2026-09-14",
+          "dayOfWeek": "Monday",
+          "workouts": [
+            {
+              "name": "Strength B — Core & Stability",
+              "description": "Core + single-leg balance. Protects form when you fatigue late in long runs.",
+              "durationMinutes": 25,
+              "humanReadable": "Warm-up (5 min): cat-cow, bird-dog 2x8\nMain (3 rounds, 45s rest):\n  • Plank — 30–45s\n  • Side plank — 20–30s each side\n  • Dead bug — 8 each side\n  • Single-leg deadlift — 8 each leg\n  • Step-ups onto chair — 10 each leg\nCool-down (5 min): pigeon stretch, child's pose",
+              "id": "w5-mon-str",
+              "sport": "strength",
+              "type": "strength",
+              "primaryZone": "Z2",
+              "completed": false
+            }
+          ]
+        },
+        {
+          "date": "2026-09-15",
+          "dayOfWeek": "Tuesday",
+          "workouts": [
+            {
+              "id": "w5-tue-run",
+              "sport": "run",
+              "type": "run",
+              "completed": false,
+              "name": "Easy Run — 50 min",
+              "description": "Easy/conversational. HR 135–148. Let pace be whatever that allows.",
+              "durationMinutes": 50,
+              "distanceKm": 7.5,
+              "primaryZone": "Z2 Easy",
+              "humanReadable": "Warm-up: 5 min very easy\nMain: 40 min easy (HR 135–148, ~6:30–7:00/km)\nCool-down: 5 min easy + stretch"
+            }
+          ]
+        },
+        {
+          "date": "2026-09-16",
+          "dayOfWeek": "Wednesday",
+          "workouts": [
+            {
+              "id": "w5-wed-run",
+              "sport": "run",
+              "type": "run",
+              "completed": false,
+              "name": "Easy Run — 40 min (optional 4th run)",
+              "description": "Optional. Run only if recovery is good — skip freely on bad-sleep weeks.",
+              "durationMinutes": 40,
+              "distanceKm": 6,
+              "primaryZone": "Z2 Easy",
+              "humanReadable": "OPTIONAL — only if you feel fresh.\nWarm-up: 5 min\nMain: 30 min very easy (HR <145)\nCool-down: 5 min\n\nTired, poor sleep, or any knee signal? Do mobility instead."
+            }
+          ]
+        },
+        {
+          "date": "2026-09-17",
+          "dayOfWeek": "Thursday",
+          "workouts": [
+            {
+              "id": "w5-thu-run",
+              "sport": "run",
+              "type": "run",
+              "completed": false,
+              "name": "Marathon Pace Block — 25 min @ MP",
+              "description": "Sustained goal-pace work — the cornerstone session.",
+              "durationMinutes": 60,
+              "primaryZone": "Z3 Marathon Pace",
+              "humanReadable": "Warm-up: 15 min easy\nMain: 25 min continuous @ marathon pace (6:20/km, HR 152–162)\nCool-down: 10 min easy"
+            }
+          ]
+        },
+        {
+          "date": "2026-09-18",
+          "dayOfWeek": "Friday",
+          "workouts": [
+            {
+              "name": "Strength A — Lower Body Foundation",
+              "description": "Knee insurance. Single-leg & glute work. Critical now that long runs pass 20 km.",
+              "durationMinutes": 30,
+              "humanReadable": "Warm-up (5 min): leg swings, hip circles, glute bridges 2x10\nMain (3 rounds, 60s rest):\n  • Bodyweight squats — 12 reps\n  • Reverse lunges — 8 each leg\n  • Single-leg glute bridges — 10 each leg\n  • Calf raises — 15 reps\n  • Side-lying clamshells — 12 each side\nCool-down (5 min): hip flexor & quad stretches",
+              "id": "w5-fri-str",
+              "sport": "strength",
+              "type": "strength",
+              "primaryZone": "Z2",
+              "completed": false
+            }
+          ]
+        },
+        {
+          "date": "2026-09-19",
+          "dayOfWeek": "Saturday",
+          "workouts": [
+            {
+              "id": "w5-sat-run",
+              "sport": "run",
+              "type": "run",
+              "completed": false,
+              "name": "Long Run — 22 km",
+              "description": "The engine of your marathon. Keep it genuinely easy — time on feet beats pace.",
+              "distanceKm": 22,
+              "durationMinutes": 149,
+              "primaryZone": "Z2 Easy",
+              "humanReadable": "Warm-up: 1 km very easy\nMain: 21 km easy (HR 138–150, ~6:40–7:05/km)\nCool-down: 5 min walk + stretches\nFuel: after 75 min take 30g carbs. Water every 15 min."
+            }
+          ]
+        },
+        {
+          "date": "2026-09-20",
+          "dayOfWeek": "Sunday",
+          "workouts": [
+            {
+              "id": "w5-sun-rest",
+              "sport": "rest",
+              "type": "rest",
+              "name": "Rest Day",
+              "description": "Full recovery — adaptation happens now.",
+              "humanReadable": "Sleep, hydrate, eat well. Light walking is fine.",
+              "completed": false
+            }
+          ]
+        }
+      ],
+      "summary": {
+        "totalHours": 5.0,
+        "bySport": {
+          "run": {
+            "sessions": 4,
+            "hours": 5.0,
+            "km": 35.5
+          }
+        }
+      }
+    },
+    {
+      "weekNumber": 6,
       "startDate": "2026-09-21",
       "endDate": "2026-09-27",
       "phase": "Build",
@@ -2033,11 +899,11 @@
           "dayOfWeek": "Monday",
           "workouts": [
             {
-              "id": "w14-mon-rest",
+              "id": "w6-mon-rest",
               "sport": "rest",
               "type": "rest",
               "name": "Rest Day",
-              "description": "Full recovery — fitness is built during rest.",
+              "description": "Full recovery — adaptation happens now.",
               "humanReadable": "Sleep, hydrate, eat well. Light walking is fine.",
               "completed": false
             }
@@ -2048,16 +914,16 @@
           "dayOfWeek": "Tuesday",
           "workouts": [
             {
-              "id": "w14-tue-run",
+              "id": "w6-tue-run",
               "sport": "run",
               "type": "run",
               "completed": false,
               "name": "Easy Run — 40 min",
-              "description": "Easy/conversational. Keep HR under 150. This pace should feel comfortable.",
+              "description": "Easy/conversational. HR 135–148. Let pace be whatever that allows.",
               "durationMinutes": 40,
-              "distanceKm": 5.5,
+              "distanceKm": 6,
               "primaryZone": "Z2 Easy",
-              "humanReadable": "Warm-up: 5 min walk + light jog\nMain: 30 min easy (HR 135–150, pace 6:30–7:00/km)\nCool-down: 5 min walk + stretch"
+              "humanReadable": "Warm-up: 5 min very easy\nMain: 30 min easy (HR 135–148, ~6:30–7:00/km)\nCool-down: 5 min easy + stretch"
             }
           ]
         },
@@ -2068,9 +934,9 @@
             {
               "name": "Mobility & Recovery",
               "description": "Light movement — supports recovery.",
-              "humanReadable": "10–15 min total:\n  • Foam roll quads, calves, glutes (5 min)\n  • Hip flexor stretch — 60s each side\n  • Hamstring stretch — 60s each side\n  • Ankle circles & calf stretch — 30s each",
               "durationMinutes": 15,
-              "id": "w14-wed-mob",
+              "humanReadable": "10–15 min:\n  • Foam roll quads, calves, glutes (5 min)\n  • Hip flexor stretch 60s each\n  • Hamstring stretch 60s each\n  • Ankle circles & calf stretch",
+              "id": "w6-wed-mob",
               "sport": "mobility",
               "type": "recovery",
               "primaryZone": "Recovery",
@@ -2083,16 +949,15 @@
           "dayOfWeek": "Thursday",
           "workouts": [
             {
-              "id": "w14-thu-run",
+              "id": "w6-thu-run",
               "sport": "run",
               "type": "run",
               "completed": false,
-              "name": "Easy Run — 45 min",
-              "description": "Easy/conversational. Keep HR under 150. This pace should feel comfortable.",
+              "name": "Easy + 5 Strides — 45 min",
+              "description": "Easy aerobic plus short pickups to hold leg speed and high cadence.",
               "durationMinutes": 45,
-              "distanceKm": 6,
-              "primaryZone": "Z2 Easy",
-              "humanReadable": "Warm-up: 5 min walk + light jog\nMain: 35 min easy (HR 135–150, pace 6:30–7:00/km)\nCool-down: 5 min walk + stretch"
+              "primaryZone": "Z2 + Strides",
+              "humanReadable": "Warm-up: 15 min easy\nMain: 20 min easy\nStrides: 5 x 20s acceleration to ~5K effort, 60s walk between\nCool-down: 5 min easy"
             }
           ]
         },
@@ -2102,10 +967,10 @@
           "workouts": [
             {
               "name": "Strength A — Lower Body Foundation",
-              "description": "Knee insurance. Single-leg & glute work. Non-negotiable now that long runs are growing.",
-              "humanReadable": "Warm-up (5 min): leg swings, hip circles, glute bridges 2x10\nMain (3 rounds, 60s rest):\n  • Bodyweight squats — 12 reps (slow & controlled)\n  • Reverse lunges — 8 reps each leg\n  • Single-leg glute bridges — 10 reps each leg\n  • Calf raises — 15 reps\n  • Side-lying clamshells — 12 reps each side\nCool-down (5 min): hip flexor & quad stretches",
+              "description": "Knee insurance. Single-leg & glute work. Critical now that long runs pass 20 km.",
               "durationMinutes": 30,
-              "id": "w14-fri-str",
+              "humanReadable": "Warm-up (5 min): leg swings, hip circles, glute bridges 2x10\nMain (3 rounds, 60s rest):\n  • Bodyweight squats — 12 reps\n  • Reverse lunges — 8 each leg\n  • Single-leg glute bridges — 10 each leg\n  • Calf raises — 15 reps\n  • Side-lying clamshells — 12 each side\nCool-down (5 min): hip flexor & quad stretches",
+              "id": "w6-fri-str",
               "sport": "strength",
               "type": "strength",
               "primaryZone": "Z2",
@@ -2118,16 +983,16 @@
           "dayOfWeek": "Saturday",
           "workouts": [
             {
-              "id": "w14-sat-run",
+              "id": "w6-sat-run",
               "sport": "run",
               "type": "run",
               "completed": false,
-              "name": "Long Run — 14 km",
-              "description": "The engine of your marathon. Keep it SLOW — slower than your easy runs. Time on feet matters more than pace.",
-              "distanceKm": 14,
-              "durationMinutes": 102,
+              "name": "Long Run — 16 km",
+              "description": "The engine of your marathon. Keep it genuinely easy — time on feet beats pace.",
+              "distanceKm": 16,
+              "durationMinutes": 108,
               "primaryZone": "Z2 Easy",
-              "humanReadable": "Warm-up: 5 min walk\nMain: 14 km easy (7:00–7:30/km, HR 135–150). Deliberately slow.\nCool-down: 5 min walk + stretches\nFuel: After 75 min, 30g carbs (gel/banana). Water every 15 min."
+              "humanReadable": "Warm-up: 1 km very easy\nMain: 15 km easy (HR 138–150, ~6:40–7:05/km)\nCool-down: 5 min walk + stretches\nFuel: after 75 min take 30g carbs. Water every 15 min."
             }
           ]
         },
@@ -2136,11 +1001,11 @@
           "dayOfWeek": "Sunday",
           "workouts": [
             {
-              "id": "w14-sun-rest",
+              "id": "w6-sun-rest",
               "sport": "rest",
               "type": "rest",
               "name": "Rest Day",
-              "description": "Full recovery — fitness is built during rest.",
+              "description": "Full recovery — adaptation happens now.",
               "humanReadable": "Sleep, hydrate, eat well. Light walking is fine.",
               "completed": false
             }
@@ -2148,23 +1013,23 @@
         }
       ],
       "summary": {
-        "totalHours": 3.1,
+        "totalHours": 3.2,
         "bySport": {
           "run": {
             "sessions": 3,
-            "hours": 3.1,
-            "km": 25.5
+            "hours": 3.2,
+            "km": 22
           }
         }
       }
     },
     {
-      "weekNumber": 15,
+      "weekNumber": 7,
       "startDate": "2026-09-28",
       "endDate": "2026-10-04",
       "phase": "Build",
-      "focus": "First 20 km — half-marathon+",
-      "targetHours": 8.5,
+      "focus": "Sharpen the top end",
+      "targetHours": 9.0,
       "isRecoveryWeek": false,
       "days": [
         {
@@ -2173,10 +1038,10 @@
           "workouts": [
             {
               "name": "Strength B — Core & Stability",
-              "description": "Core + single-leg balance for running economy and knee tracking.",
-              "humanReadable": "Warm-up (5 min): cat-cow, bird-dog 2x8\nMain (3 rounds, 45s rest):\n  • Plank — 30–45s\n  • Side plank — 20–30s each side\n  • Dead bug — 8 reps each side\n  • Single-leg deadlift (no weight) — 8 reps each leg\n  • Step-ups onto chair — 10 each leg\nCool-down (5 min): pigeon stretch, child's pose",
+              "description": "Core + single-leg balance. Protects form when you fatigue late in long runs.",
               "durationMinutes": 25,
-              "id": "w15-mon-str",
+              "humanReadable": "Warm-up (5 min): cat-cow, bird-dog 2x8\nMain (3 rounds, 45s rest):\n  • Plank — 30–45s\n  • Side plank — 20–30s each side\n  • Dead bug — 8 each side\n  • Single-leg deadlift — 8 each leg\n  • Step-ups onto chair — 10 each leg\nCool-down (5 min): pigeon stretch, child's pose",
+              "id": "w7-mon-str",
               "sport": "strength",
               "type": "strength",
               "primaryZone": "Z2",
@@ -2189,16 +1054,16 @@
           "dayOfWeek": "Tuesday",
           "workouts": [
             {
-              "id": "w15-tue-run",
+              "id": "w7-tue-run",
               "sport": "run",
               "type": "run",
               "completed": false,
               "name": "Easy Run — 50 min",
-              "description": "Easy/conversational. Keep HR under 150. This pace should feel comfortable.",
+              "description": "Easy/conversational. HR 135–148. Let pace be whatever that allows.",
               "durationMinutes": 50,
-              "distanceKm": 7,
+              "distanceKm": 7.5,
               "primaryZone": "Z2 Easy",
-              "humanReadable": "Warm-up: 5 min walk + light jog\nMain: 40 min easy (HR 135–150, pace 6:30–7:00/km)\nCool-down: 5 min walk + stretch"
+              "humanReadable": "Warm-up: 5 min very easy\nMain: 40 min easy (HR 135–148, ~6:30–7:00/km)\nCool-down: 5 min easy + stretch"
             }
           ]
         },
@@ -2207,16 +1072,16 @@
           "dayOfWeek": "Wednesday",
           "workouts": [
             {
-              "id": "w15-wed-run",
+              "id": "w7-wed-run",
               "sport": "run",
               "type": "run",
               "completed": false,
               "name": "Easy Run — 40 min (optional 4th run)",
-              "description": "Optional. Run it if recovery is good — skip without guilt if tired or short on sleep.",
+              "description": "Optional. Run only if recovery is good — skip freely on bad-sleep weeks.",
               "durationMinutes": 40,
-              "distanceKm": 5.5,
+              "distanceKm": 6,
               "primaryZone": "Z2 Easy",
-              "humanReadable": "OPTIONAL 4th run — only if you feel fresh.\nWarm-up: 5 min walk\nMain: 30 min very easy (HR <145, pace 6:45–7:15/km)\nCool-down: 5 min walk\n\nIf knee feels anything, or sleep was bad, do mobility instead."
+              "humanReadable": "OPTIONAL — only if you feel fresh.\nWarm-up: 5 min\nMain: 30 min very easy (HR <145)\nCool-down: 5 min\n\nTired, poor sleep, or any knee signal? Do mobility instead."
             }
           ]
         },
@@ -2225,15 +1090,15 @@
           "dayOfWeek": "Thursday",
           "workouts": [
             {
-              "id": "w15-thu-run",
+              "id": "w7-thu-run",
               "sport": "run",
               "type": "run",
               "completed": false,
-              "name": "Marathon Pace Block — 20 min @ MP",
-              "description": "Sustained goal-pace work. Cornerstone of marathon prep.",
-              "durationMinutes": 55,
-              "primaryZone": "Z3 Marathon Pace",
-              "humanReadable": "Warm-up: 15 min easy\nMain: 20 min continuous @ marathon pace (6:55/km, HR 155–165)\nCool-down: 10 min easy"
+              "name": "Hill Repeats — 50 min",
+              "description": "Dune hill strength. Builds power with less impact than flat speedwork.",
+              "durationMinutes": 50,
+              "primaryZone": "Z4–Z5",
+              "humanReadable": "Warm-up: 15 min easy to your hill\nMain: 8 x 30s uphill hard (~5K effort, HR 168+), jog/walk down for full recovery (90s)\nCool-down: 10 min easy"
             }
           ]
         },
@@ -2243,10 +1108,10 @@
           "workouts": [
             {
               "name": "Strength A — Lower Body Foundation",
-              "description": "Knee insurance. Single-leg & glute work. Non-negotiable now that long runs are growing.",
-              "humanReadable": "Warm-up (5 min): leg swings, hip circles, glute bridges 2x10\nMain (3 rounds, 60s rest):\n  • Bodyweight squats — 12 reps (slow & controlled)\n  • Reverse lunges — 8 reps each leg\n  • Single-leg glute bridges — 10 reps each leg\n  • Calf raises — 15 reps\n  • Side-lying clamshells — 12 reps each side\nCool-down (5 min): hip flexor & quad stretches",
+              "description": "Knee insurance. Single-leg & glute work. Critical now that long runs pass 20 km.",
               "durationMinutes": 30,
-              "id": "w15-fri-str",
+              "humanReadable": "Warm-up (5 min): leg swings, hip circles, glute bridges 2x10\nMain (3 rounds, 60s rest):\n  • Bodyweight squats — 12 reps\n  • Reverse lunges — 8 each leg\n  • Single-leg glute bridges — 10 each leg\n  • Calf raises — 15 reps\n  • Side-lying clamshells — 12 each side\nCool-down (5 min): hip flexor & quad stretches",
+              "id": "w7-fri-str",
               "sport": "strength",
               "type": "strength",
               "primaryZone": "Z2",
@@ -2259,16 +1124,16 @@
           "dayOfWeek": "Saturday",
           "workouts": [
             {
-              "id": "w15-sat-run",
+              "id": "w7-sat-run",
               "sport": "run",
               "type": "run",
               "completed": false,
-              "name": "Long Run — 20 km",
-              "description": "🏁 Half-marathon distance and beyond!",
-              "distanceKm": 20,
-              "durationMinutes": 146,
-              "primaryZone": "Z2 Easy",
-              "humanReadable": "Warm-up: 5 min walk\nMain: 20 km easy (7:00–7:30/km, HR 135–150). Deliberately slow.\nCool-down: 5 min walk + stretches\nFuel: After 75 min, 30g carbs (gel/banana). Water every 15 min."
+              "name": "Long Run — 24 km (last 4 km @ MP)",
+              "description": "Last 4 km at MP — first taste of race pace on tired legs.",
+              "distanceKm": 24,
+              "durationMinutes": 158,
+              "primaryZone": "Z2 + Z3 (MP)",
+              "humanReadable": "Warm-up: 1 km very easy\nMain:\n  • 20 km easy (HR 138–150, ~6:40–7:00/km)\n  • 4 km @ marathon pace (6:20/km, HR 152–162)\nCool-down: 5 min walk\nFuel: 30g carbs every 30 min after the first hour. Water every 15 min."
             }
           ]
         },
@@ -2277,11 +1142,11 @@
           "dayOfWeek": "Sunday",
           "workouts": [
             {
-              "id": "w15-sun-rest",
+              "id": "w7-sun-rest",
               "sport": "rest",
               "type": "rest",
               "name": "Rest Day",
-              "description": "Full recovery — fitness is built during rest.",
+              "description": "Full recovery — adaptation happens now.",
               "humanReadable": "Sleep, hydrate, eat well. Light walking is fine.",
               "completed": false
             }
@@ -2289,23 +1154,23 @@
         }
       ],
       "summary": {
-        "totalHours": 4.8,
+        "totalHours": 5.0,
         "bySport": {
           "run": {
             "sessions": 4,
-            "hours": 4.8,
-            "km": 32.5
+            "hours": 5.0,
+            "km": 37.5
           }
         }
       }
     },
     {
-      "weekNumber": 16,
+      "weekNumber": 8,
       "startDate": "2026-10-05",
       "endDate": "2026-10-11",
       "phase": "Build",
-      "focus": "Push to 22 km",
-      "targetHours": 9.0,
+      "focus": "26 km with MP finish",
+      "targetHours": 9.5,
       "isRecoveryWeek": false,
       "days": [
         {
@@ -2314,10 +1179,10 @@
           "workouts": [
             {
               "name": "Strength B — Core & Stability",
-              "description": "Core + single-leg balance for running economy and knee tracking.",
-              "humanReadable": "Warm-up (5 min): cat-cow, bird-dog 2x8\nMain (3 rounds, 45s rest):\n  • Plank — 30–45s\n  • Side plank — 20–30s each side\n  • Dead bug — 8 reps each side\n  • Single-leg deadlift (no weight) — 8 reps each leg\n  • Step-ups onto chair — 10 each leg\nCool-down (5 min): pigeon stretch, child's pose",
+              "description": "Core + single-leg balance. Protects form when you fatigue late in long runs.",
               "durationMinutes": 25,
-              "id": "w16-mon-str",
+              "humanReadable": "Warm-up (5 min): cat-cow, bird-dog 2x8\nMain (3 rounds, 45s rest):\n  • Plank — 30–45s\n  • Side plank — 20–30s each side\n  • Dead bug — 8 each side\n  • Single-leg deadlift — 8 each leg\n  • Step-ups onto chair — 10 each leg\nCool-down (5 min): pigeon stretch, child's pose",
+              "id": "w8-mon-str",
               "sport": "strength",
               "type": "strength",
               "primaryZone": "Z2",
@@ -2330,16 +1195,16 @@
           "dayOfWeek": "Tuesday",
           "workouts": [
             {
-              "id": "w16-tue-run",
+              "id": "w8-tue-run",
               "sport": "run",
               "type": "run",
               "completed": false,
-              "name": "Easy Run — 50 min",
-              "description": "Easy/conversational. Keep HR under 150. This pace should feel comfortable.",
-              "durationMinutes": 50,
-              "distanceKm": 7,
+              "name": "Easy Run — 55 min",
+              "description": "Easy/conversational. HR 135–148. Let pace be whatever that allows.",
+              "durationMinutes": 55,
+              "distanceKm": 8,
               "primaryZone": "Z2 Easy",
-              "humanReadable": "Warm-up: 5 min walk + light jog\nMain: 40 min easy (HR 135–150, pace 6:30–7:00/km)\nCool-down: 5 min walk + stretch"
+              "humanReadable": "Warm-up: 5 min very easy\nMain: 45 min easy (HR 135–148, ~6:30–7:00/km)\nCool-down: 5 min easy + stretch"
             }
           ]
         },
@@ -2348,16 +1213,16 @@
           "dayOfWeek": "Wednesday",
           "workouts": [
             {
-              "id": "w16-wed-run",
+              "id": "w8-wed-run",
               "sport": "run",
               "type": "run",
               "completed": false,
               "name": "Easy Run — 40 min (optional 4th run)",
-              "description": "Optional. Run it if recovery is good — skip without guilt if tired or short on sleep.",
+              "description": "Optional. Run only if recovery is good — skip freely on bad-sleep weeks.",
               "durationMinutes": 40,
-              "distanceKm": 5.5,
+              "distanceKm": 6,
               "primaryZone": "Z2 Easy",
-              "humanReadable": "OPTIONAL 4th run — only if you feel fresh.\nWarm-up: 5 min walk\nMain: 30 min very easy (HR <145, pace 6:45–7:15/km)\nCool-down: 5 min walk\n\nIf knee feels anything, or sleep was bad, do mobility instead."
+              "humanReadable": "OPTIONAL — only if you feel fresh.\nWarm-up: 5 min\nMain: 30 min very easy (HR <145)\nCool-down: 5 min\n\nTired, poor sleep, or any knee signal? Do mobility instead."
             }
           ]
         },
@@ -2366,15 +1231,15 @@
           "dayOfWeek": "Thursday",
           "workouts": [
             {
-              "id": "w16-thu-run",
+              "id": "w8-thu-run",
               "sport": "run",
               "type": "run",
               "completed": false,
-              "name": "Marathon Pace Block — 25 min @ MP",
-              "description": "Sustained goal-pace work. Cornerstone of marathon prep.",
+              "name": "Tempo — 3x12 min",
+              "description": "Threshold work. Raises the ceiling your marathon pace sits under.",
               "durationMinutes": 60,
-              "primaryZone": "Z3 Marathon Pace",
-              "humanReadable": "Warm-up: 15 min easy\nMain: 25 min continuous @ marathon pace (6:55/km, HR 155–165)\nCool-down: 10 min easy"
+              "primaryZone": "Z4 Tempo",
+              "humanReadable": "Warm-up: 15 min easy\nMain: 3 x 12 min @ tempo (5:50–6:05/km, HR 162–172), 3 min jog recovery\nCool-down: 10 min easy"
             }
           ]
         },
@@ -2384,10 +1249,10 @@
           "workouts": [
             {
               "name": "Strength A — Lower Body Foundation",
-              "description": "Knee insurance. Single-leg & glute work. Non-negotiable now that long runs are growing.",
-              "humanReadable": "Warm-up (5 min): leg swings, hip circles, glute bridges 2x10\nMain (3 rounds, 60s rest):\n  • Bodyweight squats — 12 reps (slow & controlled)\n  • Reverse lunges — 8 reps each leg\n  • Single-leg glute bridges — 10 reps each leg\n  • Calf raises — 15 reps\n  • Side-lying clamshells — 12 reps each side\nCool-down (5 min): hip flexor & quad stretches",
+              "description": "Knee insurance. Single-leg & glute work. Critical now that long runs pass 20 km.",
               "durationMinutes": 30,
-              "id": "w16-fri-str",
+              "humanReadable": "Warm-up (5 min): leg swings, hip circles, glute bridges 2x10\nMain (3 rounds, 60s rest):\n  • Bodyweight squats — 12 reps\n  • Reverse lunges — 8 each leg\n  • Single-leg glute bridges — 10 each leg\n  • Calf raises — 15 reps\n  • Side-lying clamshells — 12 each side\nCool-down (5 min): hip flexor & quad stretches",
+              "id": "w8-fri-str",
               "sport": "strength",
               "type": "strength",
               "primaryZone": "Z2",
@@ -2400,16 +1265,16 @@
           "dayOfWeek": "Saturday",
           "workouts": [
             {
-              "id": "w16-sat-run",
+              "id": "w8-sat-run",
               "sport": "run",
               "type": "run",
               "completed": false,
-              "name": "Long Run — 22 km",
-              "description": "The engine of your marathon. Keep it SLOW — slower than your easy runs. Time on feet matters more than pace.",
-              "distanceKm": 22,
-              "durationMinutes": 160,
-              "primaryZone": "Z2 Easy",
-              "humanReadable": "Warm-up: 5 min walk\nMain: 22 km easy (7:00–7:30/km, HR 135–150). Deliberately slow.\nCool-down: 5 min walk + stretches\nFuel: After 75 min, 30g carbs (gel/banana). Water every 15 min."
+              "name": "Long Run — 26 km (last 6 km @ MP)",
+              "description": "Last 6 km at MP. Rehearse your fuel plan exactly.",
+              "distanceKm": 26,
+              "durationMinutes": 171,
+              "primaryZone": "Z2 + Z3 (MP)",
+              "humanReadable": "Warm-up: 1 km very easy\nMain:\n  • 20 km easy (HR 138–150, ~6:40–7:00/km)\n  • 6 km @ marathon pace (6:20/km, HR 152–162)\nCool-down: 5 min walk\nFuel: 30g carbs every 30 min after the first hour. Water every 15 min."
             }
           ]
         },
@@ -2418,11 +1283,11 @@
           "dayOfWeek": "Sunday",
           "workouts": [
             {
-              "id": "w16-sun-rest",
+              "id": "w8-sun-rest",
               "sport": "rest",
               "type": "rest",
               "name": "Rest Day",
-              "description": "Full recovery — fitness is built during rest.",
+              "description": "Full recovery — adaptation happens now.",
               "humanReadable": "Sleep, hydrate, eat well. Light walking is fine.",
               "completed": false
             }
@@ -2430,38 +1295,36 @@
         }
       ],
       "summary": {
-        "totalHours": 5.2,
+        "totalHours": 5.4,
         "bySport": {
           "run": {
             "sessions": 4,
-            "hours": 5.2,
-            "km": 34.5
+            "hours": 5.4,
+            "km": 40
           }
         }
       }
     },
     {
-      "weekNumber": 17,
+      "weekNumber": 9,
       "startDate": "2026-10-12",
       "endDate": "2026-10-18",
       "phase": "Peak",
-      "focus": "Marathon-specific endurance",
-      "targetHours": 9.5,
-      "isRecoveryWeek": false,
+      "focus": "Recovery week — don't skip",
+      "targetHours": 6.5,
+      "isRecoveryWeek": true,
       "days": [
         {
           "date": "2026-10-12",
           "dayOfWeek": "Monday",
           "workouts": [
             {
-              "name": "Strength B — Core & Stability",
-              "description": "Core + single-leg balance for running economy and knee tracking.",
-              "humanReadable": "Warm-up (5 min): cat-cow, bird-dog 2x8\nMain (3 rounds, 45s rest):\n  • Plank — 30–45s\n  • Side plank — 20–30s each side\n  • Dead bug — 8 reps each side\n  • Single-leg deadlift (no weight) — 8 reps each leg\n  • Step-ups onto chair — 10 each leg\nCool-down (5 min): pigeon stretch, child's pose",
-              "durationMinutes": 25,
-              "id": "w17-mon-str",
-              "sport": "strength",
-              "type": "strength",
-              "primaryZone": "Z2",
+              "id": "w9-mon-rest",
+              "sport": "rest",
+              "type": "rest",
+              "name": "Rest Day",
+              "description": "Full recovery — adaptation happens now.",
+              "humanReadable": "Sleep, hydrate, eat well. Light walking is fine.",
               "completed": false
             }
           ]
@@ -2471,16 +1334,16 @@
           "dayOfWeek": "Tuesday",
           "workouts": [
             {
-              "id": "w17-tue-run",
+              "id": "w9-tue-run",
               "sport": "run",
               "type": "run",
               "completed": false,
-              "name": "Easy Run — 50 min",
-              "description": "Easy/conversational. Keep HR under 150. This pace should feel comfortable.",
-              "durationMinutes": 50,
+              "name": "Easy Run — 45 min",
+              "description": "Easy/conversational. HR 135–148. Let pace be whatever that allows.",
+              "durationMinutes": 45,
               "distanceKm": 7,
               "primaryZone": "Z2 Easy",
-              "humanReadable": "Warm-up: 5 min walk + light jog\nMain: 40 min easy (HR 135–150, pace 6:30–7:00/km)\nCool-down: 5 min walk + stretch"
+              "humanReadable": "Warm-up: 5 min very easy\nMain: 35 min easy (HR 135–148, ~6:30–7:00/km)\nCool-down: 5 min easy + stretch"
             }
           ]
         },
@@ -2489,16 +1352,15 @@
           "dayOfWeek": "Wednesday",
           "workouts": [
             {
-              "id": "w17-wed-run",
-              "sport": "run",
-              "type": "run",
-              "completed": false,
-              "name": "Easy Run — 40 min (optional 4th run)",
-              "description": "Optional. Run it if recovery is good — skip without guilt if tired or short on sleep.",
-              "durationMinutes": 40,
-              "distanceKm": 5.5,
-              "primaryZone": "Z2 Easy",
-              "humanReadable": "OPTIONAL 4th run — only if you feel fresh.\nWarm-up: 5 min walk\nMain: 30 min very easy (HR <145, pace 6:45–7:15/km)\nCool-down: 5 min walk\n\nIf knee feels anything, or sleep was bad, do mobility instead."
+              "name": "Mobility & Recovery",
+              "description": "Light movement — supports recovery.",
+              "durationMinutes": 15,
+              "humanReadable": "10–15 min:\n  • Foam roll quads, calves, glutes (5 min)\n  • Hip flexor stretch 60s each\n  • Hamstring stretch 60s each\n  • Ankle circles & calf stretch",
+              "id": "w9-wed-mob",
+              "sport": "mobility",
+              "type": "recovery",
+              "primaryZone": "Recovery",
+              "completed": false
             }
           ]
         },
@@ -2507,15 +1369,16 @@
           "dayOfWeek": "Thursday",
           "workouts": [
             {
-              "id": "w17-thu-run",
+              "id": "w9-thu-run",
               "sport": "run",
               "type": "run",
               "completed": false,
-              "name": "Marathon Pace Block — 30 min @ MP",
-              "description": "Sustained goal-pace work. Cornerstone of marathon prep.",
-              "durationMinutes": 60,
-              "primaryZone": "Z3 Marathon Pace",
-              "humanReadable": "Warm-up: 15 min easy\nMain: 30 min continuous @ marathon pace (6:55/km, HR 155–165)\nCool-down: 10 min easy"
+              "name": "Easy Run — 50 min",
+              "description": "Easy/conversational. HR 135–148. Let pace be whatever that allows.",
+              "durationMinutes": 50,
+              "distanceKm": 7.5,
+              "primaryZone": "Z2 Easy",
+              "humanReadable": "Warm-up: 5 min very easy\nMain: 40 min easy (HR 135–148, ~6:30–7:00/km)\nCool-down: 5 min easy + stretch"
             }
           ]
         },
@@ -2525,10 +1388,10 @@
           "workouts": [
             {
               "name": "Strength A — Lower Body Foundation",
-              "description": "Knee insurance. Single-leg & glute work. Non-negotiable now that long runs are growing.",
-              "humanReadable": "Warm-up (5 min): leg swings, hip circles, glute bridges 2x10\nMain (3 rounds, 60s rest):\n  • Bodyweight squats — 12 reps (slow & controlled)\n  • Reverse lunges — 8 reps each leg\n  • Single-leg glute bridges — 10 reps each leg\n  • Calf raises — 15 reps\n  • Side-lying clamshells — 12 reps each side\nCool-down (5 min): hip flexor & quad stretches",
+              "description": "Knee insurance. Single-leg & glute work. Critical now that long runs pass 20 km.",
               "durationMinutes": 30,
-              "id": "w17-fri-str",
+              "humanReadable": "Warm-up (5 min): leg swings, hip circles, glute bridges 2x10\nMain (3 rounds, 60s rest):\n  • Bodyweight squats — 12 reps\n  • Reverse lunges — 8 each leg\n  • Single-leg glute bridges — 10 each leg\n  • Calf raises — 15 reps\n  • Side-lying clamshells — 12 each side\nCool-down (5 min): hip flexor & quad stretches",
+              "id": "w9-fri-str",
               "sport": "strength",
               "type": "strength",
               "primaryZone": "Z2",
@@ -2541,16 +1404,16 @@
           "dayOfWeek": "Saturday",
           "workouts": [
             {
-              "id": "w17-sat-run",
+              "id": "w9-sat-run",
               "sport": "run",
               "type": "run",
               "completed": false,
-              "name": "Long Run — 24 km (last 6 km @ MP)",
-              "description": "Last 6 km @ MP. Full race-day fuel rehearsal.",
-              "distanceKm": 24,
-              "durationMinutes": 170,
-              "primaryZone": "Z2 + Z3 (MP)",
-              "humanReadable": "Warm-up: 1 km very easy\nMain:\n  • 18 km @ easy (7:00–7:30/km, HR <150)\n  • 6 km @ marathon pace (6:55/km, HR 155–165)\nCool-down: 5 min walk\nFuel: 30g carbs every 30 min after the first hour. Sip water every 15 min."
+              "name": "Long Run — 18 km",
+              "description": "The engine of your marathon. Keep it genuinely easy — time on feet beats pace.",
+              "distanceKm": 18,
+              "durationMinutes": 122,
+              "primaryZone": "Z2 Easy",
+              "humanReadable": "Warm-up: 1 km very easy\nMain: 17 km easy (HR 138–150, ~6:40–7:05/km)\nCool-down: 5 min walk + stretches\nFuel: after 75 min take 30g carbs. Water every 15 min."
             }
           ]
         },
@@ -2559,291 +1422,11 @@
           "dayOfWeek": "Sunday",
           "workouts": [
             {
-              "id": "w17-sun-rest",
+              "id": "w9-sun-rest",
               "sport": "rest",
               "type": "rest",
               "name": "Rest Day",
-              "description": "Full recovery — fitness is built during rest.",
-              "humanReadable": "Sleep, hydrate, eat well. Light walking is fine.",
-              "completed": false
-            }
-          ]
-        }
-      ],
-      "summary": {
-        "totalHours": 5.3,
-        "bySport": {
-          "run": {
-            "sessions": 4,
-            "hours": 5.3,
-            "km": 36.5
-          }
-        }
-      }
-    },
-    {
-      "weekNumber": 18,
-      "startDate": "2026-10-19",
-      "endDate": "2026-10-25",
-      "phase": "Peak",
-      "focus": "Long run to 26 km",
-      "targetHours": 10.0,
-      "isRecoveryWeek": false,
-      "days": [
-        {
-          "date": "2026-10-19",
-          "dayOfWeek": "Monday",
-          "workouts": [
-            {
-              "name": "Strength B — Core & Stability",
-              "description": "Core + single-leg balance for running economy and knee tracking.",
-              "humanReadable": "Warm-up (5 min): cat-cow, bird-dog 2x8\nMain (3 rounds, 45s rest):\n  • Plank — 30–45s\n  • Side plank — 20–30s each side\n  • Dead bug — 8 reps each side\n  • Single-leg deadlift (no weight) — 8 reps each leg\n  • Step-ups onto chair — 10 each leg\nCool-down (5 min): pigeon stretch, child's pose",
-              "durationMinutes": 25,
-              "id": "w18-mon-str",
-              "sport": "strength",
-              "type": "strength",
-              "primaryZone": "Z2",
-              "completed": false
-            }
-          ]
-        },
-        {
-          "date": "2026-10-20",
-          "dayOfWeek": "Tuesday",
-          "workouts": [
-            {
-              "id": "w18-tue-run",
-              "sport": "run",
-              "type": "run",
-              "completed": false,
-              "name": "Easy Run — 50 min",
-              "description": "Easy/conversational. Keep HR under 150. This pace should feel comfortable.",
-              "durationMinutes": 50,
-              "distanceKm": 7,
-              "primaryZone": "Z2 Easy",
-              "humanReadable": "Warm-up: 5 min walk + light jog\nMain: 40 min easy (HR 135–150, pace 6:30–7:00/km)\nCool-down: 5 min walk + stretch"
-            }
-          ]
-        },
-        {
-          "date": "2026-10-21",
-          "dayOfWeek": "Wednesday",
-          "workouts": [
-            {
-              "id": "w18-wed-run",
-              "sport": "run",
-              "type": "run",
-              "completed": false,
-              "name": "Easy Run — 40 min (optional 4th run)",
-              "description": "Optional. Run it if recovery is good — skip without guilt if tired or short on sleep.",
-              "durationMinutes": 40,
-              "distanceKm": 5.5,
-              "primaryZone": "Z2 Easy",
-              "humanReadable": "OPTIONAL 4th run — only if you feel fresh.\nWarm-up: 5 min walk\nMain: 30 min very easy (HR <145, pace 6:45–7:15/km)\nCool-down: 5 min walk\n\nIf knee feels anything, or sleep was bad, do mobility instead."
-            }
-          ]
-        },
-        {
-          "date": "2026-10-22",
-          "dayOfWeek": "Thursday",
-          "workouts": [
-            {
-              "id": "w18-thu-run",
-              "sport": "run",
-              "type": "run",
-              "completed": false,
-              "name": "Marathon Pace Block — 35 min @ MP",
-              "description": "Sustained goal-pace work. Cornerstone of marathon prep.",
-              "durationMinutes": 60,
-              "primaryZone": "Z3 Marathon Pace",
-              "humanReadable": "Warm-up: 15 min easy\nMain: 35 min continuous @ marathon pace (6:55/km, HR 155–165)\nCool-down: 10 min easy"
-            }
-          ]
-        },
-        {
-          "date": "2026-10-23",
-          "dayOfWeek": "Friday",
-          "workouts": [
-            {
-              "name": "Strength A — Lower Body Foundation",
-              "description": "Knee insurance. Single-leg & glute work. Non-negotiable now that long runs are growing.",
-              "humanReadable": "Warm-up (5 min): leg swings, hip circles, glute bridges 2x10\nMain (3 rounds, 60s rest):\n  • Bodyweight squats — 12 reps (slow & controlled)\n  • Reverse lunges — 8 reps each leg\n  • Single-leg glute bridges — 10 reps each leg\n  • Calf raises — 15 reps\n  • Side-lying clamshells — 12 reps each side\nCool-down (5 min): hip flexor & quad stretches",
-              "durationMinutes": 30,
-              "id": "w18-fri-str",
-              "sport": "strength",
-              "type": "strength",
-              "primaryZone": "Z2",
-              "completed": false
-            }
-          ]
-        },
-        {
-          "date": "2026-10-24",
-          "dayOfWeek": "Saturday",
-          "workouts": [
-            {
-              "id": "w18-sat-run",
-              "sport": "run",
-              "type": "run",
-              "completed": false,
-              "name": "Long Run — 26 km (last 8 km @ MP)",
-              "description": "Last 8 km @ MP. Practice fueling protocol exactly.",
-              "distanceKm": 26,
-              "durationMinutes": 184,
-              "primaryZone": "Z2 + Z3 (MP)",
-              "humanReadable": "Warm-up: 1 km very easy\nMain:\n  • 18 km @ easy (7:00–7:30/km, HR <150)\n  • 8 km @ marathon pace (6:55/km, HR 155–165)\nCool-down: 5 min walk\nFuel: 30g carbs every 30 min after the first hour. Sip water every 15 min."
-            }
-          ]
-        },
-        {
-          "date": "2026-10-25",
-          "dayOfWeek": "Sunday",
-          "workouts": [
-            {
-              "id": "w18-sun-rest",
-              "sport": "rest",
-              "type": "rest",
-              "name": "Rest Day",
-              "description": "Full recovery — fitness is built during rest.",
-              "humanReadable": "Sleep, hydrate, eat well. Light walking is fine.",
-              "completed": false
-            }
-          ]
-        }
-      ],
-      "summary": {
-        "totalHours": 5.6,
-        "bySport": {
-          "run": {
-            "sessions": 4,
-            "hours": 5.6,
-            "km": 38.5
-          }
-        }
-      }
-    },
-    {
-      "weekNumber": 19,
-      "startDate": "2026-10-26",
-      "endDate": "2026-11-01",
-      "phase": "Peak",
-      "focus": "Recovery week — DON'T skip",
-      "targetHours": 6.5,
-      "isRecoveryWeek": true,
-      "days": [
-        {
-          "date": "2026-10-26",
-          "dayOfWeek": "Monday",
-          "workouts": [
-            {
-              "id": "w19-mon-rest",
-              "sport": "rest",
-              "type": "rest",
-              "name": "Rest Day",
-              "description": "Full recovery — fitness is built during rest.",
-              "humanReadable": "Sleep, hydrate, eat well. Light walking is fine.",
-              "completed": false
-            }
-          ]
-        },
-        {
-          "date": "2026-10-27",
-          "dayOfWeek": "Tuesday",
-          "workouts": [
-            {
-              "id": "w19-tue-run",
-              "sport": "run",
-              "type": "run",
-              "completed": false,
-              "name": "Easy Run — 40 min",
-              "description": "Easy/conversational. Keep HR under 150. This pace should feel comfortable.",
-              "durationMinutes": 40,
-              "distanceKm": 5.5,
-              "primaryZone": "Z2 Easy",
-              "humanReadable": "Warm-up: 5 min walk + light jog\nMain: 30 min easy (HR 135–150, pace 6:30–7:00/km)\nCool-down: 5 min walk + stretch"
-            }
-          ]
-        },
-        {
-          "date": "2026-10-28",
-          "dayOfWeek": "Wednesday",
-          "workouts": [
-            {
-              "name": "Mobility & Recovery",
-              "description": "Light movement — supports recovery.",
-              "humanReadable": "10–15 min total:\n  • Foam roll quads, calves, glutes (5 min)\n  • Hip flexor stretch — 60s each side\n  • Hamstring stretch — 60s each side\n  • Ankle circles & calf stretch — 30s each",
-              "durationMinutes": 15,
-              "id": "w19-wed-mob",
-              "sport": "mobility",
-              "type": "recovery",
-              "primaryZone": "Recovery",
-              "completed": false
-            }
-          ]
-        },
-        {
-          "date": "2026-10-29",
-          "dayOfWeek": "Thursday",
-          "workouts": [
-            {
-              "id": "w19-thu-run",
-              "sport": "run",
-              "type": "run",
-              "completed": false,
-              "name": "Easy Run — 45 min",
-              "description": "Easy/conversational. Keep HR under 150. This pace should feel comfortable.",
-              "durationMinutes": 45,
-              "distanceKm": 6,
-              "primaryZone": "Z2 Easy",
-              "humanReadable": "Warm-up: 5 min walk + light jog\nMain: 35 min easy (HR 135–150, pace 6:30–7:00/km)\nCool-down: 5 min walk + stretch"
-            }
-          ]
-        },
-        {
-          "date": "2026-10-30",
-          "dayOfWeek": "Friday",
-          "workouts": [
-            {
-              "name": "Strength A — Lower Body Foundation",
-              "description": "Knee insurance. Single-leg & glute work. Non-negotiable now that long runs are growing.",
-              "humanReadable": "Warm-up (5 min): leg swings, hip circles, glute bridges 2x10\nMain (3 rounds, 60s rest):\n  • Bodyweight squats — 12 reps (slow & controlled)\n  • Reverse lunges — 8 reps each leg\n  • Single-leg glute bridges — 10 reps each leg\n  • Calf raises — 15 reps\n  • Side-lying clamshells — 12 reps each side\nCool-down (5 min): hip flexor & quad stretches",
-              "durationMinutes": 30,
-              "id": "w19-fri-str",
-              "sport": "strength",
-              "type": "strength",
-              "primaryZone": "Z2",
-              "completed": false
-            }
-          ]
-        },
-        {
-          "date": "2026-10-31",
-          "dayOfWeek": "Saturday",
-          "workouts": [
-            {
-              "id": "w19-sat-run",
-              "sport": "run",
-              "type": "run",
-              "completed": false,
-              "name": "Long Run — 18 km",
-              "description": "The engine of your marathon. Keep it SLOW — slower than your easy runs. Time on feet matters more than pace.",
-              "distanceKm": 18,
-              "durationMinutes": 131,
-              "primaryZone": "Z2 Easy",
-              "humanReadable": "Warm-up: 5 min walk\nMain: 18 km easy (7:00–7:30/km, HR 135–150). Deliberately slow.\nCool-down: 5 min walk + stretches\nFuel: After 75 min, 30g carbs (gel/banana). Water every 15 min."
-            }
-          ]
-        },
-        {
-          "date": "2026-11-01",
-          "dayOfWeek": "Sunday",
-          "workouts": [
-            {
-              "id": "w19-sun-rest",
-              "sport": "rest",
-              "type": "rest",
-              "name": "Rest Day",
-              "description": "Full recovery — fitness is built during rest.",
+              "description": "Full recovery — adaptation happens now.",
               "humanReadable": "Sleep, hydrate, eat well. Light walking is fine.",
               "completed": false
             }
@@ -2856,30 +1439,30 @@
           "run": {
             "sessions": 3,
             "hours": 3.6,
-            "km": 29.5
+            "km": 32.5
           }
         }
       }
     },
     {
-      "weekNumber": 20,
-      "startDate": "2026-11-02",
-      "endDate": "2026-11-08",
+      "weekNumber": 10,
+      "startDate": "2026-10-19",
+      "endDate": "2026-10-25",
       "phase": "Peak",
-      "focus": "Long run to 28 km",
+      "focus": "28 km — the confidence run",
       "targetHours": 10.0,
       "isRecoveryWeek": false,
       "days": [
         {
-          "date": "2026-11-02",
+          "date": "2026-10-19",
           "dayOfWeek": "Monday",
           "workouts": [
             {
               "name": "Strength B — Core & Stability",
-              "description": "Core + single-leg balance for running economy and knee tracking.",
-              "humanReadable": "Warm-up (5 min): cat-cow, bird-dog 2x8\nMain (3 rounds, 45s rest):\n  • Plank — 30–45s\n  • Side plank — 20–30s each side\n  • Dead bug — 8 reps each side\n  • Single-leg deadlift (no weight) — 8 reps each leg\n  • Step-ups onto chair — 10 each leg\nCool-down (5 min): pigeon stretch, child's pose",
+              "description": "Core + single-leg balance. Protects form when you fatigue late in long runs.",
               "durationMinutes": 25,
-              "id": "w20-mon-str",
+              "humanReadable": "Warm-up (5 min): cat-cow, bird-dog 2x8\nMain (3 rounds, 45s rest):\n  • Plank — 30–45s\n  • Side plank — 20–30s each side\n  • Dead bug — 8 each side\n  • Single-leg deadlift — 8 each leg\n  • Step-ups onto chair — 10 each leg\nCool-down (5 min): pigeon stretch, child's pose",
+              "id": "w10-mon-str",
               "sport": "strength",
               "type": "strength",
               "primaryZone": "Z2",
@@ -2888,68 +1471,68 @@
           ]
         },
         {
-          "date": "2026-11-03",
+          "date": "2026-10-20",
           "dayOfWeek": "Tuesday",
           "workouts": [
             {
-              "id": "w20-tue-run",
+              "id": "w10-tue-run",
               "sport": "run",
               "type": "run",
               "completed": false,
               "name": "Easy Run — 55 min",
-              "description": "Easy/conversational. Keep HR under 150. This pace should feel comfortable.",
+              "description": "Easy/conversational. HR 135–148. Let pace be whatever that allows.",
               "durationMinutes": 55,
-              "distanceKm": 7.5,
+              "distanceKm": 8,
               "primaryZone": "Z2 Easy",
-              "humanReadable": "Warm-up: 5 min walk + light jog\nMain: 45 min easy (HR 135–150, pace 6:30–7:00/km)\nCool-down: 5 min walk + stretch"
+              "humanReadable": "Warm-up: 5 min very easy\nMain: 45 min easy (HR 135–148, ~6:30–7:00/km)\nCool-down: 5 min easy + stretch"
             }
           ]
         },
         {
-          "date": "2026-11-04",
+          "date": "2026-10-21",
           "dayOfWeek": "Wednesday",
           "workouts": [
             {
-              "id": "w20-wed-run",
+              "id": "w10-wed-run",
               "sport": "run",
               "type": "run",
               "completed": false,
               "name": "Easy Run — 40 min (optional 4th run)",
-              "description": "Optional. Run it if recovery is good — skip without guilt if tired or short on sleep.",
+              "description": "Optional. Run only if recovery is good — skip freely on bad-sleep weeks.",
               "durationMinutes": 40,
-              "distanceKm": 5.5,
+              "distanceKm": 6,
               "primaryZone": "Z2 Easy",
-              "humanReadable": "OPTIONAL 4th run — only if you feel fresh.\nWarm-up: 5 min walk\nMain: 30 min very easy (HR <145, pace 6:45–7:15/km)\nCool-down: 5 min walk\n\nIf knee feels anything, or sleep was bad, do mobility instead."
+              "humanReadable": "OPTIONAL — only if you feel fresh.\nWarm-up: 5 min\nMain: 30 min very easy (HR <145)\nCool-down: 5 min\n\nTired, poor sleep, or any knee signal? Do mobility instead."
             }
           ]
         },
         {
-          "date": "2026-11-05",
+          "date": "2026-10-22",
           "dayOfWeek": "Thursday",
           "workouts": [
             {
-              "id": "w20-thu-run",
+              "id": "w10-thu-run",
               "sport": "run",
               "type": "run",
               "completed": false,
-              "name": "Marathon Pace Block — 40 min @ MP",
-              "description": "Sustained goal-pace work. Cornerstone of marathon prep.",
-              "durationMinutes": 60,
+              "name": "Marathon Pace Block — 35 min @ MP",
+              "description": "Sustained goal-pace work — the cornerstone session.",
+              "durationMinutes": 65,
               "primaryZone": "Z3 Marathon Pace",
-              "humanReadable": "Warm-up: 15 min easy\nMain: 40 min continuous @ marathon pace (6:55/km, HR 155–165)\nCool-down: 10 min easy"
+              "humanReadable": "Warm-up: 15 min easy\nMain: 35 min continuous @ marathon pace (6:20/km, HR 152–162)\nCool-down: 10 min easy"
             }
           ]
         },
         {
-          "date": "2026-11-06",
+          "date": "2026-10-23",
           "dayOfWeek": "Friday",
           "workouts": [
             {
               "name": "Strength A — Lower Body Foundation",
-              "description": "Knee insurance. Single-leg & glute work. Non-negotiable now that long runs are growing.",
-              "humanReadable": "Warm-up (5 min): leg swings, hip circles, glute bridges 2x10\nMain (3 rounds, 60s rest):\n  • Bodyweight squats — 12 reps (slow & controlled)\n  • Reverse lunges — 8 reps each leg\n  • Single-leg glute bridges — 10 reps each leg\n  • Calf raises — 15 reps\n  • Side-lying clamshells — 12 reps each side\nCool-down (5 min): hip flexor & quad stretches",
+              "description": "Knee insurance. Single-leg & glute work. Critical now that long runs pass 20 km.",
               "durationMinutes": 30,
-              "id": "w20-fri-str",
+              "humanReadable": "Warm-up (5 min): leg swings, hip circles, glute bridges 2x10\nMain (3 rounds, 60s rest):\n  • Bodyweight squats — 12 reps\n  • Reverse lunges — 8 each leg\n  • Single-leg glute bridges — 10 each leg\n  • Calf raises — 15 reps\n  • Side-lying clamshells — 12 each side\nCool-down (5 min): hip flexor & quad stretches",
+              "id": "w10-fri-str",
               "sport": "strength",
               "type": "strength",
               "primaryZone": "Z2",
@@ -2958,33 +1541,174 @@
           ]
         },
         {
-          "date": "2026-11-07",
+          "date": "2026-10-24",
           "dayOfWeek": "Saturday",
           "workouts": [
             {
-              "id": "w20-sat-run",
+              "id": "w10-sat-run",
               "sport": "run",
               "type": "run",
               "completed": false,
               "name": "Long Run — 28 km (last 8 km @ MP)",
-              "description": "Big day. Rehearse race gear, breakfast, fuel.",
+              "description": "Last 8 km at MP. Full dress rehearsal: gear, breakfast, gels.",
               "distanceKm": 28,
-              "durationMinutes": 198,
+              "durationMinutes": 184,
               "primaryZone": "Z2 + Z3 (MP)",
-              "humanReadable": "Warm-up: 1 km very easy\nMain:\n  • 20 km @ easy (7:00–7:30/km, HR <150)\n  • 8 km @ marathon pace (6:55/km, HR 155–165)\nCool-down: 5 min walk\nFuel: 30g carbs every 30 min after the first hour. Sip water every 15 min."
+              "humanReadable": "Warm-up: 1 km very easy\nMain:\n  • 20 km easy (HR 138–150, ~6:40–7:00/km)\n  • 8 km @ marathon pace (6:20/km, HR 152–162)\nCool-down: 5 min walk\nFuel: 30g carbs every 30 min after the first hour. Water every 15 min."
             }
           ]
         },
         {
-          "date": "2026-11-08",
+          "date": "2026-10-25",
           "dayOfWeek": "Sunday",
           "workouts": [
             {
-              "id": "w20-sun-rest",
+              "id": "w10-sun-rest",
               "sport": "rest",
               "type": "rest",
               "name": "Rest Day",
-              "description": "Full recovery — fitness is built during rest.",
+              "description": "Full recovery — adaptation happens now.",
+              "humanReadable": "Sleep, hydrate, eat well. Light walking is fine.",
+              "completed": false
+            }
+          ]
+        }
+      ],
+      "summary": {
+        "totalHours": 5.7,
+        "bySport": {
+          "run": {
+            "sessions": 4,
+            "hours": 5.7,
+            "km": 42
+          }
+        }
+      }
+    },
+    {
+      "weekNumber": 11,
+      "startDate": "2026-10-26",
+      "endDate": "2026-11-01",
+      "phase": "Peak",
+      "focus": "30 km",
+      "targetHours": 10.5,
+      "isRecoveryWeek": false,
+      "days": [
+        {
+          "date": "2026-10-26",
+          "dayOfWeek": "Monday",
+          "workouts": [
+            {
+              "name": "Strength B — Core & Stability",
+              "description": "Core + single-leg balance. Protects form when you fatigue late in long runs.",
+              "durationMinutes": 25,
+              "humanReadable": "Warm-up (5 min): cat-cow, bird-dog 2x8\nMain (3 rounds, 45s rest):\n  • Plank — 30–45s\n  • Side plank — 20–30s each side\n  • Dead bug — 8 each side\n  • Single-leg deadlift — 8 each leg\n  • Step-ups onto chair — 10 each leg\nCool-down (5 min): pigeon stretch, child's pose",
+              "id": "w11-mon-str",
+              "sport": "strength",
+              "type": "strength",
+              "primaryZone": "Z2",
+              "completed": false
+            }
+          ]
+        },
+        {
+          "date": "2026-10-27",
+          "dayOfWeek": "Tuesday",
+          "workouts": [
+            {
+              "id": "w11-tue-run",
+              "sport": "run",
+              "type": "run",
+              "completed": false,
+              "name": "Easy Run — 55 min",
+              "description": "Easy/conversational. HR 135–148. Let pace be whatever that allows.",
+              "durationMinutes": 55,
+              "distanceKm": 8,
+              "primaryZone": "Z2 Easy",
+              "humanReadable": "Warm-up: 5 min very easy\nMain: 45 min easy (HR 135–148, ~6:30–7:00/km)\nCool-down: 5 min easy + stretch"
+            }
+          ]
+        },
+        {
+          "date": "2026-10-28",
+          "dayOfWeek": "Wednesday",
+          "workouts": [
+            {
+              "id": "w11-wed-run",
+              "sport": "run",
+              "type": "run",
+              "completed": false,
+              "name": "Easy Run — 40 min (optional 4th run)",
+              "description": "Optional. Run only if recovery is good — skip freely on bad-sleep weeks.",
+              "durationMinutes": 40,
+              "distanceKm": 6,
+              "primaryZone": "Z2 Easy",
+              "humanReadable": "OPTIONAL — only if you feel fresh.\nWarm-up: 5 min\nMain: 30 min very easy (HR <145)\nCool-down: 5 min\n\nTired, poor sleep, or any knee signal? Do mobility instead."
+            }
+          ]
+        },
+        {
+          "date": "2026-10-29",
+          "dayOfWeek": "Thursday",
+          "workouts": [
+            {
+              "id": "w11-thu-run",
+              "sport": "run",
+              "type": "run",
+              "completed": false,
+              "name": "MP Intervals — 5 x 2 km",
+              "description": "Lock in goal marathon pace and rhythm.",
+              "durationMinutes": 60,
+              "primaryZone": "Z3 Marathon Pace",
+              "humanReadable": "Warm-up: 15 min easy\nMain: 5 x 2 km @ marathon pace (6:20/km, HR 152–162), 2 min jog recovery\nCool-down: 10 min easy"
+            }
+          ]
+        },
+        {
+          "date": "2026-10-30",
+          "dayOfWeek": "Friday",
+          "workouts": [
+            {
+              "name": "Strength A — Lower Body Foundation",
+              "description": "Knee insurance. Single-leg & glute work. Critical now that long runs pass 20 km.",
+              "durationMinutes": 30,
+              "humanReadable": "Warm-up (5 min): leg swings, hip circles, glute bridges 2x10\nMain (3 rounds, 60s rest):\n  • Bodyweight squats — 12 reps\n  • Reverse lunges — 8 each leg\n  • Single-leg glute bridges — 10 each leg\n  • Calf raises — 15 reps\n  • Side-lying clamshells — 12 each side\nCool-down (5 min): hip flexor & quad stretches",
+              "id": "w11-fri-str",
+              "sport": "strength",
+              "type": "strength",
+              "primaryZone": "Z2",
+              "completed": false
+            }
+          ]
+        },
+        {
+          "date": "2026-10-31",
+          "dayOfWeek": "Saturday",
+          "workouts": [
+            {
+              "id": "w11-sat-run",
+              "sport": "run",
+              "type": "run",
+              "completed": false,
+              "name": "Long Run — 30 km (last 6 km @ MP)",
+              "description": "Steady, then 6 km at MP. This is the big one.",
+              "distanceKm": 30,
+              "durationMinutes": 198,
+              "primaryZone": "Z2 + Z3 (MP)",
+              "humanReadable": "Warm-up: 1 km very easy\nMain:\n  • 24 km easy (HR 138–150, ~6:40–7:00/km)\n  • 6 km @ marathon pace (6:20/km, HR 152–162)\nCool-down: 5 min walk\nFuel: 30g carbs every 30 min after the first hour. Water every 15 min."
+            }
+          ]
+        },
+        {
+          "date": "2026-11-01",
+          "dayOfWeek": "Sunday",
+          "workouts": [
+            {
+              "id": "w11-sun-rest",
+              "sport": "rest",
+              "type": "rest",
+              "name": "Rest Day",
+              "description": "Full recovery — adaptation happens now.",
               "humanReadable": "Sleep, hydrate, eat well. Light walking is fine.",
               "completed": false
             }
@@ -2997,18 +1721,157 @@
           "run": {
             "sessions": 4,
             "hours": 5.9,
-            "km": 41.0
+            "km": 44
           }
         }
       }
     },
     {
-      "weekNumber": 21,
+      "weekNumber": 12,
+      "startDate": "2026-11-02",
+      "endDate": "2026-11-08",
+      "phase": "Peak",
+      "focus": "Recovery week",
+      "targetHours": 7.0,
+      "isRecoveryWeek": true,
+      "days": [
+        {
+          "date": "2026-11-02",
+          "dayOfWeek": "Monday",
+          "workouts": [
+            {
+              "id": "w12-mon-rest",
+              "sport": "rest",
+              "type": "rest",
+              "name": "Rest Day",
+              "description": "Full recovery — adaptation happens now.",
+              "humanReadable": "Sleep, hydrate, eat well. Light walking is fine.",
+              "completed": false
+            }
+          ]
+        },
+        {
+          "date": "2026-11-03",
+          "dayOfWeek": "Tuesday",
+          "workouts": [
+            {
+              "id": "w12-tue-run",
+              "sport": "run",
+              "type": "run",
+              "completed": false,
+              "name": "Easy Run — 45 min",
+              "description": "Easy/conversational. HR 135–148. Let pace be whatever that allows.",
+              "durationMinutes": 45,
+              "distanceKm": 7,
+              "primaryZone": "Z2 Easy",
+              "humanReadable": "Warm-up: 5 min very easy\nMain: 35 min easy (HR 135–148, ~6:30–7:00/km)\nCool-down: 5 min easy + stretch"
+            }
+          ]
+        },
+        {
+          "date": "2026-11-04",
+          "dayOfWeek": "Wednesday",
+          "workouts": [
+            {
+              "name": "Mobility & Recovery",
+              "description": "Light movement — supports recovery.",
+              "durationMinutes": 15,
+              "humanReadable": "10–15 min:\n  • Foam roll quads, calves, glutes (5 min)\n  • Hip flexor stretch 60s each\n  • Hamstring stretch 60s each\n  • Ankle circles & calf stretch",
+              "id": "w12-wed-mob",
+              "sport": "mobility",
+              "type": "recovery",
+              "primaryZone": "Recovery",
+              "completed": false
+            }
+          ]
+        },
+        {
+          "date": "2026-11-05",
+          "dayOfWeek": "Thursday",
+          "workouts": [
+            {
+              "id": "w12-thu-run",
+              "sport": "run",
+              "type": "run",
+              "completed": false,
+              "name": "Easy Run — 50 min",
+              "description": "Easy/conversational. HR 135–148. Let pace be whatever that allows.",
+              "durationMinutes": 50,
+              "distanceKm": 7.5,
+              "primaryZone": "Z2 Easy",
+              "humanReadable": "Warm-up: 5 min very easy\nMain: 40 min easy (HR 135–148, ~6:30–7:00/km)\nCool-down: 5 min easy + stretch"
+            }
+          ]
+        },
+        {
+          "date": "2026-11-06",
+          "dayOfWeek": "Friday",
+          "workouts": [
+            {
+              "name": "Strength A — Lower Body Foundation",
+              "description": "Knee insurance. Single-leg & glute work. Critical now that long runs pass 20 km.",
+              "durationMinutes": 30,
+              "humanReadable": "Warm-up (5 min): leg swings, hip circles, glute bridges 2x10\nMain (3 rounds, 60s rest):\n  • Bodyweight squats — 12 reps\n  • Reverse lunges — 8 each leg\n  • Single-leg glute bridges — 10 each leg\n  • Calf raises — 15 reps\n  • Side-lying clamshells — 12 each side\nCool-down (5 min): hip flexor & quad stretches",
+              "id": "w12-fri-str",
+              "sport": "strength",
+              "type": "strength",
+              "primaryZone": "Z2",
+              "completed": false
+            }
+          ]
+        },
+        {
+          "date": "2026-11-07",
+          "dayOfWeek": "Saturday",
+          "workouts": [
+            {
+              "id": "w12-sat-run",
+              "sport": "run",
+              "type": "run",
+              "completed": false,
+              "name": "Long Run — 20 km",
+              "description": "The engine of your marathon. Keep it genuinely easy — time on feet beats pace.",
+              "distanceKm": 20,
+              "durationMinutes": 136,
+              "primaryZone": "Z2 Easy",
+              "humanReadable": "Warm-up: 1 km very easy\nMain: 19 km easy (HR 138–150, ~6:40–7:05/km)\nCool-down: 5 min walk + stretches\nFuel: after 75 min take 30g carbs. Water every 15 min."
+            }
+          ]
+        },
+        {
+          "date": "2026-11-08",
+          "dayOfWeek": "Sunday",
+          "workouts": [
+            {
+              "id": "w12-sun-rest",
+              "sport": "rest",
+              "type": "rest",
+              "name": "Rest Day",
+              "description": "Full recovery — adaptation happens now.",
+              "humanReadable": "Sleep, hydrate, eat well. Light walking is fine.",
+              "completed": false
+            }
+          ]
+        }
+      ],
+      "summary": {
+        "totalHours": 3.9,
+        "bySport": {
+          "run": {
+            "sessions": 3,
+            "hours": 3.9,
+            "km": 34.5
+          }
+        }
+      }
+    },
+    {
+      "weekNumber": 13,
       "startDate": "2026-11-09",
       "endDate": "2026-11-15",
       "phase": "Peak",
-      "focus": "🏔️ PEAK — 30 km",
-      "targetHours": 10.5,
+      "focus": "🏔️ PEAK — 32 km",
+      "targetHours": 11.0,
       "isRecoveryWeek": false,
       "days": [
         {
@@ -3017,10 +1880,10 @@
           "workouts": [
             {
               "name": "Strength B — Core & Stability",
-              "description": "Core + single-leg balance for running economy and knee tracking.",
-              "humanReadable": "Warm-up (5 min): cat-cow, bird-dog 2x8\nMain (3 rounds, 45s rest):\n  • Plank — 30–45s\n  • Side plank — 20–30s each side\n  • Dead bug — 8 reps each side\n  • Single-leg deadlift (no weight) — 8 reps each leg\n  • Step-ups onto chair — 10 each leg\nCool-down (5 min): pigeon stretch, child's pose",
+              "description": "Core + single-leg balance. Protects form when you fatigue late in long runs.",
               "durationMinutes": 25,
-              "id": "w21-mon-str",
+              "humanReadable": "Warm-up (5 min): cat-cow, bird-dog 2x8\nMain (3 rounds, 45s rest):\n  • Plank — 30–45s\n  • Side plank — 20–30s each side\n  • Dead bug — 8 each side\n  • Single-leg deadlift — 8 each leg\n  • Step-ups onto chair — 10 each leg\nCool-down (5 min): pigeon stretch, child's pose",
+              "id": "w13-mon-str",
               "sport": "strength",
               "type": "strength",
               "primaryZone": "Z2",
@@ -3033,16 +1896,16 @@
           "dayOfWeek": "Tuesday",
           "workouts": [
             {
-              "id": "w21-tue-run",
+              "id": "w13-tue-run",
               "sport": "run",
               "type": "run",
               "completed": false,
               "name": "Easy Run — 50 min",
-              "description": "Easy/conversational. Keep HR under 150. This pace should feel comfortable.",
+              "description": "Easy/conversational. HR 135–148. Let pace be whatever that allows.",
               "durationMinutes": 50,
-              "distanceKm": 7,
+              "distanceKm": 7.5,
               "primaryZone": "Z2 Easy",
-              "humanReadable": "Warm-up: 5 min walk + light jog\nMain: 40 min easy (HR 135–150, pace 6:30–7:00/km)\nCool-down: 5 min walk + stretch"
+              "humanReadable": "Warm-up: 5 min very easy\nMain: 40 min easy (HR 135–148, ~6:30–7:00/km)\nCool-down: 5 min easy + stretch"
             }
           ]
         },
@@ -3051,16 +1914,16 @@
           "dayOfWeek": "Wednesday",
           "workouts": [
             {
-              "id": "w21-wed-run",
+              "id": "w13-wed-run",
               "sport": "run",
               "type": "run",
               "completed": false,
               "name": "Easy Run — 40 min (optional 4th run)",
-              "description": "Optional. Run it if recovery is good — skip without guilt if tired or short on sleep.",
+              "description": "Optional. Run only if recovery is good — skip freely on bad-sleep weeks.",
               "durationMinutes": 40,
-              "distanceKm": 5.5,
+              "distanceKm": 6,
               "primaryZone": "Z2 Easy",
-              "humanReadable": "OPTIONAL 4th run — only if you feel fresh.\nWarm-up: 5 min walk\nMain: 30 min very easy (HR <145, pace 6:45–7:15/km)\nCool-down: 5 min walk\n\nIf knee feels anything, or sleep was bad, do mobility instead."
+              "humanReadable": "OPTIONAL — only if you feel fresh.\nWarm-up: 5 min\nMain: 30 min very easy (HR <145)\nCool-down: 5 min\n\nTired, poor sleep, or any knee signal? Do mobility instead."
             }
           ]
         },
@@ -3069,15 +1932,15 @@
           "dayOfWeek": "Thursday",
           "workouts": [
             {
-              "id": "w21-thu-run",
+              "id": "w13-thu-run",
               "sport": "run",
               "type": "run",
               "completed": false,
-              "name": "Marathon Pace Block — 25 min @ MP",
-              "description": "Sustained goal-pace work. Cornerstone of marathon prep.",
-              "durationMinutes": 55,
+              "name": "Marathon Pace Block — 30 min @ MP",
+              "description": "Sustained goal-pace work — the cornerstone session.",
+              "durationMinutes": 60,
               "primaryZone": "Z3 Marathon Pace",
-              "humanReadable": "Warm-up: 15 min easy\nMain: 25 min continuous @ marathon pace (6:55/km, HR 155–165)\nCool-down: 10 min easy"
+              "humanReadable": "Warm-up: 15 min easy\nMain: 30 min continuous @ marathon pace (6:20/km, HR 152–162)\nCool-down: 10 min easy"
             }
           ]
         },
@@ -3087,10 +1950,10 @@
           "workouts": [
             {
               "name": "Strength A — Lower Body Foundation",
-              "description": "Knee insurance. Single-leg & glute work. Non-negotiable now that long runs are growing.",
-              "humanReadable": "Warm-up (5 min): leg swings, hip circles, glute bridges 2x10\nMain (3 rounds, 60s rest):\n  • Bodyweight squats — 12 reps (slow & controlled)\n  • Reverse lunges — 8 reps each leg\n  • Single-leg glute bridges — 10 reps each leg\n  • Calf raises — 15 reps\n  • Side-lying clamshells — 12 reps each side\nCool-down (5 min): hip flexor & quad stretches",
+              "description": "Knee insurance. Single-leg & glute work. Critical now that long runs pass 20 km.",
               "durationMinutes": 30,
-              "id": "w21-fri-str",
+              "humanReadable": "Warm-up (5 min): leg swings, hip circles, glute bridges 2x10\nMain (3 rounds, 60s rest):\n  • Bodyweight squats — 12 reps\n  • Reverse lunges — 8 each leg\n  • Single-leg glute bridges — 10 each leg\n  • Calf raises — 15 reps\n  • Side-lying clamshells — 12 each side\nCool-down (5 min): hip flexor & quad stretches",
+              "id": "w13-fri-str",
               "sport": "strength",
               "type": "strength",
               "primaryZone": "Z2",
@@ -3103,16 +1966,16 @@
           "dayOfWeek": "Saturday",
           "workouts": [
             {
-              "id": "w21-sat-run",
+              "id": "w13-sat-run",
               "sport": "run",
               "type": "run",
               "completed": false,
-              "name": "Long Run — 30 km",
-              "description": "🏔️ Peak long run. Easy pace. This is your confidence bank.",
-              "distanceKm": 30,
-              "durationMinutes": 219,
+              "name": "Long Run — 32 km",
+              "description": "🏔️ Peak long run. Easy pace throughout. Your confidence bank for race day.",
+              "distanceKm": 32,
+              "durationMinutes": 217,
               "primaryZone": "Z2 Easy",
-              "humanReadable": "Warm-up: 5 min walk\nMain: 30 km easy (7:00–7:30/km, HR 135–150). Deliberately slow.\nCool-down: 5 min walk + stretches\nFuel: After 75 min, 30g carbs (gel/banana). Water every 15 min."
+              "humanReadable": "Warm-up: 1 km very easy\nMain: 31 km easy (HR 138–150, ~6:40–7:05/km)\nCool-down: 5 min walk + stretches\nFuel: after 75 min take 30g carbs. Water every 15 min."
             }
           ]
         },
@@ -3121,11 +1984,11 @@
           "dayOfWeek": "Sunday",
           "workouts": [
             {
-              "id": "w21-sun-rest",
+              "id": "w13-sun-rest",
               "sport": "rest",
               "type": "rest",
               "name": "Rest Day",
-              "description": "Full recovery — fitness is built during rest.",
+              "description": "Full recovery — adaptation happens now.",
               "humanReadable": "Sleep, hydrate, eat well. Light walking is fine.",
               "completed": false
             }
@@ -3138,18 +2001,18 @@
           "run": {
             "sessions": 4,
             "hours": 6.1,
-            "km": 42.5
+            "km": 45.5
           }
         }
       }
     },
     {
-      "weekNumber": 22,
+      "weekNumber": 14,
       "startDate": "2026-11-16",
       "endDate": "2026-11-22",
       "phase": "Taper",
-      "focus": "Begin taper — cut volume, hold sharpness",
-      "targetHours": 7.5,
+      "focus": "Taper begins — volume down, sharpness held",
+      "targetHours": 8.0,
       "isRecoveryWeek": true,
       "days": [
         {
@@ -3158,10 +2021,10 @@
           "workouts": [
             {
               "name": "Strength B — Core & Stability",
-              "description": "Core + single-leg balance for running economy and knee tracking.",
-              "humanReadable": "Warm-up (5 min): cat-cow, bird-dog 2x8\nMain (3 rounds, 45s rest):\n  • Plank — 30–45s\n  • Side plank — 20–30s each side\n  • Dead bug — 8 reps each side\n  • Single-leg deadlift (no weight) — 8 reps each leg\n  • Step-ups onto chair — 10 each leg\nCool-down (5 min): pigeon stretch, child's pose",
+              "description": "Core + single-leg balance. Protects form when you fatigue late in long runs.",
               "durationMinutes": 25,
-              "id": "w22-mon-str",
+              "humanReadable": "Warm-up (5 min): cat-cow, bird-dog 2x8\nMain (3 rounds, 45s rest):\n  • Plank — 30–45s\n  • Side plank — 20–30s each side\n  • Dead bug — 8 each side\n  • Single-leg deadlift — 8 each leg\n  • Step-ups onto chair — 10 each leg\nCool-down (5 min): pigeon stretch, child's pose",
+              "id": "w14-mon-str",
               "sport": "strength",
               "type": "strength",
               "primaryZone": "Z2",
@@ -3174,16 +2037,16 @@
           "dayOfWeek": "Tuesday",
           "workouts": [
             {
-              "id": "w22-tue-run",
+              "id": "w14-tue-run",
               "sport": "run",
               "type": "run",
               "completed": false,
               "name": "Easy Run — 45 min",
-              "description": "Easy/conversational. Keep HR under 150. This pace should feel comfortable.",
+              "description": "Easy/conversational. HR 135–148. Let pace be whatever that allows.",
               "durationMinutes": 45,
-              "distanceKm": 6,
+              "distanceKm": 7,
               "primaryZone": "Z2 Easy",
-              "humanReadable": "Warm-up: 5 min walk + light jog\nMain: 35 min easy (HR 135–150, pace 6:30–7:00/km)\nCool-down: 5 min walk + stretch"
+              "humanReadable": "Warm-up: 5 min very easy\nMain: 35 min easy (HR 135–148, ~6:30–7:00/km)\nCool-down: 5 min easy + stretch"
             }
           ]
         },
@@ -3192,16 +2055,16 @@
           "dayOfWeek": "Wednesday",
           "workouts": [
             {
-              "id": "w22-wed-run",
+              "id": "w14-wed-run",
               "sport": "run",
               "type": "run",
               "completed": false,
               "name": "Easy Run — 35 min (optional 4th run)",
-              "description": "Optional. Run it if recovery is good — skip without guilt if tired or short on sleep.",
+              "description": "Optional. Run only if recovery is good — skip freely on bad-sleep weeks.",
               "durationMinutes": 35,
               "distanceKm": 5,
               "primaryZone": "Z2 Easy",
-              "humanReadable": "OPTIONAL 4th run — only if you feel fresh.\nWarm-up: 5 min walk\nMain: 25 min very easy (HR <145, pace 6:45–7:15/km)\nCool-down: 5 min walk\n\nIf knee feels anything, or sleep was bad, do mobility instead."
+              "humanReadable": "OPTIONAL — only if you feel fresh.\nWarm-up: 5 min\nMain: 25 min very easy (HR <145)\nCool-down: 5 min\n\nTired, poor sleep, or any knee signal? Do mobility instead."
             }
           ]
         },
@@ -3210,15 +2073,15 @@
           "dayOfWeek": "Thursday",
           "workouts": [
             {
-              "id": "w22-thu-run",
+              "id": "w14-thu-run",
               "sport": "run",
               "type": "run",
               "completed": false,
-              "name": "Marathon Pace Block — 20 min @ MP",
-              "description": "Sustained goal-pace work. Cornerstone of marathon prep.",
+              "name": "Marathon Pace Block — 25 min @ MP",
+              "description": "Sustained goal-pace work — the cornerstone session.",
               "durationMinutes": 50,
               "primaryZone": "Z3 Marathon Pace",
-              "humanReadable": "Warm-up: 15 min easy\nMain: 20 min continuous @ marathon pace (6:55/km, HR 155–165)\nCool-down: 10 min easy"
+              "humanReadable": "Warm-up: 15 min easy\nMain: 25 min continuous @ marathon pace (6:20/km, HR 152–162)\nCool-down: 10 min easy"
             }
           ]
         },
@@ -3227,11 +2090,11 @@
           "dayOfWeek": "Friday",
           "workouts": [
             {
-              "id": "w22-fri-rest",
+              "id": "w14-fri-rest",
               "sport": "rest",
               "type": "rest",
               "name": "Rest Day",
-              "description": "Full recovery — fitness is built during rest.",
+              "description": "Full recovery — adaptation happens now.",
               "humanReadable": "Sleep, hydrate, eat well. Light walking is fine.",
               "completed": false
             }
@@ -3242,16 +2105,16 @@
           "dayOfWeek": "Saturday",
           "workouts": [
             {
-              "id": "w22-sat-run",
+              "id": "w14-sat-run",
               "sport": "run",
               "type": "run",
               "completed": false,
-              "name": "Long Run — 20 km",
-              "description": "The engine of your marathon. Keep it SLOW — slower than your easy runs. Time on feet matters more than pace.",
-              "distanceKm": 20,
-              "durationMinutes": 146,
+              "name": "Long Run — 22 km",
+              "description": "The engine of your marathon. Keep it genuinely easy — time on feet beats pace.",
+              "distanceKm": 22,
+              "durationMinutes": 149,
               "primaryZone": "Z2 Easy",
-              "humanReadable": "Warm-up: 5 min walk\nMain: 20 km easy (7:00–7:30/km, HR 135–150). Deliberately slow.\nCool-down: 5 min walk + stretches\nFuel: After 75 min, 30g carbs (gel/banana). Water every 15 min."
+              "humanReadable": "Warm-up: 1 km very easy\nMain: 21 km easy (HR 138–150, ~6:40–7:05/km)\nCool-down: 5 min walk + stretches\nFuel: after 75 min take 30g carbs. Water every 15 min."
             }
           ]
         },
@@ -3260,11 +2123,11 @@
           "dayOfWeek": "Sunday",
           "workouts": [
             {
-              "id": "w22-sun-rest",
+              "id": "w14-sun-rest",
               "sport": "rest",
               "type": "rest",
               "name": "Rest Day",
-              "description": "Full recovery — fitness is built during rest.",
+              "description": "Full recovery — adaptation happens now.",
               "humanReadable": "Sleep, hydrate, eat well. Light walking is fine.",
               "completed": false
             }
@@ -3272,23 +2135,23 @@
         }
       ],
       "summary": {
-        "totalHours": 4.6,
+        "totalHours": 4.7,
         "bySport": {
           "run": {
             "sessions": 4,
-            "hours": 4.6,
-            "km": 31
+            "hours": 4.7,
+            "km": 34
           }
         }
       }
     },
     {
-      "weekNumber": 23,
+      "weekNumber": 15,
       "startDate": "2026-11-23",
       "endDate": "2026-11-29",
       "phase": "Taper",
-      "focus": "Stay sharp, legs fresh",
-      "targetHours": 5.5,
+      "focus": "Legs fresh, mind sharp",
+      "targetHours": 6.0,
       "isRecoveryWeek": true,
       "days": [
         {
@@ -3297,10 +2160,10 @@
           "workouts": [
             {
               "name": "Strength A — Lower Body Foundation",
-              "description": "Knee insurance. Single-leg & glute work. Non-negotiable now that long runs are growing.",
-              "humanReadable": "Warm-up (5 min): leg swings, hip circles, glute bridges 2x10\nMain (3 rounds, 60s rest):\n  • Bodyweight squats — 12 reps (slow & controlled)\n  • Reverse lunges — 8 reps each leg\n  • Single-leg glute bridges — 10 reps each leg\n  • Calf raises — 15 reps\n  • Side-lying clamshells — 12 reps each side\nCool-down (5 min): hip flexor & quad stretches",
+              "description": "Knee insurance. Single-leg & glute work. Critical now that long runs pass 20 km.",
               "durationMinutes": 30,
-              "id": "w23-mon-str",
+              "humanReadable": "Warm-up (5 min): leg swings, hip circles, glute bridges 2x10\nMain (3 rounds, 60s rest):\n  • Bodyweight squats — 12 reps\n  • Reverse lunges — 8 each leg\n  • Single-leg glute bridges — 10 each leg\n  • Calf raises — 15 reps\n  • Side-lying clamshells — 12 each side\nCool-down (5 min): hip flexor & quad stretches",
+              "id": "w15-mon-str",
               "sport": "strength",
               "type": "strength",
               "primaryZone": "Z2",
@@ -3313,16 +2176,16 @@
           "dayOfWeek": "Tuesday",
           "workouts": [
             {
-              "id": "w23-tue-run",
+              "id": "w15-tue-run",
               "sport": "run",
               "type": "run",
               "completed": false,
               "name": "Easy Run — 40 min",
-              "description": "Easy/conversational. Keep HR under 150. This pace should feel comfortable.",
+              "description": "Easy/conversational. HR 135–148. Let pace be whatever that allows.",
               "durationMinutes": 40,
-              "distanceKm": 5.5,
+              "distanceKm": 6,
               "primaryZone": "Z2 Easy",
-              "humanReadable": "Warm-up: 5 min walk + light jog\nMain: 30 min easy (HR 135–150, pace 6:30–7:00/km)\nCool-down: 5 min walk + stretch"
+              "humanReadable": "Warm-up: 5 min very easy\nMain: 30 min easy (HR 135–148, ~6:30–7:00/km)\nCool-down: 5 min easy + stretch"
             }
           ]
         },
@@ -3333,9 +2196,9 @@
             {
               "name": "Mobility & Recovery",
               "description": "Light movement — supports recovery.",
-              "humanReadable": "10–15 min total:\n  • Foam roll quads, calves, glutes (5 min)\n  • Hip flexor stretch — 60s each side\n  • Hamstring stretch — 60s each side\n  • Ankle circles & calf stretch — 30s each",
               "durationMinutes": 15,
-              "id": "w23-wed-mob",
+              "humanReadable": "10–15 min:\n  • Foam roll quads, calves, glutes (5 min)\n  • Hip flexor stretch 60s each\n  • Hamstring stretch 60s each\n  • Ankle circles & calf stretch",
+              "id": "w15-wed-mob",
               "sport": "mobility",
               "type": "recovery",
               "primaryZone": "Recovery",
@@ -3348,15 +2211,15 @@
           "dayOfWeek": "Thursday",
           "workouts": [
             {
-              "id": "w23-thu-run",
+              "id": "w15-thu-run",
               "sport": "run",
               "type": "run",
               "completed": false,
-              "name": "MP Intervals — 4 x 800 m",
+              "name": "MP Intervals — 4 x 1 km",
               "description": "Lock in goal marathon pace and rhythm.",
               "durationMinutes": 40,
               "primaryZone": "Z3 Marathon Pace",
-              "humanReadable": "Warm-up: 15 min easy\nMain: 4 x 800 m @ marathon pace (6:55/km, HR 155–165), 2 min jog recovery\nCool-down: 10 min easy"
+              "humanReadable": "Warm-up: 15 min easy\nMain: 4 x 1 km @ marathon pace (6:20/km, HR 152–162), 2 min jog recovery\nCool-down: 10 min easy"
             }
           ]
         },
@@ -3365,11 +2228,11 @@
           "dayOfWeek": "Friday",
           "workouts": [
             {
-              "id": "w23-fri-rest",
+              "id": "w15-fri-rest",
               "sport": "rest",
               "type": "rest",
               "name": "Rest Day",
-              "description": "Full recovery — fitness is built during rest.",
+              "description": "Full recovery — adaptation happens now.",
               "humanReadable": "Sleep, hydrate, eat well. Light walking is fine.",
               "completed": false
             }
@@ -3380,16 +2243,16 @@
           "dayOfWeek": "Saturday",
           "workouts": [
             {
-              "id": "w23-sat-run",
+              "id": "w15-sat-run",
               "sport": "run",
               "type": "run",
               "completed": false,
               "name": "Long Run — 14 km",
-              "description": "The engine of your marathon. Keep it SLOW — slower than your easy runs. Time on feet matters more than pace.",
+              "description": "The engine of your marathon. Keep it genuinely easy — time on feet beats pace.",
               "distanceKm": 14,
-              "durationMinutes": 102,
+              "durationMinutes": 95,
               "primaryZone": "Z2 Easy",
-              "humanReadable": "Warm-up: 5 min walk\nMain: 14 km easy (7:00–7:30/km, HR 135–150). Deliberately slow.\nCool-down: 5 min walk + stretches\nFuel: After 75 min, 30g carbs (gel/banana). Water every 15 min."
+              "humanReadable": "Warm-up: 1 km very easy\nMain: 13 km easy (HR 138–150, ~6:40–7:05/km)\nCool-down: 5 min walk + stretches\nFuel: after 75 min take 30g carbs. Water every 15 min."
             }
           ]
         },
@@ -3398,11 +2261,11 @@
           "dayOfWeek": "Sunday",
           "workouts": [
             {
-              "id": "w23-sun-rest",
+              "id": "w15-sun-rest",
               "sport": "rest",
               "type": "rest",
               "name": "Rest Day",
-              "description": "Full recovery — fitness is built during rest.",
+              "description": "Full recovery — adaptation happens now.",
               "humanReadable": "Sleep, hydrate, eat well. Light walking is fine.",
               "completed": false
             }
@@ -3410,18 +2273,18 @@
         }
       ],
       "summary": {
-        "totalHours": 3.0,
+        "totalHours": 2.9,
         "bySport": {
           "run": {
             "sessions": 3,
-            "hours": 3.0,
-            "km": 19.5
+            "hours": 2.9,
+            "km": 20
           }
         }
       }
     },
     {
-      "weekNumber": 24,
+      "weekNumber": 16,
       "startDate": "2026-11-30",
       "endDate": "2026-12-06",
       "phase": "Taper",
@@ -3434,11 +2297,11 @@
           "dayOfWeek": "Monday",
           "workouts": [
             {
-              "id": "w24-mon-rest",
+              "id": "w16-mon-rest",
               "sport": "rest",
               "type": "rest",
               "name": "Rest Day",
-              "description": "Full recovery — fitness is built during rest.",
+              "description": "Full recovery — adaptation happens now.",
               "humanReadable": "Sleep, hydrate, eat well. Light walking is fine.",
               "completed": false
             }
@@ -3449,16 +2312,16 @@
           "dayOfWeek": "Tuesday",
           "workouts": [
             {
-              "id": "w24-tue-run",
+              "id": "w16-tue-run",
               "sport": "run",
               "type": "run",
               "completed": false,
               "name": "Easy Run — 30 min",
               "description": "Easy shake-out. Legs should feel springy.",
               "durationMinutes": 30,
-              "distanceKm": 4,
+              "distanceKm": 4.5,
               "primaryZone": "Z2 Easy",
-              "humanReadable": "Warm-up: 5 min walk + light jog\nMain: 20 min easy (HR 135–150, pace 6:30–7:00/km)\nCool-down: 5 min walk + stretch"
+              "humanReadable": "Warm-up: 5 min very easy\nMain: 20 min easy (HR 135–148, ~6:30–7:00/km)\nCool-down: 5 min easy + stretch"
             }
           ]
         },
@@ -3469,9 +2332,9 @@
             {
               "name": "Mobility & Recovery",
               "description": "Light movement — supports recovery.",
-              "humanReadable": "10–15 min total:\n  • Foam roll quads, calves, glutes (5 min)\n  • Hip flexor stretch — 60s each side\n  • Hamstring stretch — 60s each side\n  • Ankle circles & calf stretch — 30s each",
               "durationMinutes": 15,
-              "id": "w24-wed-mob",
+              "humanReadable": "10–15 min:\n  • Foam roll quads, calves, glutes (5 min)\n  • Hip flexor stretch 60s each\n  • Hamstring stretch 60s each\n  • Ankle circles & calf stretch",
+              "id": "w16-wed-mob",
               "sport": "mobility",
               "type": "recovery",
               "primaryZone": "Recovery",
@@ -3484,15 +2347,15 @@
           "dayOfWeek": "Thursday",
           "workouts": [
             {
-              "id": "w24-thu-run",
+              "id": "w16-thu-run",
               "sport": "run",
               "type": "run",
               "completed": false,
               "name": "Easy + 4 Strides — 25 min",
-              "description": "Easy aerobic with short pickups to keep leg speed sharp.",
+              "description": "Easy aerobic plus short pickups to hold leg speed and high cadence.",
               "durationMinutes": 25,
               "primaryZone": "Z2 + Strides",
-              "humanReadable": "Warm-up: 5 min walk + 10 min easy\nMain: 0 min easy (6:30–7:00/km)\nStrides: 4 x 20s acceleration to ~5K pace on flat, 60s walk between\nCool-down: 5 min walk"
+              "humanReadable": "Warm-up: 15 min easy\nMain: 0 min easy\nStrides: 4 x 20s acceleration to ~5K effort, 60s walk between\nCool-down: 5 min easy"
             }
           ]
         },
@@ -3501,11 +2364,11 @@
           "dayOfWeek": "Friday",
           "workouts": [
             {
-              "id": "w24-fri-rest",
+              "id": "w16-fri-rest",
               "sport": "rest",
               "type": "rest",
               "name": "Rest Day",
-              "description": "Full recovery — fitness is built during rest.",
+              "description": "Full recovery — adaptation happens now.",
               "humanReadable": "Sleep, hydrate, eat well. Light walking is fine.",
               "completed": false
             }
@@ -3516,7 +2379,7 @@
           "dayOfWeek": "Saturday",
           "workouts": [
             {
-              "id": "w24-sat-run",
+              "id": "w16-sat-run",
               "sport": "run",
               "type": "run",
               "completed": false,
@@ -3524,7 +2387,7 @@
               "description": "Fire the legs, nothing more.",
               "durationMinutes": 15,
               "primaryZone": "Z2 Easy",
-              "humanReadable": "10 min very easy + 4x 20s strides + 5 min walk. Eat well, hydrate, sleep early. Lay out gear tonight."
+              "humanReadable": "10 min very easy + 4x 20s strides + 5 min walk.\nEat well, hydrate, sleep early. Lay out gear tonight."
             }
           ]
         },
@@ -3533,27 +2396,27 @@
           "dayOfWeek": "Sunday",
           "workouts": [
             {
-              "id": "w24-sun-run",
+              "id": "w16-sun-run",
               "sport": "run",
               "type": "run",
               "completed": false,
               "name": "🏁 VALENCIA MARATHON 42.2 km",
               "description": "RACE DAY! See Race Strategy tab.",
               "distanceKm": 42.2,
-              "durationMinutes": 290,
+              "durationMinutes": 267,
               "primaryZone": "Z3 Marathon Pace",
-              "humanReadable": "Goal 6:55/km (~4:51). Negative split: first 10K at 7:05/km, settle into MP. Walk aid stations to fuel. 30g carbs every 30 min from km 8. Trust the build — it's in your legs."
+              "humanReadable": "Goal 6:20/km (~4:27). First 10 km at 6:30 — deliberately held back. Settle into 6:20 from km 10. Walk aid stations to fuel cleanly. 30g carbs every 30 min from km 8. The training is in your legs."
             }
           ]
         }
       ],
       "summary": {
-        "totalHours": 6.0,
+        "totalHours": 5.6,
         "bySport": {
           "run": {
             "sessions": 4,
-            "hours": 6.0,
-            "km": 46.2
+            "hours": 5.6,
+            "km": 46.7
           }
         }
       }
@@ -3567,56 +2430,57 @@
       "distance": 42.2
     },
     "pacing": {
-      "strategy": "Conservative negative split for a first marathon",
+      "strategy": "Controlled negative split — hold back early, press late",
       "firstHalf": {
-        "target": "7:00–7:05/km",
-        "notes": "DELIBERATELY hold back. The first 10 km should feel TOO easy — that's correct."
+        "target": "6:30/km for the first 10 km",
+        "notes": "DELIBERATELY slower than goal. It will feel far too easy — that is exactly right."
       },
       "secondHalf": {
-        "target": "6:50–7:00/km if feeling good",
-        "notes": "Reach 30 km feeling fresh, then press slightly. Otherwise hold."
+        "target": "6:20/km from km 10",
+        "notes": "If you reach 32 km still strong, press to 6:10. Otherwise hold."
       },
-      "targetHR": "150–162 bpm",
-      "lastTenK": "Whatever's left. Pass people from km 32 on.",
-      "warnings": "Your easy pace is quick now, which will tempt you to start fast. Don't. Endurance, not speed, is the unknown in your first marathon."
+      "targetHR": "152–162 bpm",
+      "lastTenK": "Whatever remains. Aim to pass people from km 32 on.",
+      "warnings": "Your easy pace is now ~6:25, so 6:20 will feel deceptively comfortable at the start. The marathon punishes that feeling at km 32. Hold the leash for 10 km."
     },
     "nutrition": {
-      "preRace": "Night before: pasta + lean protein, nothing new. 3 hr before: 100g carbs (oatmeal+banana+honey, low fiber). 1 cup coffee 60 min before if usual.",
+      "preRace": "Night before: pasta + lean protein, nothing new. 3 hr before: ~100g carbs (oatmeal, banana, honey, low fibre). Coffee 60 min before if usual.",
       "during": {
         "carbsPerHour": "60–80g",
         "fluidPerHour": "500–750 ml",
-        "schedule": "Gel at km 8, then every 5 km (8/13/18/23/28/33/37). ~25g carbs each. Walk aid stations to drink cleanly.",
-        "products": "Only what you've practiced in long runs."
+        "schedule": "Gel at km 8, then every 5 km (8/13/18/23/28/33/37). ~25g each. Walk aid stations to drink properly.",
+        "products": "Only what you have practised in long runs."
       },
-      "rule": "Nothing new on race day. Lock your fuel protocol in long runs from week 15."
+      "rule": "Nothing new on race day. Lock the fuel protocol in from the 24 km run onward."
     },
     "raceMorning": {
       "wakeUp": "3:00 hrs before start",
       "breakfast": "2:30–3:00 before — familiar carbs only",
-      "warmUp": "10 min easy + 4 strides 30 min before",
-      "gear": "Only what you've trained in. New = blisters."
+      "warmUp": "10 min easy + 4 strides, 30 min before",
+      "gear": "Only what you have trained in. New shoes = blisters."
     },
     "mentalCues": [
-      "Km 1–10: 'Easy. So easy. Supposed to feel slow.'",
-      "Km 11–21: 'Settle in. Rhythm. Drink and fuel.'",
-      "Km 22–32: 'Now the race begins. Stay relaxed.'",
-      "Km 33–42: 'Everyone hurts now. The training is in my legs. One km at a time.'"
+      "Km 1–10: 'Too easy. Good. That's the plan.'",
+      "Km 11–21: 'Rhythm. Drink. Fuel. Relax the shoulders.'",
+      "Km 22–32: 'Now the race starts. Quick feet, tall posture.'",
+      "Km 33–42: 'Everyone hurts now. The 32 km run is in my legs. One km at a time.'"
     ],
     "postRace": {
       "immediate": "Keep walking 10 min. Electrolytes. Eat within 30 min.",
-      "next72hrs": "Light walking only. No running. Sleep. Celebrate!",
-      "return": "First easy jog 5–7 days after. Two weeks unstructured before structure."
+      "next72hrs": "Light walking only. No running. Sleep.",
+      "return": "First easy jog 5–7 days after. Two unstructured weeks before any structure."
     }
   },
   "coachingNotes": [
-    "📅 REVISION 2 (June 23): Rebuilt to 24 weeks from your current week. You skipped re-base and adapted well, so this starts in Base. Peak (30 km) & 3-week taper unchanged.",
-    "📈 Your data: easy pace held at ~6:30/km while HR dropped from 159→139 over 3 weeks. That's real aerobic fitness. Paces recalibrated faster to match.",
-    "🏃 THE LONG RUN IS THE JOB NOW. Your runs cluster at 4–6 km; the marathon is won on the Saturday long run. It grows ~1–2 km/week. Keep it SLOWER than your easy runs (7:00–7:30/km).",
-    "💪 Strength is your weak link — you said 'occasionally.' Two real sessions a week (Mon + Fri). This is what keeps the knee quiet as long runs pass 15 km. Don't skip it.",
-    "🦵 Knee is symptom-free — protect that. The cautious progression that built it still applies: any sharp or persistent pain = scale back immediately, see a physio. Achy/stiff is normal.",
-    "😴 Recovery is your real limiter (1yo + work). The Wednesday run is OPTIONAL — skip it freely on bad-sleep weeks. 3 quality runs > 4 tired ones.",
-    "🥗 As long runs grow, fuel them: ~250–350g carbs on long-run days. Practice race fuel from week 15.",
-    "⌚ Keep exporting from your Watch every few weeks. The HR-at-pace trend is exactly how we'll know if the goal time can come down. Next check-in: after your first 18–20 km run.",
-    "🧪 Around week 6, do a 5K time trial (all-out, flat) to validate your tempo/threshold zones — they're still estimated."
+    "📈 REVISION 3 (Aug 16): Your 15 km at 6:28/km with mean HR 146 and only +3 bpm drift over 96 minutes is a genuinely strong aerobic performance. Efficiency factor is up 14% since June at identical heart rate. Goal pace moves from 6:55 to 6:20/km (~4:27 finish).",
+    "🎯 The new goal is provisional. It is built on a 15 km effort — the 26 km and 28 km runs in October are what actually confirm it. If those go well, 6:10 is on the table. If they hurt, we move back toward 6:35. No ego either way.",
+    "👟 Cadence went 143 → 165 spm. That is a real, meaningful change: shorter stride, less impact per footfall, and very likely part of why the knee has stayed quiet. Keep it there — the strides sessions exist partly to maintain it.",
+    "💪 STRENGTH IS THE GAP. Two sessions logged since June. You are about to double your long run from 15 to 32 km. Single-leg and glute work is what keeps a quiet knee quiet under that load. Monday and Friday, 25–30 minutes. This is the one thing in the plan I would not negotiate on.",
+    "⛰️ Your runs carry real climbing — the 15 km had ~378 m of ascent (124 flights), the 12 km on Aug 2 had ~418 m. The Elevation Ascended field exports blank, but Flights Climbed captures it. Hill repeats stay in the plan. Valencia is pancake-flat, so your flat-ground pace is very likely 10–20 sec/km quicker than these numbers suggest — the 6:20 goal has margin.",
+    "🏃 Long runs are now the whole game: 16 → 18 → 20 → 22 → 24 → 26 → 28 → 30 → 32 km. Keep them at HR 138–150 (~6:40–7:05/km) — slower than your easy runs. Time on feet builds the durability that pace cannot.",
+    "😴 Recovery is your real limiter (work + a 1-year-old). The Wednesday run stays OPTIONAL. Three quality runs beat four tired ones, every time.",
+    "🥗 From the 24 km run onward, practise race fuelling exactly: 30g carbs every 30 min. Your gut needs training as much as your legs.",
+    "⌚ Duplicate 'Indoor Run' entries appeared alongside outdoor runs in July–early August (Watchletic recording without GPS). They stopped after Aug 4 — worth confirming your recording setup is clean so training load isn't double-counted.",
+    "🧪 Next checkpoint: after the 26 km run (week 8, early October). Export then and we will finalise race pace."
   ]
 }
