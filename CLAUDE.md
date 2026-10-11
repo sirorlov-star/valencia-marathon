@@ -25,13 +25,15 @@ When the user asks to change the plan (e.g. "shift the goal pace", "add a week",
 
 ## Conventions
 
-- The plan is for a first-time marathoner. Keep progression conservative: long-run jumps ≤ ~2 km/week, a recovery (cutback) week every 3–4 weeks, never shorten the 3-week taper, peak long run 30 km.
+- The plan is for a first-time marathoner. Keep progression conservative: long-run jumps ≤ ~2 km/week, a recovery (cutback) week every 3–4 weeks, never shorten the 3-week taper, peak long run 32 km (raised in Rev 3).
 - All workout intensity targets are **heart-rate based** (`% HR` of max HR). Do not switch to pace targets unless explicitly asked.
-- Max HR assumption is 188, LTHR 168. If the user updates these, change them in `generate_plan.py` zones and mention they must also be set in Intervals.icu Run settings.
+- Max HR assumption is 188, LTHR ~170. Marathon-pace band is 77–84% (145–158 bpm) since Rev 4. If the user updates these, change them in `generate_plan.py` zones and `sync_intervals.py`, and mention they must also be set in Intervals.icu Run settings.
+- Past weeks are history: when revising, keep earlier weeks' workouts unchanged and mark missed weeks with `("x", planned name)` cells rather than deleting them.
 - Keep `index.html` a single self-contained file (no external assets besides Google Fonts).
 
 ## Guardrails
 
 - Never print or echo `INTERVALS_API_KEY` or any secret.
-- `sync_intervals.py` deletes and recreates planned events in the plan's date range only; it never touches completed activities. Mention this when you run it.
+- `sync_intervals.py` deletes and recreates planned events from today (Europe/Amsterdam) to race day only; it never touches past planned workouts or completed activities. Mention this when you run it.
+- A merge to `main` that changes `plan.json` triggers `.github/workflows/sync-intervals.yml`, which runs the sync with the `INTERVALS_API_KEY` repo secret. After it runs, the user re-imports in Watchletic.
 - After any change, verify `python3 build_site.py` runs cleanly before committing.

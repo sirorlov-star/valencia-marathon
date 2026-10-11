@@ -103,6 +103,7 @@ section{padding:clamp(36px,6vh,96px) clamp(16px,4vw,48px);position:relative;z-in
 .workout-card.strength{border-left-color:var(--olive)}
 .workout-card.mobility{border-left-color:var(--sea-2)}
 .workout-card.rest{border-left-color:var(--muted);opacity:.55}
+.workout-card.missed{border-left-color:var(--muted);opacity:.45;font-style:italic}
 .workout-card.completed{opacity:.5}
 .workout-card.completed .wo-name{text-decoration:line-through}
 .wo-sport{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.15em;text-transform:uppercase;color:var(--muted-2);margin-bottom:4px}
@@ -179,18 +180,18 @@ h1.title{font-size:clamp(48px,18vw,80px)}
 </head>
 <body>
 <header class="hero">
-  <div class="topbar"><span><span class="dot"></span>Claude Coach · Personal Plan · rev2</span><span id="today">—</span></div>
+  <div class="topbar"><span><span class="dot"></span>Claude Coach · Personal Plan · <span id="rev-tag">rev</span></span><span id="today">—</span></div>
   <div class="hero-grid"><div>
     <div class="eyebrow">First Marathon · Sunday 6 December 2026</div>
     <h1 class="title">Valencia,<br><em>42.2</em></h1>
-    <p class="tagline">24 weeks out, ahead of schedule, and building the engine. Start line healthy, finish line proud.</p>
+    <p class="tagline" id="tagline">Start line healthy, finish line proud.</p>
   </div></div>
   <div class="hero-stats">
     <div class="stat" id="countdown"><div class="stat-label">Days to Race</div><div class="stat-value" id="days-left">—<span class="unit">days</span></div></div>
-    <div class="stat"><div class="stat-label">Plan Length</div><div class="stat-value">24<span class="unit">weeks</span></div></div>
-    <div class="stat"><div class="stat-label">Peak Long Run</div><div class="stat-value">30<span class="unit">km</span></div></div>
-    <div class="stat"><div class="stat-label">Goal Time</div><div class="stat-value">4:51<span class="unit">finish</span></div></div>
-    <div class="stat"><div class="stat-label">Goal Pace</div><div class="stat-value">6:55<span class="unit">/km</span></div></div>
+    <div class="stat"><div class="stat-label">Plan Length</div><div class="stat-value" id="stat-weeks">—<span class="unit">weeks</span></div></div>
+    <div class="stat"><div class="stat-label">Peak Long Run</div><div class="stat-value" id="stat-peak">—<span class="unit">km</span></div></div>
+    <div class="stat"><div class="stat-label">Goal Time</div><div class="stat-value" id="stat-goal-time">—<span class="unit">finish</span></div></div>
+    <div class="stat"><div class="stat-label">Goal Pace</div><div class="stat-value" id="stat-goal-pace">—<span class="unit">/km</span></div></div>
   </div>
 </header>
 <nav class="tabs">
@@ -200,11 +201,11 @@ h1.title{font-size:clamp(48px,18vw,80px)}
   <button class="tab" data-panel="race"><span class="tab-num">04</span>Race Strategy</button>
 </nav>
 <section id="panel-overview" class="panel active">
-  <div class="section-header"><span class="num">01</span><h2>Overview</h2><span class="deck">24 weeks to race day, recalibrated to the fitness your watch data shows.</span></div>
-  <div class="revision-banner"><strong>Revision 2 · June 23 check-in</strong>Rebuilt from your 3 weeks of logged runs. You skipped re-base and adapted fast — easy pace held at ~6:30/km while HR dropped from 159 → 139. Paces recalibrated faster, long-run ramp accelerated, no more run/walk. The long run is now the priority.</div>
+  <div class="section-header"><span class="num">01</span><h2>Overview</h2><span class="deck" id="overview-deck"></span></div>
+  <div class="revision-banner" id="revision-banner"></div>
   <div class="assessment-grid" id="assessment-grid"></div>
   <div class="chart-wrap"><div class="chart-title">Weekly Long-Run Distance · Macro Progression</div><svg class="chart-svg" id="chart-svg" preserveAspectRatio="none"></svg></div>
-  <h3 style="font-family:'Fraunces',serif;font-size:26px;font-weight:500;margin:40px 0 20px">Four Phases</h3>
+  <h3 style="font-family:'Fraunces',serif;font-size:26px;font-weight:500;margin:40px 0 20px" id="phases-title">Phases</h3>
   <div class="phase-strip" id="phase-strip"></div>
   <div class="notes-box"><h3>Coaching Notes</h3><ul id="coaching-notes"></ul></div>
 </section>
@@ -216,14 +217,14 @@ h1.title{font-size:clamp(48px,18vw,80px)}
   <div class="days-grid" id="days-grid"></div>
 </section>
 <section id="panel-zones" class="panel">
-  <div class="section-header"><span class="num">03</span><h2>Training Zones</h2><span class="deck">Refined from 11 logged runs. Validate Z4/Z5 with a 5K time trial around week 6.</span></div>
+  <div class="section-header"><span class="num">03</span><h2>Training Zones</h2><span class="deck" id="zones-deck"></span></div>
   <div class="zones-grid" id="zones-grid"></div>
 </section>
 <section id="panel-race" class="panel">
   <div class="section-header"><span class="num">04</span><h2>Race Strategy</h2><span class="deck">Pacing, fueling, mental cues. Read this twice in race week.</span></div>
   <div class="race-grid" id="race-grid"></div>
 </section>
-<footer><p>Generated by Claude Coach · Revision 2, June 23 2026.<br>💡 <strong style="color:var(--paper-2)">On iPhone:</strong> open the hosted URL in Safari → Share → "Add to Home Screen" for app-like access. Progress saves automatically in your browser.
+<footer><p>Generated by Claude Coach · <span id="footer-rev"></span><br>💡 <strong style="color:var(--paper-2)">On iPhone:</strong> open the hosted URL in Safari → Share → "Add to Home Screen" for app-like access. Progress saves automatically in your browser.
 <button class="reset-btn" onclick="resetProgress()">Reset Progress</button></p></footer>
 <div class="modal" id="modal" onclick="if(event.target===this)closeModal()">
   <div class="modal-content"><button class="modal-close" onclick="closeModal()">×</button>
@@ -232,7 +233,7 @@ h1.title{font-size:clamp(48px,18vw,80px)}
 </div>
 <script>
 const PLAN={
-  "version": "3.0",
+  "version": "4.0",
   "meta": {
     "id": "valencia-marathon-2026",
     "athlete": "First-Time Marathoner",
@@ -241,10 +242,14 @@ const PLAN={
     "planStartDate": "2026-08-17",
     "planEndDate": "2026-12-06",
     "createdAt": "2026-08-16T00:00:00Z",
-    "updatedAt": "2026-08-16T00:00:00Z",
+    "updatedAt": "2026-10-11T00:00:00Z",
     "totalWeeks": 16,
     "generatedBy": "Claude Coach",
-    "revisionNote": "Revision 3 (Aug 16). 15 km at 6:28/km over ~378 m climbing, HR 146, +3bpm drift over 96 min. EF +14% since June, cadence 143->165. Goal pace revised 6:55 -> 6:20/km. Peak long run raised to 32 km. Hill repeats retained (dune terrain)."
+    "tagline": "One week lost, nothing broken. Eight weeks to go — the long runs that matter are still ahead.",
+    "overviewDeck": "16-week build from 15 km to race day, recalibrated on Oct 11 from the Aug–Oct watch data.",
+    "zonesDeck": "Heart-rate targets drive every workout on the watch. Paces below are what those heart rates produced in Aug–Oct.",
+    "revisionTitle": "Revision 4 · Oct 11 check-in",
+    "revisionNote": "Week 8 (Oct 5–11) was lost to a business trip and illness. It takes the place of the recovery week that was scheduled next, so week 9 becomes an easy return week, the missed 26 km with a marathon-pace finish moves to Oct 24, the 30 km follows on Oct 31, and the 32 km peak and 3-week taper stay where they were. Goal pace moves from 6:20 to ~6:00/km (≈4:13): the last 4 km of the 24 km ran 5:48–5:51/km. The marathon-pace heart-rate band drops to 145–158 so Thursday sessions line up with that pace."
   },
   "preferences": {
     "swim": "meters",
@@ -257,57 +262,57 @@ const PLAN={
       "raceHistory": [
         "No prior races — first marathon"
       ],
-      "peakTrainingLoad": "36 km/week, longest run 15 km",
+      "peakTrainingLoad": "46 km/week, longest run 24 km",
       "foundationLevel": "novice",
       "yearsInSport": 10,
-      "notes": "8 weeks of consistent training with zero missed weeks. Handling 4 runs/week comfortably."
+      "notes": "Consistent training since June 1. One week lost (Oct 5–11) to a business trip and illness."
     },
     "currentForm": {
       "weeklyVolume": {
-        "total": 36,
-        "run": 36
+        "total": 39,
+        "run": 39
       },
       "longestSessions": {
-        "run": 15
+        "run": 24
       },
-      "consistency": "Excellent — no gaps since June 1",
-      "notes": "15 km at 6:28/km over ~378 m of climbing, mean HR 146, peak 157, only +3 bpm drift over 96 min. Even 5 km splits (6:24/6:35/6:24). Efficiency factor up 14% since June."
+      "consistency": "Very good — one missed week in nineteen",
+      "notes": "24 km on Oct 3 at 6:14/km average, HR ~150; last 4 km at 5:48–5:51/km (HR 154–160). Pace-to-heart-rate drift stayed at or under ~4% on all seven long runs of 15–24 km since mid-August."
     },
     "strengths": [
       {
         "sport": "run",
-        "evidence": "Only +3 bpm cardiac drift over 96 min on hilly terrain — exceptional aerobic control"
+        "evidence": "Aerobic durability: pace-to-HR drift ≤4% on every long run from 15 to 24 km"
       },
       {
         "sport": "run",
-        "evidence": "Cadence improved 143 -> 165 spm, reducing impact load per step"
+        "evidence": "Finished the 24 km with 4 km at 5:48–5:51/km — about 30 s/km faster than the Rev 3 goal pace"
       },
       {
         "sport": "run",
-        "evidence": "Efficiency factor +14% in 8 weeks (same HR, 1:10/km faster)"
+        "evidence": "Tempo reps at ~5:05/km and MP reps at 5:15–5:35/km, all inside their heart-rate bands"
       },
       {
-        "sport": "general",
-        "evidence": "Zero missed training weeks; knee has stayed symptom-free"
+        "sport": "run",
+        "evidence": "Easy-run efficiency up ~8% from June to September; ground contact time down from ~310 to ~265 ms"
       }
     ],
     "limiters": [
       {
         "sport": "strength",
-        "evidence": "Only 2 strength sessions logged since June — the main injury risk as volume climbs"
+        "evidence": "Four strength sessions logged since June — still the main injury risk as the long run goes to 32 km"
       },
       {
         "sport": "run",
-        "evidence": "Untested beyond 15 km; the 25–42 km range is entirely unknown territory"
+        "evidence": "Never beyond 24 km. At km 17–19 of the 24 km, HR rose to 153–159 while pace slipped to 6:29–6:35 — fuelling and durability to test at 26 and 30 km"
       },
       {
-        "sport": "run",
-        "evidence": "Long runs carry ~25 m/km of climbing — great training, but means flat-ground race pace is still unmeasured"
+        "sport": "general",
+        "evidence": "Returning from 8 days off (travel + illness); the first week back has to be easy"
       }
     ],
     "constraints": [
       "3–4 running days/week",
-      "9-to-5 work + two children (1 yo & 11 yo)",
+      "9-to-5 work, business travel + two children (1 yo & 11 yo)",
       "Bodyweight strength only (home)",
       "Rolling dune terrain near the coast — hillier than the flat Valencia course"
     ]
@@ -317,7 +322,7 @@ const PLAN={
       "hr": {
         "lthr": 170,
         "maxEstimated": 188,
-        "notes": "Observed max 183 in hard sessions. Zones validated against 8 weeks of data — easy runs sit correctly at 142–147.",
+        "notes": "Max HR 188 (observed 185 on strides). Tempo reps held 166–168 for 10 minutes, consistent with LTHR ~170. Marathon band lowered in Rev 4 to 145–158.",
         "zones": [
           {
             "zone": 1,
@@ -330,15 +335,15 @@ const PLAN={
             "zone": 2,
             "name": "Easy/Aerobic",
             "hrLow": 132,
-            "hrHigh": 150,
+            "hrHigh": 148,
             "feels": "Conversational — where most runs live"
           },
           {
             "zone": 3,
-            "name": "Marathon Pace",
-            "hrLow": 150,
-            "hrHigh": 162,
-            "feels": "Comfortably hard, full sentences"
+            "name": "Marathon",
+            "hrLow": 145,
+            "hrHigh": 158,
+            "feels": "Steady, full sentences — race HR until km 30"
           },
           {
             "zone": 4,
@@ -349,21 +354,22 @@ const PLAN={
           },
           {
             "zone": 5,
-            "name": "Threshold",
+            "name": "Threshold+",
             "hrLow": 172,
-            "hrHigh": 185,
+            "hrHigh": 188,
             "feels": "Very hard — single words"
           }
         ]
       },
       "pace": {
-        "marathonGoalPace": "6:20/km",
-        "marathonGoalRange": "6:10–6:35/km (4:20–4:38 finish)",
-        "easy": "6:30–7:00/km",
-        "longRun": "6:40–7:05/km",
-        "tempo": "5:50–6:05/km",
-        "threshold": "5:30–5:45/km",
-        "notes": "Revised UP from 6:55/km after the 15 km at 6:28 with negligible drift. Final goal confirmed after the 26–28 km runs in October."
+        "marathonGoalPace": "6:00/km",
+        "marathonGoalTime": "4:13",
+        "marathonGoalRange": "5:50–6:10/km (4:06–4:20 finish)",
+        "easy": "6:00–6:30/km",
+        "longRun": "6:10–6:40/km",
+        "tempo": "5:05–5:20/km",
+        "threshold": "4:50–5:05/km",
+        "notes": "From Aug–Oct runs at the stated heart rates. Goal pace is confirmed by the marathon-pace finishes of the 26 km (Oct 24) and 30 km (Oct 31)."
       }
     }
   },
@@ -372,7 +378,7 @@ const PLAN={
       "name": "Build",
       "startWeek": 1,
       "endWeek": 8,
-      "focus": "Tempo + MP work, long run to 26 km",
+      "focus": "Tempo + MP work, long run to 24 km",
       "weeklyHoursRange": {
         "low": 5.5,
         "high": 9.5
@@ -388,14 +394,15 @@ const PLAN={
       "name": "Peak",
       "startWeek": 9,
       "endWeek": 13,
-      "focus": "Marathon-specific, long run to 32 km",
+      "focus": "Return week, then 26 → 30 → 32 km",
       "weeklyHoursRange": {
-        "low": 6.5,
+        "low": 4,
         "high": 11
       },
       "keyWorkouts": [
         "Long run with MP finish",
-        "MP blocks"
+        "MP blocks",
+        "Tempo"
       ]
     },
     {
@@ -1402,8 +1409,8 @@ const PLAN={
       "startDate": "2026-10-05",
       "endDate": "2026-10-11",
       "phase": "Build",
-      "focus": "26 km with MP finish",
-      "targetHours": 9.5,
+      "focus": "Missed — business trip, then ill",
+      "targetHours": 0.0,
       "isRecoveryWeek": false,
       "days": [
         {
@@ -1411,15 +1418,13 @@ const PLAN={
           "dayOfWeek": "Monday",
           "workouts": [
             {
-              "name": "Strength B — Core & Stability",
-              "description": "Core + single-leg balance. Protects form when you fatigue late in long runs.",
-              "durationMinutes": 25,
-              "humanReadable": "Warm-up (5 min): cat-cow, bird-dog 2x8\nMain (3 rounds, 45s rest):\n  • Plank — 30–45s\n  • Side plank — 20–30s each side\n  • Dead bug — 8 each side\n  • Single-leg deadlift — 8 each leg\n  • Step-ups onto chair — 10 each leg\nCool-down (5 min): pigeon stretch, child's pose",
-              "id": "w8-mon-str",
-              "sport": "strength",
-              "type": "strength",
-              "primaryZone": "Z2",
-              "completed": false
+              "id": "w8-mon-missed",
+              "sport": "missed",
+              "type": "missed",
+              "name": "Missed — trip / illness",
+              "description": "Planned: Strength B — Core & Stability",
+              "completed": false,
+              "humanReadable": "Week lost to a business trip followed by illness. Not made up — the plan absorbs it (see Revision 4)."
             }
           ]
         },
@@ -1428,16 +1433,13 @@ const PLAN={
           "dayOfWeek": "Tuesday",
           "workouts": [
             {
-              "id": "w8-tue-run",
-              "sport": "run",
-              "type": "run",
+              "id": "w8-tue-missed",
+              "sport": "missed",
+              "type": "missed",
+              "name": "Missed — trip / illness",
+              "description": "Planned: Easy Run — 55 min",
               "completed": false,
-              "name": "Easy Run — 55 min",
-              "description": "Easy/conversational. HR 135–148. Let pace be whatever that allows.",
-              "durationMinutes": 55,
-              "distanceKm": 8,
-              "primaryZone": "Z2 Easy",
-              "humanReadable": "Warm-up: 5 min very easy\nMain: 45 min easy (HR 135–148, ~6:30–7:00/km)\nCool-down: 5 min easy + stretch"
+              "humanReadable": "Week lost to a business trip followed by illness. Not made up — the plan absorbs it (see Revision 4)."
             }
           ]
         },
@@ -1446,16 +1448,13 @@ const PLAN={
           "dayOfWeek": "Wednesday",
           "workouts": [
             {
-              "id": "w8-wed-run",
-              "sport": "run",
-              "type": "run",
+              "id": "w8-wed-missed",
+              "sport": "missed",
+              "type": "missed",
+              "name": "Missed — trip / illness",
+              "description": "Planned: Easy Run — 40 min (optional)",
               "completed": false,
-              "name": "Easy Run — 40 min (optional 4th run)",
-              "description": "Optional. Run only if recovery is good — skip freely on bad-sleep weeks.",
-              "durationMinutes": 40,
-              "distanceKm": 6,
-              "primaryZone": "Z2 Easy",
-              "humanReadable": "OPTIONAL — only if you feel fresh.\nWarm-up: 5 min\nMain: 30 min very easy (HR <145)\nCool-down: 5 min\n\nTired, poor sleep, or any knee signal? Do mobility instead."
+              "humanReadable": "Week lost to a business trip followed by illness. Not made up — the plan absorbs it (see Revision 4)."
             }
           ]
         },
@@ -1464,15 +1463,13 @@ const PLAN={
           "dayOfWeek": "Thursday",
           "workouts": [
             {
-              "id": "w8-thu-run",
-              "sport": "run",
-              "type": "run",
+              "id": "w8-thu-missed",
+              "sport": "missed",
+              "type": "missed",
+              "name": "Missed — trip / illness",
+              "description": "Planned: Tempo — 3x12 min",
               "completed": false,
-              "name": "Tempo — 3x12 min",
-              "description": "Threshold work. Raises the ceiling your marathon pace sits under.",
-              "durationMinutes": 60,
-              "primaryZone": "Z4 Tempo",
-              "humanReadable": "Warm-up: 15 min easy\nMain: 3 x 12 min @ tempo (5:50–6:05/km, HR 162–172), 3 min jog recovery\nCool-down: 10 min easy"
+              "humanReadable": "Week lost to a business trip followed by illness. Not made up — the plan absorbs it (see Revision 4)."
             }
           ]
         },
@@ -1481,15 +1478,13 @@ const PLAN={
           "dayOfWeek": "Friday",
           "workouts": [
             {
-              "name": "Strength A — Lower Body Foundation",
-              "description": "Knee insurance. Single-leg & glute work. Critical now that long runs pass 20 km.",
-              "durationMinutes": 30,
-              "humanReadable": "Warm-up (5 min): leg swings, hip circles, glute bridges 2x10\nMain (3 rounds, 60s rest):\n  • Bodyweight squats — 12 reps\n  • Reverse lunges — 8 each leg\n  • Single-leg glute bridges — 10 each leg\n  • Calf raises — 15 reps\n  • Side-lying clamshells — 12 each side\nCool-down (5 min): hip flexor & quad stretches",
-              "id": "w8-fri-str",
-              "sport": "strength",
-              "type": "strength",
-              "primaryZone": "Z2",
-              "completed": false
+              "id": "w8-fri-missed",
+              "sport": "missed",
+              "type": "missed",
+              "name": "Missed — trip / illness",
+              "description": "Planned: Strength A — Lower Body Foundation",
+              "completed": false,
+              "humanReadable": "Week lost to a business trip followed by illness. Not made up — the plan absorbs it (see Revision 4)."
             }
           ]
         },
@@ -1498,16 +1493,13 @@ const PLAN={
           "dayOfWeek": "Saturday",
           "workouts": [
             {
-              "id": "w8-sat-run",
-              "sport": "run",
-              "type": "run",
+              "id": "w8-sat-missed",
+              "sport": "missed",
+              "type": "missed",
+              "name": "Missed — trip / illness",
+              "description": "Planned: Long Run — 26 km (last 6 km @ MP)",
               "completed": false,
-              "name": "Long Run — 26 km (last 6 km @ MP)",
-              "description": "Last 6 km at MP. Rehearse your fuel plan exactly.",
-              "distanceKm": 26,
-              "durationMinutes": 171,
-              "primaryZone": "Z2 + Z3 (MP)",
-              "humanReadable": "Warm-up: 1 km very easy\nMain:\n  • 20 km easy (HR 138–150, ~6:40–7:00/km)\n  • 6 km @ marathon pace (6:20/km, HR 152–162)\nCool-down: 5 min walk\nFuel: 30g carbs every 30 min after the first hour. Water every 15 min."
+              "humanReadable": "Week lost to a business trip followed by illness. Not made up — the plan absorbs it (see Revision 4)."
             }
           ]
         },
@@ -1516,24 +1508,24 @@ const PLAN={
           "dayOfWeek": "Sunday",
           "workouts": [
             {
-              "id": "w8-sun-rest",
-              "sport": "rest",
-              "type": "rest",
-              "name": "Rest Day",
-              "description": "Full recovery — adaptation happens now.",
-              "humanReadable": "Sleep, hydrate, eat well. Light walking is fine.",
-              "completed": false
+              "id": "w8-sun-missed",
+              "sport": "missed",
+              "type": "missed",
+              "name": "Missed — trip / illness",
+              "description": "Planned: Rest Day",
+              "completed": false,
+              "humanReadable": "Week lost to a business trip followed by illness. Not made up — the plan absorbs it (see Revision 4)."
             }
           ]
         }
       ],
       "summary": {
-        "totalHours": 5.4,
+        "totalHours": 0,
         "bySport": {
           "run": {
-            "sessions": 4,
-            "hours": 5.4,
-            "km": 40
+            "sessions": 0,
+            "hours": 0,
+            "km": 0
           }
         }
       }
@@ -1543,8 +1535,8 @@ const PLAN={
       "startDate": "2026-10-12",
       "endDate": "2026-10-18",
       "phase": "Peak",
-      "focus": "Recovery week — don't skip",
-      "targetHours": 6.5,
+      "focus": "Return week — ease back in after illness",
+      "targetHours": 4.0,
       "isRecoveryWeek": true,
       "days": [
         {
@@ -1552,12 +1544,14 @@ const PLAN={
           "dayOfWeek": "Monday",
           "workouts": [
             {
-              "id": "w9-mon-rest",
-              "sport": "rest",
-              "type": "rest",
-              "name": "Rest Day",
-              "description": "Full recovery — adaptation happens now.",
-              "humanReadable": "Sleep, hydrate, eat well. Light walking is fine.",
+              "name": "Mobility & Recovery",
+              "description": "Light movement — supports recovery.",
+              "durationMinutes": 15,
+              "humanReadable": "10–15 min:\n  • Foam roll quads, calves, glutes (5 min)\n  • Hip flexor stretch 60s each\n  • Hamstring stretch 60s each\n  • Ankle circles & calf stretch",
+              "id": "w9-mon-mob",
+              "sport": "mobility",
+              "type": "recovery",
+              "primaryZone": "Recovery",
               "completed": false
             }
           ]
@@ -1571,12 +1565,12 @@ const PLAN={
               "sport": "run",
               "type": "run",
               "completed": false,
-              "name": "Easy Run — 45 min",
-              "description": "Easy/conversational. HR 135–148. Let pace be whatever that allows.",
-              "durationMinutes": 45,
-              "distanceKm": 7,
+              "name": "Easy Run — 40 min",
+              "description": "First run back. Fever gone and only above-the-neck symptoms? Run it easy. Fever, chest symptoms or aches = another rest day.",
+              "durationMinutes": 40,
+              "distanceKm": 6.5,
               "primaryZone": "Z2 Easy",
-              "humanReadable": "Warm-up: 5 min very easy\nMain: 35 min easy (HR 135–148, ~6:30–7:00/km)\nCool-down: 5 min easy + stretch"
+              "humanReadable": "Warm-up: 5 min very easy\nMain: 30 min easy (HR 132–148, ~6:00–6:30/km)\nCool-down: 5 min easy + stretch"
             }
           ]
         },
@@ -1606,12 +1600,11 @@ const PLAN={
               "sport": "run",
               "type": "run",
               "completed": false,
-              "name": "Easy Run — 50 min",
-              "description": "Easy/conversational. HR 135–148. Let pace be whatever that allows.",
-              "durationMinutes": 50,
-              "distanceKm": 7.5,
-              "primaryZone": "Z2 Easy",
-              "humanReadable": "Warm-up: 5 min very easy\nMain: 40 min easy (HR 135–148, ~6:30–7:00/km)\nCool-down: 5 min easy + stretch"
+              "name": "Easy + 4 Strides — 45 min",
+              "description": "Easy aerobic plus short pickups to hold leg speed and high cadence.",
+              "durationMinutes": 45,
+              "primaryZone": "Z2 + Strides",
+              "humanReadable": "Warm-up: 15 min easy\nMain: 20 min easy\nStrides: 4 x 20s acceleration to ~5K effort, 60s walk between\nCool-down: 5 min easy"
             }
           ]
         },
@@ -1641,12 +1634,12 @@ const PLAN={
               "sport": "run",
               "type": "run",
               "completed": false,
-              "name": "Long Run — 18 km",
-              "description": "The engine of your marathon. Keep it genuinely easy — time on feet beats pace.",
-              "distanceKm": 18,
-              "durationMinutes": 122,
+              "name": "Long Run — 16 km",
+              "description": "Easy only, no MP. If HR sits above 150 at an easy pace, cut it to 12 km — you're not fully recovered yet.",
+              "distanceKm": 16,
+              "durationMinutes": 102,
               "primaryZone": "Z2 Easy",
-              "humanReadable": "Warm-up: 1 km very easy\nMain: 17 km easy (HR 138–150, ~6:40–7:05/km)\nCool-down: 5 min walk + stretches\nFuel: after 75 min take 30g carbs. Water every 15 min."
+              "humanReadable": "Warm-up: 1 km very easy\nMain: 15 km easy (HR 138–148, ~6:10–6:40/km)\nCool-down: 5 min walk + stretches\nFuel: after 75 min take 30g carbs. Water every 15 min."
             }
           ]
         },
@@ -1667,12 +1660,12 @@ const PLAN={
         }
       ],
       "summary": {
-        "totalHours": 3.6,
+        "totalHours": 3.1,
         "bySport": {
           "run": {
             "sessions": 3,
-            "hours": 3.6,
-            "km": 32.5
+            "hours": 3.1,
+            "km": 22.5
           }
         }
       }
@@ -1682,8 +1675,8 @@ const PLAN={
       "startDate": "2026-10-19",
       "endDate": "2026-10-25",
       "phase": "Peak",
-      "focus": "28 km — the confidence run",
-      "targetHours": 10.0,
+      "focus": "Back on track — the missed 26 km",
+      "targetHours": 9.0,
       "isRecoveryWeek": false,
       "days": [
         {
@@ -1712,12 +1705,12 @@ const PLAN={
               "sport": "run",
               "type": "run",
               "completed": false,
-              "name": "Easy Run — 55 min",
-              "description": "Easy/conversational. HR 135–148. Let pace be whatever that allows.",
-              "durationMinutes": 55,
+              "name": "Easy Run — 50 min",
+              "description": "Easy/conversational. HR 132–148. Let pace be whatever that allows.",
+              "durationMinutes": 50,
               "distanceKm": 8,
               "primaryZone": "Z2 Easy",
-              "humanReadable": "Warm-up: 5 min very easy\nMain: 45 min easy (HR 135–148, ~6:30–7:00/km)\nCool-down: 5 min easy + stretch"
+              "humanReadable": "Warm-up: 5 min very easy\nMain: 40 min easy (HR 132–148, ~6:00–6:30/km)\nCool-down: 5 min easy + stretch"
             }
           ]
         },
@@ -1733,7 +1726,7 @@ const PLAN={
               "name": "Easy Run — 40 min (optional 4th run)",
               "description": "Optional. Run only if recovery is good — skip freely on bad-sleep weeks.",
               "durationMinutes": 40,
-              "distanceKm": 6,
+              "distanceKm": 6.5,
               "primaryZone": "Z2 Easy",
               "humanReadable": "OPTIONAL — only if you feel fresh.\nWarm-up: 5 min\nMain: 30 min very easy (HR <145)\nCool-down: 5 min\n\nTired, poor sleep, or any knee signal? Do mobility instead."
             }
@@ -1748,11 +1741,11 @@ const PLAN={
               "sport": "run",
               "type": "run",
               "completed": false,
-              "name": "Marathon Pace Block — 35 min @ MP",
+              "name": "Marathon Pace Block — 30 min @ MP",
               "description": "Sustained goal-pace work — the cornerstone session.",
-              "durationMinutes": 65,
+              "durationMinutes": 60,
               "primaryZone": "Z3 Marathon Pace",
-              "humanReadable": "Warm-up: 15 min easy\nMain: 35 min continuous @ marathon pace (6:20/km, HR 152–162)\nCool-down: 10 min easy"
+              "humanReadable": "Warm-up: 15 min easy\nMain: 30 min continuous @ marathon pace (~6:00/km, HR 145–158)\nCool-down: 10 min easy"
             }
           ]
         },
@@ -1782,12 +1775,12 @@ const PLAN={
               "sport": "run",
               "type": "run",
               "completed": false,
-              "name": "Long Run — 28 km (last 8 km @ MP)",
-              "description": "Last 8 km at MP. Full dress rehearsal: gear, breakfast, gels.",
-              "distanceKm": 28,
-              "durationMinutes": 184,
+              "name": "Long Run — 26 km (last 6 km @ MP)",
+              "description": "The session you missed. Last 6 km at goal pace (~6:00/km, HR ≤158). First gel at 40–45 min, then every 30 min.",
+              "distanceKm": 26,
+              "durationMinutes": 163,
               "primaryZone": "Z2 + Z3 (MP)",
-              "humanReadable": "Warm-up: 1 km very easy\nMain:\n  • 20 km easy (HR 138–150, ~6:40–7:00/km)\n  • 8 km @ marathon pace (6:20/km, HR 152–162)\nCool-down: 5 min walk\nFuel: 30g carbs every 30 min after the first hour. Water every 15 min."
+              "humanReadable": "Warm-up: 1 km very easy\nMain:\n  • 20 km easy (HR 138–148, ~6:10–6:30/km)\n  • 6 km @ marathon pace (~6:00/km, HR 145–158)\nCool-down: 5 min walk\nFuel: 30g carbs every 30 min after the first hour. Water every 15 min."
             }
           ]
         },
@@ -1808,12 +1801,12 @@ const PLAN={
         }
       ],
       "summary": {
-        "totalHours": 5.7,
+        "totalHours": 5.2,
         "bySport": {
           "run": {
             "sessions": 4,
-            "hours": 5.7,
-            "km": 42
+            "hours": 5.2,
+            "km": 40.5
           }
         }
       }
@@ -1823,8 +1816,8 @@ const PLAN={
       "startDate": "2026-10-26",
       "endDate": "2026-11-01",
       "phase": "Peak",
-      "focus": "30 km",
-      "targetHours": 10.5,
+      "focus": "30 km — race-day dress rehearsal",
+      "targetHours": 10.0,
       "isRecoveryWeek": false,
       "days": [
         {
@@ -1854,11 +1847,11 @@ const PLAN={
               "type": "run",
               "completed": false,
               "name": "Easy Run — 55 min",
-              "description": "Easy/conversational. HR 135–148. Let pace be whatever that allows.",
+              "description": "Easy/conversational. HR 132–148. Let pace be whatever that allows.",
               "durationMinutes": 55,
-              "distanceKm": 8,
+              "distanceKm": 8.5,
               "primaryZone": "Z2 Easy",
-              "humanReadable": "Warm-up: 5 min very easy\nMain: 45 min easy (HR 135–148, ~6:30–7:00/km)\nCool-down: 5 min easy + stretch"
+              "humanReadable": "Warm-up: 5 min very easy\nMain: 45 min easy (HR 132–148, ~6:00–6:30/km)\nCool-down: 5 min easy + stretch"
             }
           ]
         },
@@ -1874,7 +1867,7 @@ const PLAN={
               "name": "Easy Run — 40 min (optional 4th run)",
               "description": "Optional. Run only if recovery is good — skip freely on bad-sleep weeks.",
               "durationMinutes": 40,
-              "distanceKm": 6,
+              "distanceKm": 6.5,
               "primaryZone": "Z2 Easy",
               "humanReadable": "OPTIONAL — only if you feel fresh.\nWarm-up: 5 min\nMain: 30 min very easy (HR <145)\nCool-down: 5 min\n\nTired, poor sleep, or any knee signal? Do mobility instead."
             }
@@ -1889,11 +1882,11 @@ const PLAN={
               "sport": "run",
               "type": "run",
               "completed": false,
-              "name": "MP Intervals — 5 x 2 km",
-              "description": "Lock in goal marathon pace and rhythm.",
+              "name": "Tempo — 3x10 min",
+              "description": "Threshold work. Raises the ceiling your marathon pace sits under.",
               "durationMinutes": 60,
-              "primaryZone": "Z3 Marathon Pace",
-              "humanReadable": "Warm-up: 15 min easy\nMain: 5 x 2 km @ marathon pace (6:20/km, HR 152–162), 2 min jog recovery\nCool-down: 10 min easy"
+              "primaryZone": "Z4 Tempo",
+              "humanReadable": "Warm-up: 15 min easy\nMain: 3 x 10 min @ tempo (~5:05–5:20/km, HR 162–172), 3 min jog recovery\nCool-down: 10 min easy"
             }
           ]
         },
@@ -1924,11 +1917,11 @@ const PLAN={
               "type": "run",
               "completed": false,
               "name": "Long Run — 30 km (last 6 km @ MP)",
-              "description": "Steady, then 6 km at MP. This is the big one.",
+              "description": "Full dress rehearsal: race breakfast, race kit, race shoes, race gels on the race schedule. Last 6 km at goal pace.",
               "distanceKm": 30,
-              "durationMinutes": 198,
+              "durationMinutes": 189,
               "primaryZone": "Z2 + Z3 (MP)",
-              "humanReadable": "Warm-up: 1 km very easy\nMain:\n  • 24 km easy (HR 138–150, ~6:40–7:00/km)\n  • 6 km @ marathon pace (6:20/km, HR 152–162)\nCool-down: 5 min walk\nFuel: 30g carbs every 30 min after the first hour. Water every 15 min."
+              "humanReadable": "Warm-up: 1 km very easy\nMain:\n  • 24 km easy (HR 138–148, ~6:10–6:30/km)\n  • 6 km @ marathon pace (~6:00/km, HR 145–158)\nCool-down: 5 min walk\nFuel: 30g carbs every 30 min after the first hour. Water every 15 min."
             }
           ]
         },
@@ -1949,12 +1942,12 @@ const PLAN={
         }
       ],
       "summary": {
-        "totalHours": 5.9,
+        "totalHours": 5.7,
         "bySport": {
           "run": {
             "sessions": 4,
-            "hours": 5.9,
-            "km": 44
+            "hours": 5.7,
+            "km": 45.0
           }
         }
       }
@@ -1993,11 +1986,11 @@ const PLAN={
               "type": "run",
               "completed": false,
               "name": "Easy Run — 45 min",
-              "description": "Easy/conversational. HR 135–148. Let pace be whatever that allows.",
+              "description": "Easy/conversational. HR 132–148. Let pace be whatever that allows.",
               "durationMinutes": 45,
               "distanceKm": 7,
               "primaryZone": "Z2 Easy",
-              "humanReadable": "Warm-up: 5 min very easy\nMain: 35 min easy (HR 135–148, ~6:30–7:00/km)\nCool-down: 5 min easy + stretch"
+              "humanReadable": "Warm-up: 5 min very easy\nMain: 35 min easy (HR 132–148, ~6:00–6:30/km)\nCool-down: 5 min easy + stretch"
             }
           ]
         },
@@ -2027,12 +2020,11 @@ const PLAN={
               "sport": "run",
               "type": "run",
               "completed": false,
-              "name": "Easy Run — 50 min",
-              "description": "Easy/conversational. HR 135–148. Let pace be whatever that allows.",
-              "durationMinutes": 50,
-              "distanceKm": 7.5,
-              "primaryZone": "Z2 Easy",
-              "humanReadable": "Warm-up: 5 min very easy\nMain: 40 min easy (HR 135–148, ~6:30–7:00/km)\nCool-down: 5 min easy + stretch"
+              "name": "Easy + 5 Strides — 45 min",
+              "description": "Easy aerobic plus short pickups to hold leg speed and high cadence.",
+              "durationMinutes": 45,
+              "primaryZone": "Z2 + Strides",
+              "humanReadable": "Warm-up: 15 min easy\nMain: 20 min easy\nStrides: 5 x 20s acceleration to ~5K effort, 60s walk between\nCool-down: 5 min easy"
             }
           ]
         },
@@ -2065,9 +2057,9 @@ const PLAN={
               "name": "Long Run — 20 km",
               "description": "The engine of your marathon. Keep it genuinely easy — time on feet beats pace.",
               "distanceKm": 20,
-              "durationMinutes": 136,
+              "durationMinutes": 128,
               "primaryZone": "Z2 Easy",
-              "humanReadable": "Warm-up: 1 km very easy\nMain: 19 km easy (HR 138–150, ~6:40–7:05/km)\nCool-down: 5 min walk + stretches\nFuel: after 75 min take 30g carbs. Water every 15 min."
+              "humanReadable": "Warm-up: 1 km very easy\nMain: 19 km easy (HR 138–148, ~6:10–6:40/km)\nCool-down: 5 min walk + stretches\nFuel: after 75 min take 30g carbs. Water every 15 min."
             }
           ]
         },
@@ -2088,12 +2080,12 @@ const PLAN={
         }
       ],
       "summary": {
-        "totalHours": 3.9,
+        "totalHours": 3.6,
         "bySport": {
           "run": {
             "sessions": 3,
-            "hours": 3.9,
-            "km": 34.5
+            "hours": 3.6,
+            "km": 27
           }
         }
       }
@@ -2134,11 +2126,11 @@ const PLAN={
               "type": "run",
               "completed": false,
               "name": "Easy Run — 50 min",
-              "description": "Easy/conversational. HR 135–148. Let pace be whatever that allows.",
+              "description": "Easy/conversational. HR 132–148. Let pace be whatever that allows.",
               "durationMinutes": 50,
-              "distanceKm": 7.5,
+              "distanceKm": 8,
               "primaryZone": "Z2 Easy",
-              "humanReadable": "Warm-up: 5 min very easy\nMain: 40 min easy (HR 135–148, ~6:30–7:00/km)\nCool-down: 5 min easy + stretch"
+              "humanReadable": "Warm-up: 5 min very easy\nMain: 40 min easy (HR 132–148, ~6:00–6:30/km)\nCool-down: 5 min easy + stretch"
             }
           ]
         },
@@ -2154,7 +2146,7 @@ const PLAN={
               "name": "Easy Run — 40 min (optional 4th run)",
               "description": "Optional. Run only if recovery is good — skip freely on bad-sleep weeks.",
               "durationMinutes": 40,
-              "distanceKm": 6,
+              "distanceKm": 6.5,
               "primaryZone": "Z2 Easy",
               "humanReadable": "OPTIONAL — only if you feel fresh.\nWarm-up: 5 min\nMain: 30 min very easy (HR <145)\nCool-down: 5 min\n\nTired, poor sleep, or any knee signal? Do mobility instead."
             }
@@ -2173,7 +2165,7 @@ const PLAN={
               "description": "Sustained goal-pace work — the cornerstone session.",
               "durationMinutes": 60,
               "primaryZone": "Z3 Marathon Pace",
-              "humanReadable": "Warm-up: 15 min easy\nMain: 30 min continuous @ marathon pace (6:20/km, HR 152–162)\nCool-down: 10 min easy"
+              "humanReadable": "Warm-up: 15 min easy\nMain: 30 min continuous @ marathon pace (~6:00/km, HR 145–158)\nCool-down: 10 min easy"
             }
           ]
         },
@@ -2206,9 +2198,9 @@ const PLAN={
               "name": "Long Run — 32 km",
               "description": "🏔️ Peak long run. Easy pace throughout. Your confidence bank for race day.",
               "distanceKm": 32,
-              "durationMinutes": 217,
+              "durationMinutes": 204,
               "primaryZone": "Z2 Easy",
-              "humanReadable": "Warm-up: 1 km very easy\nMain: 31 km easy (HR 138–150, ~6:40–7:05/km)\nCool-down: 5 min walk + stretches\nFuel: after 75 min take 30g carbs. Water every 15 min."
+              "humanReadable": "Warm-up: 1 km very easy\nMain: 31 km easy (HR 138–148, ~6:10–6:40/km)\nCool-down: 5 min walk + stretches\nFuel: after 75 min take 30g carbs. Water every 15 min."
             }
           ]
         },
@@ -2229,12 +2221,12 @@ const PLAN={
         }
       ],
       "summary": {
-        "totalHours": 6.1,
+        "totalHours": 5.9,
         "bySport": {
           "run": {
             "sessions": 4,
-            "hours": 6.1,
-            "km": 45.5
+            "hours": 5.9,
+            "km": 46.5
           }
         }
       }
@@ -2275,11 +2267,11 @@ const PLAN={
               "type": "run",
               "completed": false,
               "name": "Easy Run — 45 min",
-              "description": "Easy/conversational. HR 135–148. Let pace be whatever that allows.",
+              "description": "Easy/conversational. HR 132–148. Let pace be whatever that allows.",
               "durationMinutes": 45,
               "distanceKm": 7,
               "primaryZone": "Z2 Easy",
-              "humanReadable": "Warm-up: 5 min very easy\nMain: 35 min easy (HR 135–148, ~6:30–7:00/km)\nCool-down: 5 min easy + stretch"
+              "humanReadable": "Warm-up: 5 min very easy\nMain: 35 min easy (HR 132–148, ~6:00–6:30/km)\nCool-down: 5 min easy + stretch"
             }
           ]
         },
@@ -2295,7 +2287,7 @@ const PLAN={
               "name": "Easy Run — 35 min (optional 4th run)",
               "description": "Optional. Run only if recovery is good — skip freely on bad-sleep weeks.",
               "durationMinutes": 35,
-              "distanceKm": 5,
+              "distanceKm": 5.5,
               "primaryZone": "Z2 Easy",
               "humanReadable": "OPTIONAL — only if you feel fresh.\nWarm-up: 5 min\nMain: 25 min very easy (HR <145)\nCool-down: 5 min\n\nTired, poor sleep, or any knee signal? Do mobility instead."
             }
@@ -2314,7 +2306,7 @@ const PLAN={
               "description": "Sustained goal-pace work — the cornerstone session.",
               "durationMinutes": 50,
               "primaryZone": "Z3 Marathon Pace",
-              "humanReadable": "Warm-up: 15 min easy\nMain: 25 min continuous @ marathon pace (6:20/km, HR 152–162)\nCool-down: 10 min easy"
+              "humanReadable": "Warm-up: 15 min easy\nMain: 25 min continuous @ marathon pace (~6:00/km, HR 145–158)\nCool-down: 10 min easy"
             }
           ]
         },
@@ -2345,9 +2337,9 @@ const PLAN={
               "name": "Long Run — 22 km",
               "description": "The engine of your marathon. Keep it genuinely easy — time on feet beats pace.",
               "distanceKm": 22,
-              "durationMinutes": 149,
+              "durationMinutes": 140,
               "primaryZone": "Z2 Easy",
-              "humanReadable": "Warm-up: 1 km very easy\nMain: 21 km easy (HR 138–150, ~6:40–7:05/km)\nCool-down: 5 min walk + stretches\nFuel: after 75 min take 30g carbs. Water every 15 min."
+              "humanReadable": "Warm-up: 1 km very easy\nMain: 21 km easy (HR 138–148, ~6:10–6:40/km)\nCool-down: 5 min walk + stretches\nFuel: after 75 min take 30g carbs. Water every 15 min."
             }
           ]
         },
@@ -2368,12 +2360,12 @@ const PLAN={
         }
       ],
       "summary": {
-        "totalHours": 4.7,
+        "totalHours": 4.5,
         "bySport": {
           "run": {
             "sessions": 4,
-            "hours": 4.7,
-            "km": 34
+            "hours": 4.5,
+            "km": 34.5
           }
         }
       }
@@ -2414,11 +2406,11 @@ const PLAN={
               "type": "run",
               "completed": false,
               "name": "Easy Run — 40 min",
-              "description": "Easy/conversational. HR 135–148. Let pace be whatever that allows.",
+              "description": "Easy/conversational. HR 132–148. Let pace be whatever that allows.",
               "durationMinutes": 40,
-              "distanceKm": 6,
+              "distanceKm": 6.5,
               "primaryZone": "Z2 Easy",
-              "humanReadable": "Warm-up: 5 min very easy\nMain: 30 min easy (HR 135–148, ~6:30–7:00/km)\nCool-down: 5 min easy + stretch"
+              "humanReadable": "Warm-up: 5 min very easy\nMain: 30 min easy (HR 132–148, ~6:00–6:30/km)\nCool-down: 5 min easy + stretch"
             }
           ]
         },
@@ -2452,7 +2444,7 @@ const PLAN={
               "description": "Lock in goal marathon pace and rhythm.",
               "durationMinutes": 40,
               "primaryZone": "Z3 Marathon Pace",
-              "humanReadable": "Warm-up: 15 min easy\nMain: 4 x 1 km @ marathon pace (6:20/km, HR 152–162), 2 min jog recovery\nCool-down: 10 min easy"
+              "humanReadable": "Warm-up: 15 min easy\nMain: 4 x 1 km @ marathon pace (~6:00/km, HR 145–158), 2 min jog recovery\nCool-down: 10 min easy"
             }
           ]
         },
@@ -2483,9 +2475,9 @@ const PLAN={
               "name": "Long Run — 14 km",
               "description": "The engine of your marathon. Keep it genuinely easy — time on feet beats pace.",
               "distanceKm": 14,
-              "durationMinutes": 95,
+              "durationMinutes": 89,
               "primaryZone": "Z2 Easy",
-              "humanReadable": "Warm-up: 1 km very easy\nMain: 13 km easy (HR 138–150, ~6:40–7:05/km)\nCool-down: 5 min walk + stretches\nFuel: after 75 min take 30g carbs. Water every 15 min."
+              "humanReadable": "Warm-up: 1 km very easy\nMain: 13 km easy (HR 138–148, ~6:10–6:40/km)\nCool-down: 5 min walk + stretches\nFuel: after 75 min take 30g carbs. Water every 15 min."
             }
           ]
         },
@@ -2506,12 +2498,12 @@ const PLAN={
         }
       ],
       "summary": {
-        "totalHours": 2.9,
+        "totalHours": 2.8,
         "bySport": {
           "run": {
             "sessions": 3,
-            "hours": 2.9,
-            "km": 20
+            "hours": 2.8,
+            "km": 20.5
           }
         }
       }
@@ -2552,9 +2544,9 @@ const PLAN={
               "name": "Easy Run — 30 min",
               "description": "Easy shake-out. Legs should feel springy.",
               "durationMinutes": 30,
-              "distanceKm": 4.5,
+              "distanceKm": 4.8,
               "primaryZone": "Z2 Easy",
-              "humanReadable": "Warm-up: 5 min very easy\nMain: 20 min easy (HR 135–148, ~6:30–7:00/km)\nCool-down: 5 min easy + stretch"
+              "humanReadable": "Warm-up: 5 min very easy\nMain: 20 min easy (HR 132–148, ~6:00–6:30/km)\nCool-down: 5 min easy + stretch"
             }
           ]
         },
@@ -2636,20 +2628,20 @@ const PLAN={
               "name": "🏁 VALENCIA MARATHON 42.2 km",
               "description": "RACE DAY! See Race Strategy tab.",
               "distanceKm": 42.2,
-              "durationMinutes": 267,
+              "durationMinutes": 254,
               "primaryZone": "Z3 Marathon Pace",
-              "humanReadable": "Goal 6:20/km (~4:27). First 10 km at 6:30 — deliberately held back. Settle into 6:20 from km 10. Walk aid stations to fuel cleanly. 30g carbs every 30 min from km 8. The training is in your legs."
+              "humanReadable": "Goal ~6:00/km (≈4:13). First 10 km at 6:05–6:10 — deliberately held back. Settle into 6:00 from km 10 with HR ≤158. From km 32, press only if HR is still ≤160. Walk aid stations to fuel cleanly. Gel at km 7, then every 5 km. The training is in your legs."
             }
           ]
         }
       ],
       "summary": {
-        "totalHours": 5.6,
+        "totalHours": 5.4,
         "bySport": {
           "run": {
             "sessions": 4,
-            "hours": 5.6,
-            "km": 46.7
+            "hours": 5.4,
+            "km": 47.0
           }
         }
       }
@@ -2665,26 +2657,49 @@ const PLAN={
     "pacing": {
       "strategy": "Controlled negative split — hold back early, press late",
       "firstHalf": {
-        "target": "6:30/km for the first 10 km",
-        "notes": "DELIBERATELY slower than goal. It will feel far too easy — that is exactly right."
+        "target": "6:05–6:10/km for the first 10 km",
+        "notes": "Deliberately slower than goal. HR ~145–150. It will feel too easy — that is right."
       },
       "secondHalf": {
-        "target": "6:20/km from km 10",
-        "notes": "If you reach 32 km still strong, press to 6:10. Otherwise hold."
+        "target": "6:00/km from km 10",
+        "notes": "Keep HR ≤158 until km 30. If it climbs, ease off 5–10 s/km — that is fine."
       },
-      "targetHR": "152–162 bpm",
-      "lastTenK": "Whatever remains. Aim to pass people from km 32 on.",
-      "warnings": "Your easy pace is now ~6:25, so 6:20 will feel deceptively comfortable at the start. The marathon punishes that feeling at km 32. Hold the leash for 10 km."
+      "segments": [
+        {
+          "km": "KM 1–10",
+          "pace": "6:05–6:10",
+          "cue": "Hold back. HR ~145–150. Too easy is correct."
+        },
+        {
+          "km": "KM 11–21",
+          "pace": "6:00",
+          "cue": "Settle in. Half split ≈ 2:08."
+        },
+        {
+          "km": "KM 22–32",
+          "pace": "6:00",
+          "cue": "HR ≤158. Fuel on schedule even if you don't feel like it."
+        },
+        {
+          "km": "KM 33–42",
+          "pace": "5:50–6:00",
+          "cue": "Press only if HR is still ≤160 and legs are good. Otherwise hold."
+        }
+      ],
+      "targetHR": "≤158 until km 30",
+      "lastTenK": "Press only if HR is still ≤160 at km 32. Otherwise hold 6:00.",
+      "warnings": "Your long runs already average ~6:10 at HR ~148, so 6:00 will feel easy early. That feeling is the trap: a 6:08 first 10 km costs you about a minute; a 5:45 first 10 km can cost you fifteen after km 35."
     },
     "nutrition": {
       "preRace": "Night before: pasta + lean protein, nothing new. 3 hr before: ~100g carbs (oatmeal, banana, honey, low fibre). Coffee 60 min before if usual.",
       "during": {
         "carbsPerHour": "60–80g",
         "fluidPerHour": "500–750 ml",
-        "schedule": "Gel at km 8, then every 5 km (8/13/18/23/28/33/37). ~25g each. Walk aid stations to drink properly.",
+        "schedule": "Gel at km 7 (~40 min), then every 5 km: 7/12/17/22/27/32/37. ~25 g each, always with water. Walk the aid stations to drink properly.",
+        "gelKms": "7/12/17/22/27/32/37",
         "products": "Only what you have practised in long runs."
       },
-      "rule": "Nothing new on race day. Lock the fuel protocol in from the 24 km run onward."
+      "rule": "Nothing new on race day. The 26 km and 30 km are your last two full fuel rehearsals."
     },
     "raceMorning": {
       "wakeUp": "3:00 hrs before start",
@@ -2705,16 +2720,17 @@ const PLAN={
     }
   },
   "coachingNotes": [
-    "📈 REVISION 3 (Aug 16): Your 15 km at 6:28/km with mean HR 146 and only +3 bpm drift over 96 minutes is a genuinely strong aerobic performance. Efficiency factor is up 14% since June at identical heart rate. Goal pace moves from 6:55 to 6:20/km (~4:27 finish).",
-    "🎯 The new goal is provisional. It is built on a 15 km effort — the 26 km and 28 km runs in October are what actually confirm it. If those go well, 6:10 is on the table. If they hurt, we move back toward 6:35. No ego either way.",
-    "👟 Cadence went 143 → 165 spm. That is a real, meaningful change: shorter stride, less impact per footfall, and very likely part of why the knee has stayed quiet. Keep it there — the strides sessions exist partly to maintain it.",
-    "💪 STRENGTH IS THE GAP. Two sessions logged since June. You are about to double your long run from 15 to 32 km. Single-leg and glute work is what keeps a quiet knee quiet under that load. Monday and Friday, 25–30 minutes. This is the one thing in the plan I would not negotiate on.",
-    "⛰️ Your runs carry real climbing — the 15 km had ~378 m of ascent (124 flights), the 12 km on Aug 2 had ~418 m. The Elevation Ascended field exports blank, but Flights Climbed captures it. Hill repeats stay in the plan. Valencia is pancake-flat, so your flat-ground pace is very likely 10–20 sec/km quicker than these numbers suggest — the 6:20 goal has margin.",
-    "🏃 Long runs are now the whole game: 16 → 18 → 20 → 22 → 24 → 26 → 28 → 30 → 32 km. Keep them at HR 138–150 (~6:40–7:05/km) — slower than your easy runs. Time on feet builds the durability that pace cannot.",
-    "😴 Recovery is your real limiter (work + a 1-year-old). The Wednesday run stays OPTIONAL. Three quality runs beat four tired ones, every time.",
-    "🥗 From the 24 km run onward, practise race fuelling exactly: 30g carbs every 30 min. Your gut needs training as much as your legs.",
-    "⌚ Duplicate 'Indoor Run' entries appeared alongside outdoor runs in July–early August (Watchletic recording without GPS). They stopped after Aug 4 — worth confirming your recording setup is clean so training load isn't double-counted.",
-    "🧪 Next checkpoint: after the 26 km run (week 8, early October). Export then and we will finalise race pace."
+    "📋 REVISION 4 (Oct 11): One week lost to a business trip and illness. It replaces the recovery week that was due next, so the cost is one session — the 26 km with a marathon-pace finish — which moves to Oct 24. The 32 km peak (Nov 14) and the 3-week taper are unchanged. Don't try to make up the missed miles.",
+    "🤒 Return rule for week 9: run only if the fever is gone and any symptoms are above the neck (stuffy nose, mild sore throat). Chest symptoms, fever or body aches mean another rest day. If HR on an easy pace sits 5+ beats above normal, shorten the run.",
+    "🎯 Goal pace moves 6:20 → ~6:00/km (≈4:13). The last 4 km of the 24 km ran 5:48–5:51/km at HR 154–160, and MP sessions on fresh legs ran 5:15–5:35/km. It stays provisional: the MP finishes of the 26 km and 30 km decide between ~5:50 (4:06) and ~6:10 (4:20).",
+    "❤️ Marathon-pace HR band lowered to 145–158 (was 152–162). With the old band, Thursday MP work came out at 5:15–5:35/km — race effort, but well faster than race pace. The new band lines up with ~6:00/km.",
+    "⛽ On the 24 km, HR crept to 153–159 at km 17–19 while pace slipped to 6:29–6:35, then km 20 was slow and the finish was strong. That pattern often means carbs ran low. On the 26 and 30 km: first gel at 40–45 min, then every 30 min, no skipping.",
+    "💪 STRENGTH IS STILL THE GAP. Four sessions logged since June. The long run is about to go from 24 to 32 km. Monday and Friday, 25–30 minutes — the single-leg work is what keeps the knee quiet under that load.",
+    "🏃 Long runs average HR 146–150, at the top of the easy band. Keep the first half at 148 or below; the drift in the second half is where the training effect is.",
+    "📈 Fitness since May: easy-run efficiency up ~8% (June → September), ground contact time down from ~310 to ~265 ms, pace-to-HR drift ≤4% on every long run.",
+    "⛰️ Valencia is flat; your long runs are not (the 18 km on Aug 29 had ~200 flights of climbing). Flat-course race pace should come out a little quicker than your training numbers.",
+    "⌚ The duplicate 'Indoor Run' records stopped after Sep 12, so training load is no longer double-counted.",
+    "🧪 Next checkpoint: after the 30 km on Oct 31. Export then and we lock race pace."
   ]
 };
 let currentWeek=1;
@@ -2730,6 +2746,20 @@ function setHero(){
   $('today').textContent=today.toLocaleDateString('en-GB',{weekday:'long',day:'2-digit',month:'short',year:'numeric'});
   const wi=Math.floor((today-start)/(6048e5))+1;
   if(wi>=1&&wi<=PLAN.meta.totalWeeks)currentWeek=wi;
+  const M=PLAN.meta, pace=PLAN.zones.run.pace;
+  const longs=PLAN.weeks.flatMap(w=>w.days.flatMap(d=>d.workouts)).filter(w=>w.sport==='run'&&/^Long Run/.test(w.name)).map(w=>w.distanceKm||0);
+  const words=['Zero','One','Two','Three','Four','Five','Six'];
+  $('rev-tag').textContent='rev'+String(PLAN.version||'').split('.')[0];
+  if(M.tagline)$('tagline').textContent=M.tagline;
+  $('stat-weeks').innerHTML=`${M.totalWeeks}<span class="unit">weeks</span>`;
+  $('stat-peak').innerHTML=`${Math.max(...longs)}<span class="unit">km</span>`;
+  $('stat-goal-time').innerHTML=`${pace.marathonGoalTime||'—'}<span class="unit">finish</span>`;
+  $('stat-goal-pace').innerHTML=`${(pace.marathonGoalPace||'—').replace('/km','')}<span class="unit">/km</span>`;
+  $('overview-deck').textContent=M.overviewDeck||`${M.totalWeeks} weeks to race day.`;
+  $('revision-banner').innerHTML=`<strong>${M.revisionTitle||'Current revision'}</strong>${M.revisionNote||''}`;
+  $('phases-title').textContent=`${words[PLAN.phases.length]||PLAN.phases.length} Phases`;
+  $('zones-deck').textContent=M.zonesDeck||'';
+  $('footer-rev').textContent=(M.revisionTitle||'')+'.';
 }
 document.querySelectorAll('.tab').forEach(tab=>tab.addEventListener('click',()=>{
   document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
@@ -2795,15 +2825,12 @@ function renderRace(){
     <div class="race-block"><div class="race-eyebrow">Pacing</div><h3>The Plan: Run a negative split</h3>
       <p>${r.pacing.strategy}. The biggest first-timer mistake is starting too fast. <strong>Discipline in km 1–10 saves you at km 30+.</strong></p>
       <div class="race-pacing-chart">
-        <div class="race-segment"><div class="seg-km">KM 1–10</div><div class="seg-pace">${r.pacing.firstHalf.target}</div><div class="seg-cue">${r.pacing.firstHalf.notes}</div></div>
-        <div class="race-segment"><div class="seg-km">KM 11–21</div><div class="seg-pace">6:55–7:00</div><div class="seg-cue">Settle into goal pace. Half split ~2:25.</div></div>
-        <div class="race-segment"><div class="seg-km">KM 22–32</div><div class="seg-pace">6:55</div><div class="seg-cue">${r.pacing.secondHalf.notes}</div></div>
-        <div class="race-segment"><div class="seg-km">KM 33–42</div><div class="seg-pace">All you have</div><div class="seg-cue">${r.pacing.lastTenK}</div></div>
+        ${(r.pacing.segments||[]).map(sg=>`<div class="race-segment"><div class="seg-km">${sg.km}</div><div class="seg-pace">${sg.pace}</div><div class="seg-cue">${sg.cue}</div></div>`).join('')}
       </div>
       <p style="color:#e96c2a;font-style:italic">⚠ ${r.pacing.warnings}</p></div>
     <div class="race-block"><div class="race-eyebrow">Fueling</div><h3>${r.nutrition.during.carbsPerHour} carbs/hour</h3>
       <p>${r.nutrition.during.schedule}</p>
-      <ul><li><strong>Pre-Race</strong>${r.nutrition.preRace}</li><li><strong>During</strong>${r.nutrition.during.fluidPerHour} fluid/hr · gels km 8/13/18/23/28/33/37</li><li><strong>Products</strong>${r.nutrition.during.products}</li><li><strong>Rule</strong>${r.nutrition.rule}</li></ul></div>
+      <ul><li><strong>Pre-Race</strong>${r.nutrition.preRace}</li><li><strong>During</strong>${r.nutrition.during.fluidPerHour} fluid/hr · gels km ${r.nutrition.during.gelKms||"8/13/18/23/28/33/37"}</li><li><strong>Products</strong>${r.nutrition.during.products}</li><li><strong>Rule</strong>${r.nutrition.rule}</li></ul></div>
     <div class="race-block"><div class="race-eyebrow">Race Morning</div><h3>The 3-hour countdown</h3>
       <ul><li><strong>Wake</strong>${r.raceMorning.wakeUp}</li><li><strong>Breakfast</strong>${r.raceMorning.breakfast}</li><li><strong>Warm-up</strong>${r.raceMorning.warmUp}</li><li><strong>Gear</strong>${r.raceMorning.gear}</li></ul></div>
     <div class="race-block"><div class="race-eyebrow">Mental Cues</div><h3>What to tell yourself</h3>
