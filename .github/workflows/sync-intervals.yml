@@ -1,0 +1,30 @@
+name: Sync plan to Intervals.icu
+
+# Runs when a plan change lands on main (e.g. you merge a plan pull request),
+# or by hand: Actions tab -> "Sync plan to Intervals.icu" -> Run workflow.
+# Replaces planned workouts from TODAY onward only; past weeks and completed runs are untouched.
+on:
+  push:
+    branches: [main]
+    paths: [plan.json, sync_intervals.py]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: intervals-sync
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Replace planned workouts from today onward
+        env:
+          INTERVALS_API_KEY: ${{ secrets.INTERVALS_API_KEY }}
+        run: python3 sync_intervals.py

@@ -9,23 +9,30 @@ Completed activities are never touched (different endpoint).
 Repeat blocks are UNROLLED into explicit numbered steps (e.g. "Hill 1/5, 2/5...")
 so they survive export to Apple's Workout app and you always know where you are.
 
+Only TODAY AND LATER are touched (Europe/Amsterdam date): past planned workouts stay as
+they were, so Intervals.icu keeps pairing them with the runs you actually did.
+
 Key is read from the environment, NOT hardcoded:
     export INTERVALS_API_KEY=xxxxxxxx
     python3 sync_intervals.py
-Options:  --dry-run   show changes, make no calls
+Options:  --dry-run            show changes, make no calls
+          --from YYYY-MM-DD    first date to replace (default: today)
 """
 import os, re, sys, json, time, base64, urllib.request, urllib.error
+from datetime import datetime
+from zoneinfo import ZoneInfo
 from pathlib import Path
 
 ROOT = Path(__file__).parent
 API_KEY = os.environ.get("INTERVALS_API_KEY", "").strip()
 ATHLETE_ID = os.environ.get("INTERVALS_ATHLETE_ID", "0").strip()
 DRY = "--dry-run" in sys.argv
+FROM = sys.argv[sys.argv.index("--from") + 1] if "--from" in sys.argv else datetime.now(ZoneInfo("Europe/Amsterdam")).date().isoformat()
 UA = ("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 "
       "(KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36")
 
 REC, EASY, LONG = "55-78% HR", "70-80% HR", "68-79% HR"
-MP, TEMPO, THRESH = "80-86% HR", "86-92% HR", "90-98% HR"
+MP, TEMPO, THRESH = "77-84% HR", "86-92% HR", "90-98% HR"   # MP = 145-158 bpm at max 188 (Rev 4)
 STRIDE, HILL = "82-100% HR", "86-100% HR"
 
 def steps_for(wo):
@@ -75,7 +82,7 @@ def steps_for(wo):
             out.append(f"- 20s {STRIDE} Stride {i}/4"); out.append(f"- 60s {REC} Walk {i}/4")
         out.append(f"- 5m {REC} Walk"); return out
     if "valencia marathon" in n:
-        return [f"- 10km 75-82% HR Hold back ~7:05/km", f"- 22km {MP} Settle into MP", f"- 10.2km 80-90% HR Empty the tank"]
+        return [f"- 10km 75-82% HR Hold back - easy start", f"- 22km {MP} Settle into goal pace", f"- 10.2km 80-90% HR Press only if still strong"]
     if dur: return [f"- {dur}m {EASY} Easy"]
     if dist: return [f"- {dist}km {EASY} Easy"]
     return None
@@ -114,20 +121,25 @@ def main():
     if not API_KEY and not DRY:
         sys.exit("ERROR: set INTERVALS_API_KEY in the environment first (or use --dry-run).")
     plan = json.loads((ROOT / "plan.json").read_text(encoding="utf-8"))
-    start = plan["meta"]["planStartDate"]; end = plan["meta"]["eventDate"]
-    events = build_events(plan)
-    print(f"Plan {start} -> {end}: {len(events)} events to sync.")
+    start = max(plan["meta"]["planStartDate"], FROM); end = plan["meta"]["eventDate"]
+    events = [e for e in build_events(plan) if e["start_date_local"][:10] >= start]
+    print(f"Syncing {start} -> {end}: {len(events)} events (earlier dates are left untouched).")
     if DRY:
-        print("DRY RUN. Sample rep-based session:")
-        for e in events:
-            if "Hill Repeats" in e["name"]:
-                print(" ", e["name"]); print("   " + e["description"].replace("\n", "\n   ")); break
+        print("DRY RUN — no changes made. Next 8 entries:")
+        for e in events[:8]:
+            first = e.get("description", "").split("\n")[0][:60]
+            print(f"  {e['start_date_local'][:10]}  {e['name'][:44]:<44} | {first}")
         return
     base = f"https://intervals.icu/api/v1/athlete/{ATHLETE_ID}/events"
-    _, raw = req("GET", f"{base}?oldest={start}&newest={end}")
+    try:
+        _, raw = req("GET", f"{base}?oldest={start}&newest={end}")
+    except urllib.error.HTTPError as ex:
+        sys.exit(f"ERROR {ex.code} reading the calendar — nothing was changed. "
+                 f"{'Check INTERVALS_API_KEY (it may have been regenerated).' if ex.code in (401, 403) else ''}")
     existing = json.loads(raw) if raw.strip().startswith("[") else []
-    old = [e for e in existing if e.get("category") in ("WORKOUT", "NOTE")]
-    print(f"Removing {len(old)} existing planned entries...")
+    old = [e for e in existing if e.get("category") in ("WORKOUT", "NOTE")
+           and str(e.get("start_date_local", ""))[:10] >= start]
+    print(f"Removing {len(old)} planned entries from {start} on...")
     for e in old:
         try: req("DELETE", f"{base}/{e['id']}")
         except Exception as ex: print("  del error:", ex)
@@ -142,6 +154,8 @@ def main():
             print("  post error:", ex.code, ex.read().decode("utf-8", "ignore")[:120])
         time.sleep(0.1)
     print(f"Done. {ok}/{len(events)} synced. Re-import in Watchletic to pull the updates.")
+    if ok < len(events):
+        sys.exit(1)
 
 if __name__ == "__main__":
     main()
