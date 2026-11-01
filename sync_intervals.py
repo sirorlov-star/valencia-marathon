@@ -134,8 +134,13 @@ def main():
     try:
         _, raw = req("GET", f"{base}?oldest={start}&newest={end}")
     except urllib.error.HTTPError as ex:
-        sys.exit(f"ERROR {ex.code} reading the calendar — nothing was changed. "
-                 f"{'Check INTERVALS_API_KEY (it may have been regenerated).' if ex.code in (401, 403) else ''}")
+        body = ex.read().decode("utf-8", "ignore").strip().replace("\n", " ")[:200]
+        hint = ("The site's bot filter (Cloudflare) blocked this machine — run the sync from your own computer."
+                if "1010" in body or "cloudflare" in body.lower() else
+                "Check INTERVALS_API_KEY (it may have been regenerated)." if ex.code in (401, 403) else "")
+        sys.exit(f"ERROR {ex.code} reading the calendar — nothing was changed. {hint}\nResponse: {body}")
+    except urllib.error.URLError as ex:
+        sys.exit(f"ERROR reaching intervals.icu — nothing was changed. {ex.reason}")
     existing = json.loads(raw) if raw.strip().startswith("[") else []
     old = [e for e in existing if e.get("category") in ("WORKOUT", "NOTE")
            and str(e.get("start_date_local", ""))[:10] >= start]
